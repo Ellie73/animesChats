@@ -4,9 +4,9 @@
 require_once "../model/DAO/usuarioDAO.php";
 require_once "../model/DTO/usuarioDTO.php";
 
-if($_SESSION["perfil"] != "A"){
-    header("location:../view/cadastro.php?msg=Sem permissão para entrar!");
-}
+// if($_SESSION["perfil"] != "A"){
+//     header("location:../view/cadastroUsuario.php?msg=Sem permissão para entrar!");
+// }
 
 $idusuario = $_POST["idusuario"];
 $nome = $_POST["nome"];
@@ -14,10 +14,8 @@ $email = $_POST["email"];
 $situacao = $_POST["situacao"];
 $perfil = $_POST["perfil"];
 
-$usuario = new usuarioDTO($nome,"",$email,"");
+$usuario = new usuarioDTO($nome,$email,'','','','','','','',$perfil,$situacao);
 $usuario->setIdusuario($idusuario);
-$usuario->setSituacaoUsuario($situacao);
-$usuario->setPerfil($perfil);
 
 $usuarioConn = new usuarioDAO();
 $retorno = $usuarioConn->alterarUsuario($usuario);

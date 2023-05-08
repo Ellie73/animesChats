@@ -10,6 +10,7 @@ $telefone = $_POST["telefone"];
 $estado = $_POST["estado"];
 $cidade = $_POST["cidade"];
 $senha = $_POST["senha"];
+$senha = md5($senha);
 $genero = $_POST["genero"];
 $nascimento = $_POST["nascimento"];
 $foto = '../img/usuarios/user.png';

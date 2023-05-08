@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastro de usuário</title>
 </head>
 <body>
 <main>
@@ -15,7 +15,7 @@
 
           <form action="../control/cadastrarUsuario.php" method="post">
               <fieldset>
-                  <legend><b>Cadastro Usuário</b></legend>
+                  <legend><b>Cadastro de Usuário</b></legend>
                   <br>
                   <div class="inputBox">
                       <input type="text" name="nome" id="nome" class="inputUser" required>
@@ -46,7 +46,7 @@
                   <input type="radio" id="outro" name="genero" value="O" required>
                   <label for="outro">Outro</label>
                   <br><br>
-                  <label for="nascimento"><b>Data de Nascimento:</b></label>
+                  <label for="nascimento">Data de Nascimento:</label>
                   <input type="date" name="nascimento" id="nascimento" required>
                   <br><br><br>
                   <div class="inputBox">
