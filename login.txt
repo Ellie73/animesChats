@@ -1,0 +1,9 @@
+<?php
+session_start();
+if( $_SESSION['idusuario'] == null) {
+    header("location:home.php?error=Usuário não está logado");
+       exit;
+}
+
+$idusuario=$_SESSION['idusuario'];
+?>

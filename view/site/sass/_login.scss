@@ -1,0 +1,101 @@
+/*---------------------
+  Login
+-----------------------*/
+.login {
+    padding-top: 30px;
+    padding-bottom: 100px;
+}   
+
+.login__form {
+    position: relative;
+    padding-left: 145px;
+    
+    &:after {
+        position: absolute;
+        right: -14px;
+        top: -40px;
+        height: 330px;
+        width: 1px;
+        background: rgba(255, 255, 255, 0.514);
+        content: "";
+    }
+
+    h3 {
+        color: $white-color;
+        font-weight: 700;
+        font-family: 'Oswald', sans-serif;
+        margin-bottom: 30px;
+    }
+
+    form {
+        
+        .input__item {
+            position: relative;
+            width: 370px;
+            margin-bottom: 20px;
+
+            &:before {
+                position: absolute;
+                left: 50px;
+                top: 10px;
+                height: 30px;
+                width: 1px;
+                background: #b7b7b7;
+                content: "";
+            }
+
+            input {
+                height: 50px;
+                width: 100%;
+                font-size: 15px;
+                color: #b7b7b7;
+                background: $white-color;
+                border: none;
+                padding-left: 76px;
+                
+                &::placeholder {
+                    color: #b7b7b7;
+                }
+            }
+
+            span {
+                color: #b7b7b7;
+                font-size: 20px;
+                position: absolute;
+                left: 15px;
+                top: 13px;
+            }
+        }
+
+        button {
+            border-radius: 0;
+            margin-top: 10px;
+        }
+    }
+
+    .forget_pass {
+        font-size: 15px;
+        color: $white-color;
+        display: inline-block;
+        position: absolute;
+        right: 60px;
+        bottom: 12px;
+    }
+}
+
+.login__register {
+    padding-left: 30px;
+
+    h3 {
+        color: $white-color;
+        font-weight: 700;
+        font-family: 'Oswald', sans-serif;
+        margin-bottom: 30px;
+    }
+
+    .primary-btn {
+        background: $primary-color;
+        padding: 12px 42px;
+    }
+}
+
