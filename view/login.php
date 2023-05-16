@@ -69,7 +69,7 @@ if (isset($_SESSION['idusuario'])) {
                                 <span class="icon_mail"></span>
                             </div>
                             <div class="input__item">
-                                <input type="text" placeholder="Senha" name="senha" required>
+                                <input type="password" placeholder="Senha" name="senha" required>
                                 <span class="icon_lock"></span>
                             </div>
                             <button type="submit" class="site-btn">Entrar</button>
