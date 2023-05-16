@@ -16,3 +16,4 @@ $msg = new mensagemDTO("", $remetente, $chat, $data, $hora, $conteudo);
 //Conexão com o banco de dados
 $msgConn = new mensagemDAO();
 $retorno = $msgConn->enviarMensagem($msg);
+?>

@@ -37,3 +37,8 @@ $tema = new temaDTO($nometema, $sinopse, $generotema, $estreia, $tipo, $quantida
 //Conexão com o banco de dados
 $temaConn = new temaDAO();
 $retorno = $temaConn->cadastrarTema($tema);
+if ($retorno != null || $retorno != 0){
+    header("location:../view/login.php?msg=Tema cadastrado com sucesso!");
+} else {
+    header("location:../view/cadastroTema.php?msg=foto não aceita somente jpg jpeg png!!");
+}
