@@ -22,7 +22,7 @@ $usuario = new usuarioDTO($nome,$email,$senha,$telefone,$estado,$cidade,$foto,$g
 $usuarioConn = new usuarioDAO();
 $retorno = $usuarioConn->cadastrarUsuario($usuario);
 if ($retorno != null || $retorno != 0){
-    header("location:../view/login.php?msg=Usuario cadastrado com sucesso!");
+    header("location:../view/home.php?msg=Usuario cadastrado com sucesso!");
 } else {
-    header("location:../view/cadastroUsuario.php?msg=Usuario cadastrado com sucesso!");
+    header("location:../view/cadastroUsuario.php?msg=E-mail já cadastrado!!");
 }

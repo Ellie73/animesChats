@@ -32,7 +32,7 @@ public function logar($usuario){
 
         $conn = new PDO('mysql:host=localhost;dbname=anime-chats;charset=utf8',"root","");
 
-        $sql = "SELECT * FROM usuario WHERE email=? and senha=?";
+        $sql = "SELECT * FROM usuario WHERE email=? and senha=? and situacaoUsuario=1";
 
         $stmt = $conn->prepare($sql);
         $stmt->bindValue(1,$usuario->getEmail());

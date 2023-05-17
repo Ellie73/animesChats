@@ -38,3 +38,8 @@
 .picture__img {
     max-width: 100%;
 }
+
+.inputBox textarea{
+    border-color: #eee;
+    color: #777;
+}

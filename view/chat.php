@@ -1,6 +1,7 @@
 <?php
+session_start();
 if(isset($_GET['idchat'])) {
-            $idchat=$_GET['idchat'];
+            $chat=$_GET['idchat'];
         }else{
             header("location:home.php");
         }
@@ -11,7 +12,6 @@ if( $_SESSION['idusuario'] == null) {
 
 $idusuario=$_SESSION['idusuario'];
 ?>
-
 <!DOCTYPE html>
 <html lang="ptbr">
 <head>
@@ -21,13 +21,15 @@ $idusuario=$_SESSION['idusuario'];
     <title>Document</title>
 </head>
 <h1>Chat em Tempo Real com PHP, JavaScript e Ajax</h1>
-	<div id="mensagens"></div>
+<input hidden id="chat" value="<?=$chat?>">
+	<div id="mensagens">  </div>
 	<form id="form-chat">
 		<label for="mensagem">Mensagem:</label>
 		<input type="text" id="conteudo" name="conteudo">
 		<button type="submit">Enviar</button>
 	</form>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../js/chat.js"></script>
 </html>
 

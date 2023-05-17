@@ -776,7 +776,7 @@ ol {
 }
 
 .anime__details__text p {
-	color: #b7b7b7;
+	color: #484440;
 	font-size: 18px;
 	line-height: 30px;
 }
@@ -823,7 +823,7 @@ ol {
 
 .anime__details__title span {
 	font-size: 15px;
-	color: #acabab;
+	color: #484440;
 	display: block;
 }
 
@@ -843,7 +843,7 @@ ol {
 .anime__details__rating span {
 	display: block;
 	font-size: 18px;
-	color: #acabab;
+	color: #484440;
 }
 
 .anime__details__widget {
@@ -869,12 +869,12 @@ ol {
 	top: 12px;
 	height: 6px;
 	width: 6px;
-	background: #acabab;
+	background: #484440;
 	content: "";
 }
 
 .anime__details__widget ul li span {
-	color: #acabab;
+	color: #484440;
 	width: 115px;
 	display: inline-block;
 }
@@ -961,12 +961,12 @@ ol {
 }
 
 .anime__review__item__text h6 span {
-	color: #acabab;
+	color: #ffffff;
 	font-weight: 400;
 }
 
 .anime__review__item__text p {
-	color: #acabab;
+	color: #ffffff;
 	line-height: 23px;
 	margin-bottom: 0;
 }
@@ -974,7 +974,7 @@ ol {
 .anime__details__form form textarea {
 	width: 100%;
 	font-size: 15px;
-	color: #acabab;
+	color: #484440;
 	padding-left: 20px;
 	padding-top: 12px;
 	height: 110px;
@@ -1137,7 +1137,7 @@ ol {
 
 .breadcrumb__links span {
 	font-size: 15px;
-	color: #b7b7b7;
+	color: #696867;
 	display: inline-block;
 }
 
@@ -1213,10 +1213,11 @@ ol {
 	text-align: center;
 	width: 100%;
 	padding: 0 105px;
+	font-size: 10em;
 }
 
 .blog__item__text p {
-	color: black;
+	color: rgb(255, 255, 255);
 	margin-bottom: 12px;
 }
 
@@ -1226,7 +1227,7 @@ ol {
 }
 
 .blog__item__text h4 a {
-	color: black;
+	color: rgb(249, 79, 0);
 	line-height: 34px;
 }
 
@@ -1656,12 +1657,12 @@ ol {
 
 .login__form .singup_sexo{
 	font-size: 15px;
-	color: black;
+	color: rgb(93, 90, 90);
 	margin-top: 36px;
 }
 .login__form .singup_sexo p{
 	font-size: 15px;
-	color: black;
+	color: rgb(86, 84, 84);
 	margin-top: 36px;
 }
 

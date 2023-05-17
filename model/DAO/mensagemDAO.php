@@ -27,7 +27,7 @@ class mensagemDAO
         try {
             $conn = new PDO('mysql:host=localhost;dbname=anime-chats;charset=utf8', "root", "");
 
-            $sql = "SELECT * FROM mensagem WHERE chat = ? ORDER BY id DESC LIMIT 10";
+            $sql = "SELECT * FROM mensagem WHERE chat = ? ORDER BY idmensagem DESC LIMIT 10";
 
             $stmt = $conn->prepare($sql);
             $stmt->bindValue(1, $chat);

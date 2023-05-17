@@ -1,3 +1,10 @@
+<?php 
+session_start();
+if (isset($_SESSION['idusuario'])) {
+    header("Location:./home.php?msg=Ja esta logado!");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -32,46 +39,7 @@
     </div>
 
     <!-- Header Section Begin -->
-    <header class="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-2">
-                    <div class="header__logo">
-                        <a href="./home.php">
-                            <img src="../img/logo02.png" alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <div class="header__nav">
-                        <nav class="header__menu mobile-menu">
-                            <ul>
-                                <li class="active"><a href="./index.html">Home</a></li>
-                                <li><a href="">Categorias <span class="arrow_carrot-down"></span></a>
-                                    <ul class="dropdown">
-                                        <li><a href="./categories.html">Anime</a></li>
-                                        <li><a href="./categories.html">Mangá</a></li>
-                                        <li><a href="./categories.html">Manhwa</a></li>
-                                        <li><a href="./categories.html">Manhua</a></li>
-                                        <li><a href="./categories.html">Webtoon</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="./blog.html">Comunidades</a></li>
-                                <li><a href="./blog-details.html">Assinatura</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="header__right">
-                        <a href="#" class="search-switch"><span class="icon_search"></span></a>
-                        <a href="./login.html"><span class="icon_profile"></span></a>
-                    </div>
-                </div>
-            </div>
-            <div id="mobile-menu-wrap"></div>
-        </div>
-    </header>
+    <?php require_once './menu.php' ?>
     <!-- Header End -->
 
     <!-- Normal Breadcrumb Begin -->
@@ -102,7 +70,7 @@
                                 <span class="icon_mail"></span>
                             </div>
                             <div class="input__item">
-                                <input type="text" placeholder="Senha" name="senha" required>
+                                <input type="password" placeholder="Senha" name="senha" required>
                                 <span class="icon_lock"></span>
                             </div>
                             <button type="submit" class="site-btn">Entrar</button>
@@ -120,48 +88,8 @@
         </div>
     </section>
     <!-- Login Section End -->
-
-    <!-- Footer Section Begin -->
-    <footer class="footer">
-        <div class="page-up">
-            <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <p>
-                        Copyright &copy;
-                        <script>document.write(new Date().getFullYear());</script> Todos os direitos reservados 
-                         </a>
-                    </p>
-
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer Section End -->
-
-    <!-- Search model Begin -->
-    <div class="search-model">
-        <div class="h-100 d-flex align-items-center justify-content-center">
-            <div class="search-close-switch"><i class="icon_close"></i></div>
-            <form class="search-model-form">
-                <input type="text" id="search-input" placeholder="Pesquise aqui.....">
-            </form>
-        </div>
-    </div>
-    <!-- Search model end -->
-
-    <!-- Js Plugins -->
-    <script src="../js/jquery-3.3.1.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/player.js"></script>
-    <script src="../js/jquery.nice-select.min.js"></script>
-    <script src="../js/mixitup.min.js"></script>
-    <script src="../js/jquery.slicknav.js"></script>
-    <script src="../js/owl.carousel.min.js"></script>
-    <script src="../js/main.js"></script>
-
+    
+    <?php require_once './footer.php' ?>
 
 </body>
 

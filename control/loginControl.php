@@ -14,7 +14,7 @@ $usuario = new usuarioDTO("",$email,$senha,"","","","","","","","");
 $usuarioConn = new usuarioDAO();
 $retorno = $usuarioConn->logar($usuario);
 if($retorno == null || empty($retorno)){
-    header("location:../view/home.php?msg=Login ou senha invalidos!");
+    header("location:../view/login.php?msg=Login invalido ou sem acesso!");
 }else{
     if($retorno["situacaoUsuario"] == 1){
     session_start();

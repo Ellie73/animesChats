@@ -8,7 +8,7 @@ class chatDAO
         try {
             $conn = new PDO('mysql:host=localhost;dbname=anime-chats;charset=utf8', "root", "");
 
-            $sql = "INSERT INTO chat(tema,titulo)   VALUES (?,?)";
+            $sql = "INSERT INTO chat(tema_comunidade,titulo)   VALUES (?,?)";
 
             $stmt = $conn->prepare($sql);
             $stmt->bindValue(1, $chat->getTema());

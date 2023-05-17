@@ -18,7 +18,7 @@ $nome = $_GET["nome"];
 if(!isset($_GET["deletarUsuario"])){
 
     echo 
-   "<body style='background-color:#999'>
+   "<body style='background-color:#cccbcb'>
    <div style='border-radius:10px;background-color:white;padding:30px;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)'>
         <h3>Deseja realmente <span style='color:red;'>Excluir</span> o usuário <span style='color:red;'>$nome</span>?</h3>
         <p><b>Usuário ID:</b> $idusuario</p><br>
@@ -33,7 +33,7 @@ if(!isset($_GET["deletarUsuario"])){
     if($retorno == null || $retorno == 0){
         header("location:../view/ferramentas-adm.php?msg=Erro ao deletar usuário / login!");
     }else{
-        header("location:../view/ferramentas-adm.php?msg=Usuário deletado com sucesso!");
+        header("location:../view/adm.php?msg=Usuário deletado com sucesso!");
     }
 
 }

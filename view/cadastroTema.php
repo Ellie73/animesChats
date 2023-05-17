@@ -1,88 +1,128 @@
+<?php
+session_start();
+if (isset($_SESSION['idusuario'])) {
+    // Está logado
+} else {
+    header("Location:./login.php");
+}
+if ($_SESSION['perfil'] != 'A') {
+    header("Location:./home.php?msg=Acesso negado!");
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Anime">
+    <meta name="keywords" content="Anime, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Animes Chats</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="../css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="../css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="../css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
     <link rel="stylesheet" href="../css/cadastroTema.css">
-    <title>Cadastro de tema</title>
 </head>
 
-
 <body>
-    <main>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
 
+    <!-- Header Section Begin -->
+    <?php require_once './menu.php' ?>
+    <!-- Header End -->
 
-
-        <div class="box">
-
-            <form action="../control/cadastrarTema.php" method="post" enctype="multipart/form-data">
-                <fieldset>
-                    <legend><b>Cadastro de Tema</b></legend>
-                    <br>
-                    <div class="inputBox">
-                        <label for="nometema" class="labelInput">Nome do Tema:</label>
-                        <input type="text" name="nometema" id="nometema" class="inputUser" required>
+    <!-- Login Section Begin -->
+    <section class="login spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-left">
+                    <div class="normal__breadcrumb__text">
+                        <h2>Cadastro de um novo Tema</h2>
                     </div>
-                    <br><br>
-                    <div class="inputBox">
-                        <label for="email" class="labelInput">Sinopse:</label><br>
-                        <textarea name="sinopse" id="sinopse" cols="80" rows="10" class="inputUser" required></textarea>
-                    </div>
-                    <br><br>
-                    <div class="inputBox">
-                        <input type="text" name="generotema" id="generotema" class="inputUser" required>
-                        <label for="generotema" class="labelInput">Gênero</label>
-                    </div>
-                    <br><br>
-                    <div class="inputBox">
-                        <input type="number" name="estreia" id="estreia" class="inputUser" min="1" max="2023" required>
-                        <label for="estreia" class="labelInput">Ano de estreia</label>
-                    </div>
-                    <p>Tipo:</p>
-                    <input type="radio" id="anime" name="tipo" value="Anime" required>
-                    <label for="anime">Anime</label>
-                    <br>
-                    <input type="radio" id="manga" name="tipo" value="Mangá" required>
-                    <label for="manga">Mangá</label>
-                    <br>
-                    <input type="radio" id="webtoon" name="tipo" value="Webtoon" required>
-                    <label for="webtoon">Webtoon</label>
-                    <br><br>
-                    <label for="quantidade">Quantidade de Episódio/Capítulos:</label>
-                    <input type="number" name="quantidade" id="quantidade" required>
-                    <br><br><br>
-                    <div class="inputBox">
-                        </select>
-                        <label for="estadotema">Estado de publicação:</label>
-                        <select name="estadotema" id="estadotema" required>
-                            <option value="Em andamento" selected>Em andamento</option>
-                            <option value="Finalizado">Finalizado</option>
-                        </select>
-                    </div>
-                    <br><br>
-                    <div class="inputBox">
-                        <label class="picture" for="foto" tabIndex="0">
-                            <span class="picture__image">Escolha uma foto</span>
-                        </label>
-                        <input type="file" name="foto" id="foto" required>
-                    </div>
-                    <br><br>
-                </fieldset>
-                <div class="btn_alinhamento">
-                    <input type="submit" name="submit" id="submit">
-
                 </div>
-
-            </form>
-
+                <div class="col-lg-6">
+                    <div class="login__form">
+                        <h3></h3>
+                        <form action="../control/cadastrarTema.php" method="post" enctype="multipart/form-data">
+                            <fieldset>
+                                <div class="input__item">
+                                    <input type="text" name="nometema" id="nometema" class="inputUser" placeholder="Nome do Tema" maxlength="100" required>
+                                    
+                                </div>
+                                <div class="inputBox">
+                                    <textarea name="sinopse" id="sinopse" cols="80" rows="10" class="inputUser" placeholder="Sinopse |" maxlength="3000" required></textarea>
+                                </div>
+                                <br>
+                                <div class="input__item">
+                                    <input type="text" name="generotema" id="generotema" class="inputUser" maxlength="100" placeholder="Gênero" required>
+                                    
+                                </div>
+                                <p style="color: red;">
+                                <div class="input__item">
+                                    <input type="number" name="estreia" id="estreia" class="inputUser" min="1" max="2024" placeholder="Ano de estreia" required>
+                                    
+                                </div>
+                                <div class="singup_sexo">
+                                    <p>Tipo</p>
+                                    <input type="radio" id="anime" name="tipo" value="Anime" required>
+                                    <label for="anime">Anime</label>
+                                    <br>
+                                    <input type="radio" id="manga" name="tipo" value="Mangá" required>
+                                    <label for="mangá">Mangá</label>
+                                    <br>
+                                    <input type="radio" id="webtoon" name="tipo" value="Webtoon" required>
+                                    <label for="webtoon">Webtoon</label>
+                                    <br><br>
+                                </div>
+                                <div class="input__item">
+                                    <input type="number" name="quantidade" id="quantidade" min="1" max="2024" class="inputUser" placeholder="Quantidade de Cap/Ep" required>
+                                    
+                                </div>
+                                <div class="inputBox">
+                                    <label for="estadotema">Estado de publicação:</label>
+                                </div>
+                                <div>
+                                    <select name="estadotema" id="estadotema" required>
+                                        <option value="Em andamento" selected>Em andamento</option>
+                                        <option value="Finalizado">Finalizado</option>
+                                    </select>
+                                </div>
+                                <br><br><br>
+                                <div class="inputBox">
+                                    <label class="picture" for="foto" tabIndex="0">
+                                        <span class="picture__image">Escolha uma foto</span>
+                                    </label>
+                                    <input type="file" name="foto" id="foto" required>
+                                </div>
+                                <p>***Somente JPG jpg jpeg png</p>
+                                <br>
+                            </fieldset>
+                            <button type="submit" name="submit" id="submit" class="site-btn">Cadastrar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!--FIM 1ª DOBRA-->
+    </section>
+    <!-- Login Section End -->
 
+    <?php require_once './footer.php' ?>
 
-    </main>
 </body>
-<script src="../js/fotoCadastro.js"></script>
 
 </html>
