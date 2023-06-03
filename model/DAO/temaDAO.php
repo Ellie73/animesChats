@@ -36,10 +36,62 @@ class temaDAO
             $stmt->bindValue(1, $tema);
             $stmt->execute();
             $retorno = $stmt->fetch(PDO::FETCH_ASSOC);
-            
+
             return $retorno;
-        
-        }catch (PDOException $e) {
+
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+    public function pesquisarTema($tipo, $page)
+    {
+        try {
+            $conn = new PDO('mysql:host=localhost;dbname=anime-chats;charset=utf8', "root", "");
+
+            $resultadosPorPagina = 6;
+            $offset = ($page - 1) * $resultadosPorPagina;
+
+            $sql = "SELECT * FROM tema WHERE tipotema = ? ORDER BY nome LIMIT $resultadosPorPagina OFFSET $offset";
+
+            $stmt = $conn->prepare($sql);
+            $stmt->bindValue(1, $tipo);
+            $stmt->execute();
+            $retorno = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            return $retorno;
+
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+    public function contarTema($tipo)
+    {
+        try {
+            $conn = new PDO('mysql:host=localhost;dbname=anime-chats;charset=utf8', "root", "");
+            $sql = "SELECT COUNT(*) AS total FROM tema WHERE tipotema = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindValue(1, $tipo);
+            $stmt->execute();
+            $retorno = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            return $retorno;
+
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+    public function listarTema()
+    {
+        try {
+            $conn = new PDO('mysql:host=localhost;dbname=anime-chats;charset=utf8', "root", "");
+            $sql = "SELECT * FROM tema";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+            $retorno = $stmt->fetchALL(PDO::FETCH_ASSOC);
+
+            return $retorno;
+
+        } catch (PDOException $e) {
             echo $e->getMessage();
         }
     }

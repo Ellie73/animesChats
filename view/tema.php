@@ -70,8 +70,8 @@ if($retorno == null || empty($retorno)){
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
                         <a href="./home.php"><i class="fa fa-home"></i> Home</a>
-                        <a href="./categorias.php">Categorias</a>
-                        <span><a href="./<?= $retorno["tipotema"] ?>.php"><?= $retorno["tipotema"] ?></a></span>
+                        <a href="#">Categorias</a>
+                        <span><a href="./pesquisarTema.php?type=<?= $retorno["tipotema"] ?>&page=1"><?= $retorno["tipotema"] ?></a></span>
                     </div>
                 </div>
             </div>
@@ -118,12 +118,6 @@ if($retorno == null || empty($retorno)){
                                     </div>
                                 </div>
                             </div>
-                            <div class="anime__details__btn">
-                                <?php
-                                if ($_SESSION['perfil'] == 'A') {
-                                    echo '<a href="./criarChat.php?id='.$retorno["idtema"].'"class="follow-btn"> Cadastrar novos tópicos</a>';}
-                                ?>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -132,18 +126,19 @@ if($retorno == null || empty($retorno)){
                 <div class="col-lg-8 col-md-8">
                     <div class="anime__details__review">
                         <div class="section-title">
-                            <h5>Comunidades</h5>
+                            <h4>Comunidades de <?= $retorno["nome"]; ?></h4>
+
                         <!-- </div>
                         <div class="anime__review__item">
                             <div class="anime__review__item__pic">
-                                <a href=anime-watching.html><img src="img/anime/review-1.jpg" alt=""></a>
+                                <a href=anime-watching.html><img src="" alt=""></a>
                             </div>
                             <div class="anime__review__item__text">
-                                <h6>Chris Curry - <span>1 Hour ago</span></h6>
-                                <p>whachikan Just noticed that someone categorized this as belonging to the genre
-                                    "demons" LOL</p>
+                                <h6>$mensagem['remetente'] - <span>$mensagem['hora']</span></h6>
+                                <p>$mensagem['conteudo']</p>
                             </div>
                         </div>
+
                         <div class="anime__review__item">
                             <div class="anime__review__item__pic">
                                 <a href=anime-watching.html><img src="img/anime/review-2.jpg" alt=""></a>

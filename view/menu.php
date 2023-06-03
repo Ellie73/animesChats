@@ -25,54 +25,48 @@
     <link rel="stylesheet" href="../css/cadastroTema.css">
 </head>
 <header class="header">
-    <div class="container">
+    <div class="">
         <div class="row">
             <div class="col-lg-2">
                 <div class="header__logo">
                     <a href="./home.php">
-                        <img src="../img/logo02.png" alt="">
+                        <img src="../img/logo02.png" alt="" width="100%">
                     </a>
                 </div>
             </div>
-            <div class="col-lg-8">
+            <div class="col-lg-9">
                 <div class="header__nav">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <li><a href="./home.php">Home</a></li>
                             <li><a href="">Categorias <span class="arrow_carrot-down"></span></a>
                                 <ul class="dropdown">
-                                    <li><a href="./categories.html">Anime</a></li>
-                                    <li><a href="./categories.html">Mangá</a></li>
-                                    <li><a href="./categories.html">Manhwa</a></li>
-                                    <li><a href="./categories.html">Manhua</a></li>
-                                    <li><a href="./categories.html">Webtoon</a></li>
+                                    <li><a href="./pesquisarTema.php?type=anime&page=1">Anime</a></li>
+                                    <li><a href="./pesquisarTema.php?type=manga&page=1">Mangá</a></li>
+                                    <li><a href="./pesquisarTema.php?type=manhwa&page=1">Manhwa</a></li>
+                                    <li><a href="./pesquisarTema.php?type=manhua&page=1">Manhua</a></li>
+                                    <li><a href="./pesquisarTema.php?type=webtoon&page=1">Webtoon</a></li>
                                 </ul>
                             </li>
-                            <li><a href="./blog.html">Comunidades</a></li>
-                            <li><a href="./blog-details.html">Assinatura</a></li>
+                            <li><a href="./homeComunidade.php?page=1">Comunidades</a></li>
+                            <li><a href="./assinatura.php">Assinatura</a></li>
+                            <li title="Procurar"><a href="#" class="search-switch"><span class="icon_search"></span></a></li>
+                            <?php
+                            // Verifica se o usuário está logado 
+                            if (isset($_SESSION['idusuario'])) {
+                                echo '<li title="'.$_SESSION['nome'].'"><a href="./perfil.php"><img src="'.$_SESSION['foto'].'" class="rounded-circle me-3" style="width: 2em; height: 2em; object-fit: cover;"></a></li>';
+                                // Se o perfil do usuário for 'A', exibe o botão de administração
+                                if ($_SESSION['perfil'] == 'A') {
+                                    echo '<li title="Ferramentas ADM"><a href="./ferramentas.php"><span class="icon_flowchart"></span></a></li>';
+                                }
+                                if (isset($_SESSION['idusuario'])) {
+                                    echo '<li title="Sair"><a href="./logout.php"><span class="icon_close"></span>Sair</a></li>';
+                                }
+                            } else {
+                                echo '<li title="Login/Cadastre-se"><a href="./login.php"><img src="../img/usuarios/user.png" class="rounded-circle me-3" style="width: 2em; height: 2em; object-fit: cover;"></a></li>';
+                            }
+                            ?>
                         </ul>
                     </nav>
-                </div>
-            </div>
-            <div class="col-lg-2">
-                <div class="header__right">
-                    <a href="#" class="search-switch"><span class="icon_search"></span></a>
-                    <?php
-                    // Verifica se o usuário está logado 
-                    if (isset($_SESSION['idusuario'])) {
-                        echo '<a href="./perfil.php"><span class="icon_profile"></span></a>';
-                        // Se o perfil do usuário for 'A', exibe o botão de administração
-                        if ($_SESSION['perfil'] == 'A') {
-                            echo '<a href="./ferramentas.php"><span class="icon_flowchart"></span></a>';
-                        }
-                        if (isset($_SESSION['idusuario'])) {
-                            echo '<a href="./logout.php"><span class="icon_close"></span></a>';
-                        }
-                    } else {
-                        echo '<a href="./login.php"><span class="icon_profile"></span></a>';
-                    }
-
-                    ?>
                 </div>
             </div>
         </div>

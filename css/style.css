@@ -27,7 +27,12 @@ body {
 	background: #cccbcb;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	margin: 0;
 	color: #111111;
 	font-weight: 400;
@@ -156,6 +161,7 @@ ol {
 	letter-spacing: 2px;
 }
 
+
 .primary-btn span {
 	font-size: 18px;
 	margin-left: 5px;
@@ -208,12 +214,14 @@ ol {
 		border: 4px solid #f44336;
 		border-left-color: transparent;
 	}
+
 	50% {
 		-webkit-transform: rotate(180deg);
 		transform: rotate(180deg);
 		border: 4px solid #673ab7;
 		border-left-color: transparent;
 	}
+
 	100% {
 		-webkit-transform: rotate(360deg);
 		transform: rotate(360deg);
@@ -228,11 +236,13 @@ ol {
 		border: 4px solid #f44336;
 		border-left-color: transparent;
 	}
+
 	50% {
 		-webkit-transform: rotate(180deg);
 		border: 4px solid #673ab7;
 		border-left-color: transparent;
 	}
+
 	100% {
 		-webkit-transform: rotate(360deg);
 		border: 4px solid #f44336;
@@ -277,9 +287,9 @@ ol {
 	width: 500px;
 	font-size: 40px;
 	border: none;
-	border-bottom: 2px solid #333;
+	border-bottom: 2px solid rgb(255, 255, 255);
 	background: 0 0;
-	color: #999;
+	color: rgb(255, 255, 255);
 }
 
 .search-close-switch {
@@ -305,6 +315,11 @@ ol {
 	justify-content: center;
 }
 
+#search-input::placeholder {
+	color: white;
+	font-size: 1.5em;
+}
+
 /*---------------------
   Header
 -----------------------*/
@@ -314,7 +329,7 @@ ol {
 }
 
 .header__logo {
-	padding: 15px 0 15px;
+	padding: 30px 40px 30px;
 }
 
 .header__logo a {
@@ -324,6 +339,7 @@ ol {
 .header__menu {
 	text-align: center;
 }
+
 
 .header__menu ul li {
 	list-style: none;
@@ -340,6 +356,7 @@ ol {
 
 .header__menu ul li:hover a {
 	color: #ffffff;
+	font-size: 1.5em;
 }
 
 .header__menu ul li:hover .dropdown {
@@ -378,14 +395,14 @@ ol {
 }
 
 .header__menu ul li .dropdown li a {
-	font-size: 14px;
+	font-size: 1.3em;
 	color: #111111;
 	font-weight: 500;
 	padding: 5px 20px;
 }
 
 .header__menu ul li a {
-	font-size: 15px;
+	font-size: 1.3em;
 	color: #b7b7b7;
 	display: block;
 	font-weight: 700;
@@ -397,7 +414,7 @@ ol {
 
 .header__menu ul li a span {
 	position: relative;
-	font-size: 17px;
+	font-size: 1.2em;
 	top: 2px;
 }
 
@@ -430,8 +447,231 @@ ol {
 }
 
 .hero__items {
-	padding: 250px 0 250px 50px;
+	padding: 250px 0 180px 50px;
 	border-radius: 5px;
+}
+
+.hero__items {
+	position: relative;
+	width: 100%;
+	/* Defina o tamanho adequado para a sua div */
+	height: 650px;
+	/* Defina o tamanho adequado para a sua div */
+	overflow: hidden;
+}
+
+.hero__items {
+	position: relative;
+	z-index: 1;
+}
+
+.hero__items::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url("../img/hero/anime.jpg");
+	background-size: cover;
+	filter: blur(3px);
+	/* Ajuste o valor de desfoque conforme necessário */
+	z-index: -1;
+}
+
+.normal-breadcrumb {
+	position: relative;
+	width: 100%;
+	/* Defina o tamanho adequado para a sua div */
+	height: 650px;
+	/* Defina o tamanho adequado para a sua div */
+	overflow: hidden;
+}
+
+.normal-breadcrumb {
+	position: relative;
+	z-index: 1;
+}
+
+.normal-breadcrumb::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url("../img/anime1.jpg");
+	background-size: cover;
+	filter: blur(2px);
+	/* Ajuste o valor de desfoque conforme necessário */
+	z-index: -1;
+}
+
+.normal__breadcrumb__text > p{
+	font-family: "Oswald", sans-serif;
+	font-weight: 500;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+.hero__content {
+	position: relative;
+	z-index: 2;
+}
+
+.hero__text {
+	position: relative;
+	z-index: 9;
+}
+
+.hero__text h2 {
+	color: rgb(255, 255, 255);
+	font-size: 42px;
+	font-family: "Oswald", sans-serif;
+	font-weight: 700;
+	line-height: 52px;
+	margin-top: 35px;
+	margin-bottom: 8px;
+	position: relative;
+	top: -100px;
+	opacity: 0;
+	-webkit-transition: all, 1s;
+	-o-transition: all, 1s;
+	transition: all, 1s;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero__text p {
+	color: #ffffff;
+	font-size: 30px;
+	margin-bottom: 40px;
+	position: relative;
+	top: -100px;
+	opacity: 0;
+	-webkit-transition: all, 1.2s;
+	-o-transition: all, 1.2s;
+	transition: all, 1.2s;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero__text a {
+	position: relative;
+	top: -100px;
+	opacity: 0;
+	-webkit-transition: all, 1.4s;
+	-o-transition: all, 1.4s;
+	transition: all, 1.4s;
+}
+
+.hero__text a span {
+	font-size: 13px;
+	color: #ffffff;
+	background: #e53637;
+	display: inline-block;
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	padding: 14px 20px;
+	border-radius: 4px 0 0 4px;
+	margin-right: 1px;
+}
+
+.hero__text a i {
+	font-size: 20px;
+	display: inline-block;
+	background: #e53637;
+	padding: 11px 5px 16px 8px;
+	color: #ffffff;
+	border-radius: 0 4px 4px 0;
+}
+
+.hero__slider.owl-carousel .owl-item.active .hero__text .label {
+	top: 0;
+	opacity: 1;
+}
+
+.hero__slider.owl-carousel .owl-item.active .hero__text h2 {
+	top: 0;
+	opacity: 1;
+}
+
+.hero__slider.owl-carousel .owl-item.active .hero__text p {
+	top: 0;
+	opacity: 1;
+}
+
+.hero__slider.owl-carousel .owl-item.active .hero__text a {
+	top: 0;
+	opacity: 1;
+}
+
+.hero__slider.owl-carousel .owl-dots {
+	position: absolute;
+	left: 0;
+	bottom: 10px;
+	width: 100%;
+	text-align: center;
+}
+
+.hero__slider.owl-carousel .owl-dots button {
+	height: 8px;
+	width: 8px;
+	background: #b7b7b7;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+.hero__slider.owl-carousel .owl-dots button.active {
+	background: #ffffff;
+}
+
+.hero__slider.owl-carousel .owl-dots button:last-child {
+	margin-right: 0;
+}
+
+.hero__slider.owl-carousel .owl-nav button {
+	font-size: 25px;
+	height: 66px;
+	width: 66px;
+	background: #c24e0b;
+	line-height: 66px;
+	text-align: center;
+	color: #ffffff;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+	position: relative;
+	z-index: 1;
+	position: absolute;
+	left: -33px;
+	top: 50%;
+	margin-top: -47px;
+}
+
+.hero__slider.owl-carousel .owl-nav button.owl-next {
+	left: auto;
+	right: -33px;
+}
+
+.hero__slider.owl-carousel .owl-nav button:after {
+	position: absolute;
+	top: 6px;
+	left: 0;
+	right: 0;
+	height: 54px;
+	width: 54px;
+	background: rgba(255, 255, 255, 0.1);
+	content: "";
+	z-index: -1;
+	margin: 0 auto;
+}
+
+.hero__slider.owl-carousel .owl-nav button span {
+	-webkit-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	display: block;
+	z-index: 1;
 }
 
 /*---------------------
@@ -689,7 +929,7 @@ ol {
 
 .product__page__title .product__page__filter {
 	text-align: right;
-	
+
 }
 
 .product__page__title .product__page__filter p {
@@ -776,7 +1016,7 @@ ol {
 }
 
 .anime__details__text p {
-	color: #484440;
+	color: #0a0502;
 	font-size: 18px;
 	line-height: 30px;
 }
@@ -823,7 +1063,7 @@ ol {
 
 .anime__details__title span {
 	font-size: 15px;
-	color: #484440;
+	color: rgba(0, 0, 0, 0.721);
 	display: block;
 }
 
@@ -843,7 +1083,7 @@ ol {
 .anime__details__rating span {
 	display: block;
 	font-size: 18px;
-	color: #484440;
+	color: rgba(0, 0, 0, 0.721);
 }
 
 .anime__details__widget {
@@ -869,12 +1109,12 @@ ol {
 	top: 12px;
 	height: 6px;
 	width: 6px;
-	background: #484440;
+	background: rgba(0, 0, 0, 0.721);
 	content: "";
 }
 
 .anime__details__widget ul li span {
-	color: #484440;
+	color: black;
 	width: 115px;
 	display: inline-block;
 }
@@ -949,7 +1189,7 @@ ol {
 
 .anime__review__item__text {
 	overflow: hidden;
-	background: #d4671d;
+	background: #e57636be;
 	padding: 18px 30px 16px 20px;
 	border-radius: 10px;
 }
@@ -961,12 +1201,12 @@ ol {
 }
 
 .anime__review__item__text h6 span {
-	color: #ffffff;
+	color: black;
 	font-weight: 400;
 }
 
 .anime__review__item__text p {
-	color: #ffffff;
+	color: black;
 	line-height: 23px;
 	margin-bottom: 0;
 }
@@ -974,7 +1214,7 @@ ol {
 .anime__details__form form textarea {
 	width: 100%;
 	font-size: 15px;
-	color: #484440;
+	color: #acabab;
 	padding-left: 20px;
 	padding-top: 12px;
 	height: 110px;
@@ -1000,111 +1240,6 @@ ol {
   Anime Watching
 -----------------------*/
 
-.anime__video__player {
-	margin-bottom: 70px;
-}
-
-.anime__video__player .plyr--video {
-	border-radius: 5px;
-	background: transparent;
-}
-
-.anime__video__player .plyr audio,
-.anime__video__player .plyr iframe,
-.anime__video__player .plyr video {
-	width: 102%;
-}
-
-.anime__video__player .plyr--full-ui.plyr--video .plyr__control--overlaid {
-	display: block;
-}
-
-.anime__video__player .plyr--video .plyr__control.plyr__tab-focus,
-.anime__video__player .plyr--video .plyr__control:hover,
-.anime__video__player .plyr--video .plyr__control[aria-expanded=true] {
-	background: transparent;
-}
-
-.anime__video__player .plyr--video .plyr__controls {
-	background: transparent;
-}
-
-.anime__video__player .plyr--video .plyr__progress__buffer {
-	color: transparent;
-}
-
-.anime__video__player .plyr--full-ui input[type=range] {
-	color: black;
-}
-
-.anime__video__player .plyr__controls .plyr__controls__item.plyr__progress__container {
-	position: absolute;
-	left: 26px;
-	bottom: 45px;
-	width: calc(100% - 60px);
-}
-
-.anime__video__player .plyr__menu {
-	margin-right: 70px;
-}
-
-.anime__video__player .plyr__controls .plyr__controls__item:first-child {
-	position: absolute;
-	left: 32px;
-	bottom: 8px;
-}
-
-.anime__video__player .plyr__controls .plyr__controls__item:last-child {
-	position: absolute;
-	right: 32px;
-	bottom: 8px;
-}
-
-.anime__video__player .plyr__volume {
-	position: absolute;
-	width: auto;
-	left: 76px;
-	bottom: 8px;
-}
-
-.anime__video__player .plyr__controls .plyr__controls__item.plyr__time {
-	position: absolute;
-	left: 106px;
-	bottom: 12px;
-}
-
-.anime__video__player .plyr__control--overlaid {
-	background: transparent;
-	background: var(--plyr-video-control-background-hover, var(--plyr-color-main, var(--plyr-color-main, transparent)));
-}
-
-.anime__video__player .plyr__control--overlaid svg {
-	height: 60px;
-	width: 50px;
-}
-
-.anime__details__episodes {
-	margin-bottom: 35px;
-}
-
-.anime__details__episodes a {
-	display: inline-block;
-	font-size: 15px;
-	color: black;
-	background: rgba(255, 255, 255, 0.2);
-	padding: 10px 20px;
-	border-radius: 4px;
-	margin-right: 15px;
-	margin-bottom: 20px;
-	-webkit-transition: all, 0.3s;
-	-o-transition: all, 0.3s;
-	transition: all, 0.3s;
-}
-
-.anime__details__episodes a:hover {
-	color: #000000;
-	background: black;
-}
 
 /*---------------------
   Breadcrumb
@@ -1137,7 +1272,7 @@ ol {
 
 .breadcrumb__links span {
 	font-size: 15px;
-	color: #696867;
+	color: #b7b7b7;
 	display: inline-block;
 }
 
@@ -1213,11 +1348,10 @@ ol {
 	text-align: center;
 	width: 100%;
 	padding: 0 105px;
-	font-size: 10em;
 }
 
 .blog__item__text p {
-	color: rgb(255, 255, 255);
+	color: black;
 	margin-bottom: 12px;
 }
 
@@ -1227,9 +1361,266 @@ ol {
 }
 
 .blog__item__text h4 a {
-	color: rgb(249, 79, 0);
+	color: black;
 	line-height: 34px;
 }
+
+/* 
+---------------------------------------------
+The Clients
+---------------------------------------------
+*/
+
+.pricing-tables {
+	padding-top: 130px;
+}
+
+.pricing-tables .section-heading {
+	text-align: center;
+	margin-bottom: 80px;
+}
+
+.pricing-tables .section-heading p {
+	margin-top: 10px;
+	margin-left: 18%;
+	margin-right: 18%;
+}
+
+.pricing-item-regular {
+	margin-top: 30px;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.07);
+	border-radius: 50px;
+	padding: 90px 30px;
+	text-align: center;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+}
+
+.pricing-item-regular:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-image: url();
+	z-index: 0;
+	content: '';
+	width: 274px;
+	height: 221px;
+}
+
+.pricing-item-regular:after {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background-image: url();
+	z-index: 0;
+	content: '';
+	width: 370px;
+	height: 171px;
+}
+
+.pricing-item-regular span.price {
+	font-size: 40px;
+	color: #fff;
+	position: absolute;
+	font-weight: 700;
+	z-index: 1;
+	left: 30px;
+	top: 30px;
+}
+
+.pricing-item-regular h4 {
+	font-size: 20px;
+	font-weight: 700;
+	margin-bottom: 30px;
+}
+
+.pricing-item-regular .icon img {
+	width: 120px;
+	height: 106px;
+	margin-bottom: 30px;
+}
+
+.pricing-item-regular ul li {
+	color: #000;
+	font-size: 15px;
+	margin-bottom: 15px;
+}
+
+.pricing-item-regular ul li:last-child {
+	margin-bottom: 0px;
+}
+
+.pricing-item-regular ul li.non-function {
+	color: #acabab;
+	text-decoration: line-through;
+}
+
+.pricing-item-regular .border-button {
+	position: relative;
+	z-index: 1;
+	margin-top: 40px;
+}
+
+.pricing-item-pro {
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.07);
+	border-radius: 50px;
+	padding: 120px 30px;
+	text-align: center;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+}
+
+.pricing-item-pro:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-image: url();
+	z-index: 0;
+	content: '';
+	width: 281px;
+	height: 251px;
+}
+
+.pricing-item-pro:after {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-image: url();
+	z-index: 0;
+	content: '';
+	width: 100%;
+	height: 201px;
+}
+
+.pricing-item-pro span.price {
+	font-size: 40px;
+	color: #fff;
+	position: absolute;
+	font-weight: 700;
+	z-index: 1;
+	left: 30px;
+	top: 30px;
+}
+
+.pricing-item-pro h4 {
+	font-size: 20px;
+	font-weight: 700;
+	margin-bottom: 30px;
+}
+
+.pricing-item-pro .icon img {
+	width: 120px;
+	height: 106px;
+	margin-bottom: 30px;
+}
+
+.pricing-item-pro ul li {
+	color: #000;
+	font-size: 15px;
+	margin-bottom: 15px;
+}
+
+.pricing-item-pro ul li:last-child {
+	margin-bottom: 0px;
+}
+
+.pricing-item-pro ul li.non-function {
+	color: #acabab;
+	text-decoration: line-through;
+}
+
+.pricing-item-pro .border-button {
+	position: relative;
+	z-index: 1;
+	margin-top: 40px;
+}
+
+/*---------------------
+  Assinatura
+-----------------------*/
+
+.plans {
+	width: 1100px;
+	height: 100%;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	color: white;
+}
+
+.plans .card {
+	width: 300px;
+	height: auto;
+	padding: 10px 0;
+	text-align: center;
+	background: linear-gradient(135deg, #fdaaaa 0%, #f4440f 100%);
+	border-radius: 15px;
+	box-shadow: 2px 5px 15px black;
+	transition: transform 0.3s;
+}
+
+.plans .card:hover {
+	transform: scale(1.050);
+}
+
+.plans .card .card-title {
+	padding: 30px 20px;
+	border-bottom: 2px solid gray;
+}
+
+.plans .card .card-title h2 {
+	font-size: 35px;
+	padding-bottom: 15px;
+	color: yellow;
+}
+
+.plans .card .card-title p span {
+	font-size: 40px;
+	padding: 0 5px;
+}
+
+.plans .card .card-content ul {
+	padding: 10px 30px;
+	padding-bottom: 20px;
+}
+
+.plans .card .card-content ul li {
+	list-style: none;
+	padding: 10px 0;
+}
+
+.plans .card .card-content ul li i {
+	margin-right: 4px;
+}
+
+.plans .card .card-content button {
+	width: 120px;
+	padding: 10px 20px;
+	background: white;
+	border-radius: 20px;
+	margin-bottom: 10px;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.plans .card .card-content button:hover {
+	background: #acabab;
+	letter-spacing: 1.2px;
+}
+
+.plans .card .card-content button a {
+	text-decoration: none;
+	color: black;
+	font-size: 15px;
+}
+
 
 /*---------------------
   Blog Details
@@ -1630,39 +2021,15 @@ ol {
 	padding: 12px 42px;
 }
 
-
-/*---------------------
-  Sign Up
------------------------*/
-
-.signup {
-	padding-top: 130px;
-	padding-bottom: 150px;
-}
-
-.signup .login__form:after {
-	height: 450px;
-}
-
-.signup .login__form h5 {
+.login__form .singup_sexo {
 	font-size: 15px;
 	color: black;
 	margin-top: 36px;
 }
 
-.signup .login__form h5 a {
-	color: #e57636;
-	font-weight: 700;
-}
-
-.login__form .singup_sexo{
+.login__form .singup_sexo p {
 	font-size: 15px;
-	color: rgb(93, 90, 90);
-	margin-top: 36px;
-}
-.login__form .singup_sexo p{
-	font-size: 15px;
-	color: rgb(86, 84, 84);
+	color: black;
 	margin-top: 36px;
 }
 
@@ -1708,8 +2075,40 @@ ol {
 	text-align: right;
 }
 
+.flex>section form {
+	background-color: white;
+	border-radius: 20px;
+	padding: 20px;
+	max-width: 700px;
+	margin: auto;
+}
 
-/*--------------------------------- Responsive Media Quaries -----------------------------
+.flex>section div h1 {
+	text-align: center;
+}
+
+aside section form {
+	background-color: white;
+	border-radius: 20px;
+	max-width: 700px;
+	min-width: auto;
+	margin: auto;
+	margin-bottom: 5%;
+	display: block;
+	padding: 20px;
+}
+
+.table {
+	padding: 5px;
+	margin-bottom: 10em;
+	font-weight: 500;
+}
+
+.row {
+	margin-right: 0;
+}
+
+/*--------------------------------- Responsive Media Quaries -----------------------------*/
 
 @media only screen and (min-width: 1200px) and (max-width: 1300px) {
 	.hero {
@@ -1723,50 +2122,57 @@ ol {
 	}
 }
 
-/* Medium Device = 1200px */
-/*
+/*Medium Device = 1200px*/
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
 	.hero {
 		overflow: hidden;
 	}
+
 	.login__form {
 		position: relative;
 		padding-left: 32px;
 	}
+
 	.login__social__links ul li a {
 		width: 380px;
 	}
+
 	.blog__item__text {
 		padding: 0 50px;
 	}
 }
-*/
-/* Tablet Device = 768px */
-/*
+
+/*Tablet Device = 768px*/
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 	.hero {
 		overflow: hidden;
 	}
+
 	.header {
 		position: relative;
 	}
+
 	.header .container {
 		position: relative;
 	}
+
 	.header__right {
 		position: absolute;
 		right: 120px;
 		top: -42px;
 		padding: 0;
 	}
+
 	.header__menu {
 		display: none;
 	}
+
 	.slicknav_menu {
 		background: transparent;
 		padding: 0;
 		display: block;
 	}
+
 	.slicknav_nav {
 		position: absolute;
 		left: 0;
@@ -1776,9 +2182,11 @@ ol {
 		padding: 15px 30px;
 		z-index: 9;
 	}
+
 	.slicknav_nav ul {
 		margin: 0;
 	}
+
 	.slicknav_nav .slicknav_row,
 	.slicknav_nav a {
 		padding: 7px 0;
@@ -1786,6 +2194,7 @@ ol {
 		color: #111111;
 		font-weight: 600;
 	}
+
 	.slicknav_btn {
 		border-radius: 0;
 		background-color: #222;
@@ -1793,85 +2202,105 @@ ol {
 		right: 0;
 		top: 9px;
 	}
+
 	.slicknav_nav .slicknav_arrow {
 		color: #111111;
 	}
+
 	.slicknav_nav .slicknav_row:hover {
 		border-radius: 0;
 		background: transparent;
 		color: #111111;
 	}
+
 	.slicknav_nav a:hover {
 		border-radius: 0;
 		background: transparent;
 		color: #111111;
 	}
+
 	.product__sidebar {
 		padding-top: 50px;
 	}
+
 	.footer__logo {
 		text-align: center;
 		margin-bottom: 20px;
 	}
+
 	.footer__nav {
 		margin-bottom: 15px;
 	}
+
 	.footer__copyright__text {
 		text-align: center;
 	}
+
 	.anime__details__widget ul li span {
 		width: 90px;
 	}
+
 	.anime__details__pic {
 		margin-bottom: 40px;
 	}
+
 	.anime__details__sidebar {
 		padding-top: 50px;
 	}
+
 	.login__form {
 		padding-left: 0;
 		margin-bottom: 40px;
 	}
+
 	.login__form:after {
 		display: none;
 	}
+
 	.login__form form .input__item {
 		width: auto;
 	}
+
 	.login__register {
 		padding-left: 0;
 	}
+
 	.signup .login__social__links {
 		padding-left: 0;
 	}
 }
-*/
-/* Wide Mobile = 480px */
-/*
+
+/*Wide Mobile = 480px*/
 @media only screen and (max-width: 767px) {
 	.hero {
 		overflow: hidden;
 	}
+
 	.header {
 		position: relative;
 	}
+
 	.header .container {
 		position: relative;
 	}
+
 	.header__right {
 		position: absolute;
 		right: 120px;
 		top: -42px;
 		padding: 0;
 	}
+
 	.header__menu {
 		display: none;
 	}
+
 	.slicknav_menu {
 		background: transparent;
 		padding: 0;
 		display: block;
 	}
+
 	.slicknav_nav {
 		position: absolute;
 		left: 0;
@@ -1881,9 +2310,11 @@ ol {
 		padding: 15px 30px;
 		z-index: 9;
 	}
+
 	.slicknav_nav ul {
 		margin: 0;
 	}
+
 	.slicknav_nav .slicknav_row,
 	.slicknav_nav a {
 		padding: 7px 0;
@@ -1891,6 +2322,7 @@ ol {
 		color: #111111;
 		font-weight: 600;
 	}
+
 	.slicknav_btn {
 		border-radius: 0;
 		background-color: #222;
@@ -1898,159 +2330,201 @@ ol {
 		right: 0;
 		top: 9px;
 	}
+
 	.slicknav_nav .slicknav_arrow {
 		color: #111111;
 	}
+
 	.slicknav_nav .slicknav_row:hover {
 		border-radius: 0;
 		background: transparent;
 		color: #111111;
 	}
+
 	.slicknav_nav a:hover {
 		border-radius: 0;
 		background: transparent;
 		color: #111111;
 	}
+
 	.product__sidebar {
 		padding-top: 50px;
 	}
+
 	.footer__logo {
 		text-align: center;
 		margin-bottom: 20px;
 	}
+
 	.footer__nav {
 		margin-bottom: 15px;
 	}
+
 	.footer__copyright__text {
 		text-align: center;
 	}
+
 	.blog__details__title h2 {
 		font-size: 34px;
 		line-height: normal;
 	}
+
 	.anime__details__pic {
 		margin-bottom: 40px;
 	}
+
 	.anime__details__sidebar {
 		padding-top: 50px;
 	}
+
 	.btn__all {
 		text-align: left;
 	}
+
 	.product__page__title .section-title {
 		margin-bottom: 30px;
 	}
+
 	.product__page__title .product__page__filter {
 		text-align: left;
 	}
+
 	.anime__details__rating {
 		text-align: left;
 		position: relative;
 		margin-bottom: 20px;
 	}
+
 	.blog__details__social {
 		overflow: hidden;
 	}
+
 	.blog__details__title .blog__details__social a {
 		margin-right: 10px;
 		margin-bottom: 10px;
 		width: calc(50% - 10px);
 		float: left;
 	}
+
 	.login__form {
 		padding-left: 0;
 		margin-bottom: 40px;
 	}
+
 	.login__form:after {
 		display: none;
 	}
+
 	.login__form form .input__item {
 		width: auto;
 	}
+
 	.signup .login__social__links {
 		padding-left: 0;
 	}
+
 	.login__social__links ul li a {
 		width: auto;
 	}
+
 	.blog__item__text {
 		padding: 0 30px;
 	}
+
 	.login__register {
 		padding-left: 0;
 	}
+
 	.product__sidebar__view .filter__controls li {
 		margin-right: 2px;
 	}
+
 	.search-model-form input {
 		width: 100%;
 	}
 }
-*/
-/* Small Device = 320px */
-/*
+
+/*Small Device = 320px*/
 @media only screen and (max-width: 479px) {
 	.hero__slider.owl-carousel .owl-nav {
 		display: none;
 	}
+
 	.hero__items {
 		padding: 250px 0 42px 15px;
 	}
+
 	.hero__text h2 {
 		font-size: 32px;
 	}
+
 	.footer__nav ul li {
 		margin-right: 10px;
 	}
+
 	.anime__details__btn .follow-btn {
 		padding: 14px 26px;
 		margin-right: 11px;
 		margin-bottom: 25px;
 	}
+
 	.anime__details__widget ul li span {
 		width: 85px;
 	}
+
 	.anime__video__player .plyr__volume {
 		left: 65px;
 	}
+
 	.anime__video__player .plyr__controls .plyr__controls__item.plyr__time {
 		left: 95px;
 	}
+
 	.anime__video__player .plyr__menu {
 		margin-right: 60px;
 	}
+
 	.blog__details__title h2 {
 		font-size: 30px;
 		line-height: normal;
 	}
+
 	.blog__details__title .blog__details__social a {
 		padding: 16px 25px 14px 20px;
 	}
+
 	.blog__details__comment__item.blog__details__comment__item--reply {
 		padding-left: 0;
 	}
+
 	.blog__details__comment__item__pic {
 		margin-right: 25px;
 	}
+
 	.blog__details__comment__item__text a {
 		margin-right: 6px;
 	}
+
 	.login__social__links ul li a i {
 		left: 20px;
 	}
+
 	.login__form .forget_pass {
 		position: relative;
 		left: 0;
 		bottom: 0;
 		margin-top: 25px;
 	}
+
 	.header__right a {
 		margin-right: 10px;
 	}
+
 	.anime__review__item__text h6 span {
 		font-size: 12px;
 	}
+
 	.anime__review__item__text {
 		padding: 18px 20px 20px;
 	}
-}*/
+}

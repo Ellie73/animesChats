@@ -38,7 +38,7 @@ if ($_SESSION['perfil'] != 'A') {
     <link rel="stylesheet" href="../css/cadastroTema.css">
 </head>
 
-<body>
+<body style='background-color:#cccbcb'>
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -48,61 +48,68 @@ if ($_SESSION['perfil'] != 'A') {
     <?php require_once './menu.php' ?>
     <!-- Header End -->
 
-    <h2 style="margin-bottom:30px;text-align: center;">Usuários cadastrados no sistema</h2>
-    
+    <h1 style="margin-bottom:30px;text-align: center;">Usuários cadastrados no sistema</h1>
     <br><br>
     <?php
     if (!isset($_GET["idusuario"]) || $_GET["idusuario"] == 0) {
     ?>
-        <table border="1" width="1300px" align="center">
-            <tr>
-                <th>ID do usuário</th>
-                <th>Nome</th>
-                <th>E-mail</th>
-                <th>Status</th>
-                <th>Perfil</th>
-                <th>Ações</th>
-            </tr>
+        <div class="container">
+            <div class="table">
+                <table>
+                    <tr>
+                        <th>ID do usuário</th>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Status</th>
+                        <th>Perfil</th>
+                        <th>Alterar</th>
+                        <th>Excluir</th>
+                    </tr>
 
-            <?php
-            //usuarios
-            require_once "../model/DAO/usuarioDAO.php";
-            $usuarioConn = new usuarioDAO();
-            $retorno = $usuarioConn->listarUsuarios();
-            foreach ($retorno as $usuario) {
-            ?>
-                <!-- encontrar o usuario -->
+                    <?php
+                    //usuarios
+                    require_once "../model/DAO/usuarioDAO.php";
+                    $usuarioConn = new usuarioDAO();
+                    $retorno = $usuarioConn->listarUsuarios();
+                    foreach ($retorno as $usuario) {
+                    ?>
+                        <!-- encontrar o usuario -->
 
-                <tr <?php if ($usuario["perfil"] == "A") {
-                        echo "style='background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,300,100,1))'";
-                    } ?>>
-                    <td><?= $usuario["id_usuario"] ?></td>
-                    <td><?= $usuario["nome"] ?></td>
-                    <td><?= $usuario["email"] ?></td>
-                    <td><?php if ($usuario["situacaoUsuario"] == 1) {
-                            echo "Ativo";
-                        } else {
-                            echo "Inativo";
-                        } ?></td>
-                    <td><?php if ($usuario["perfil"] == "U") {
-                            echo "Usuário";
-                        } else {
-                            echo "Administrador";
-                        } ?></td>
-                    <td>
-                        <a href="?idusuario=<?= $usuario["id_usuario"] ?>" style="color:#8B0000">Alterar</a>
-                        <a href="../control/deletarUsuario.php?idusuario=<?= $usuario["id_usuario"] ?>&nome=<?= $usuario["nome"] ?>" style="background-color:red;border-radius:5px solid black;color:white;cursor:pointer">Excluir</a>
-                    </td>
-                </tr>
-            <?php
-            }
-            ?>
-        </table>
-        <br><br>
-        <div style="margin: auto 45%;">
-    <button class="site-btn"><a href="./cadastroUsuario.php" style="color: #ffff;"> Cadastrar novo Usuário</a></button></div>
-        
-        
+                        <tr <?php if ($usuario["perfil"] == "A") {
+                                echo "style='background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,300,100,1))'";
+                            } ?>>
+                            <td><?= $usuario["id_usuario"] ?></td>
+                            <td><?= $usuario["nome"] ?></td>
+                            <td><?= $usuario["email"] ?></td>
+                            <td><?php if ($usuario["situacaoUsuario"] == 1) {
+                                    echo "Ativo";
+                                } else {
+                                    echo "Inativo";
+                                } ?></td>
+                            <td><?php if ($usuario["perfil"] == "U") {
+                                    echo "Usuário";
+                                } else {
+                                    echo "Administrador";
+                                } ?></td>
+                            <td>
+                                <button class="btn btn-danger"><a href="?idusuario=<?= $usuario["id_usuario"] ?>" style="color:white;">Alterar</a></button>
+
+                            </td>
+                            <td>
+                                <button class="btn btn-dark"><a href="../control/deletarUsuario.php?idusuario=<?= $usuario["id_usuario"] ?>&nome=<?= $usuario["nome"] ?>" style="color:white;">Excluir</a></button>
+                            </td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
+                </table>
+                <div style="margin: auto 45%;">
+
+                    <button class="site-btn"><a href="./cadastroUsuario.php" style="color: #ffff;"> Cadastrar novo Usuário</a></button>
+                </div>
+            </div>
+        </div>
+
     <?php
     } else {
         //consultar usuario
@@ -112,68 +119,67 @@ if ($_SESSION['perfil'] != 'A') {
         $usuario = $usuarioConn->pesquisarUsuario($id);
     ?>
         <!-- alterar usuario -->
-        <div class="container">
-            <form action="../control/alterarUsuario.php" method="POST" class="form-alterar-usuario">
-                <input type="text" name="idusuario" value="<?= $id ?>" hidden> <br>
-                <a href="?idusuario=0" style="float:right;color:#424874;font-size:25px;font-weight:bold">Fechar</a><br>
-                <h3 style="border-bottom:1px solid;margin-bottom:20px;font-size:18px;margin-top:10px;text-align:center;font-size:large;">Alterar Usuário</h3>
-                <div>
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" value="<?= $usuario["nome"] ?>">
-                </div>
-                <div>
-                    <label for="email">E-mail:</label>
-                    <input type="text" id="email" name="email" value="<?= $usuario["email"] ?>">
-                </div>
-                <br>
-                <div style="margin: auto 0.7em;">
-                    <div class="row">
-                        <label for="situacao">Status:</label>
-                        <select name="situacao" id="situacao">
-                            <?php
-                            if ($usuario["situacaoUsuario"] == 1) {
-                            ?>
-                                <option value="1" selected>Ativo</option>
-                                <option value="0">Inativo</option>
-                            <?php
-                            } else {
-                            ?>
-                                <option value="1">Ativo</option>
-                                <option value="0" selected>Inativo</option>
-                            <?php
-                            }
-                            ?>
-                        </select>
+        <div class="flex">
+            <section>
+                <form action="../control/alterarUsuario.php" method="POST" class="form-alterar-usuario">
+                    <div>
+                        <input type="text" name="idusuario" value="<?= $id ?>" hidden> <br>
+                        <a href="?idusuario=0" style="float:right;color:#424874;font-size:25px;font-weight:bold">Fechar</a><br>
+                        <h3 class="mb-3" style="text-align: center;">Alterar Usuário</h3>
                     </div>
-                    <br>
-                    <div class="row">
-                        <label for="perfil">Perfil:</label>
-                        <select name="perfil" id="perfil">
-                            <?php
-                            if ($usuario["perfil"] == "U") {
-                            ?>
-                                <option value="U" selected>Usuário</option>
-                                <option value="A">Administrador</option>
-                            <?php
-                            } else {
-                            ?>
-                                <option value="U">Usuário</option>
-                                <option value="A" selected>Administrador</option>
-                            <?php
-                            }
-                            ?>
-                        </select>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="nome" class="form-label">Nome:</label>
+                            <input type="text" id="nome" name="nome" value="<?= $usuario["nome"] ?>" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label for="email" class="form-label">E-mail:</label>
+                            <input type="text" id="email" name="email" value="<?= $usuario["email"] ?>" class="form-control">
+                        </div>
                     </div>
-                </div>
-                <br><br>
-                <div>
-                    <button type="submit" class="site-btn">Salvar</button>
-                </div>
-            </form>
+                    <div class="row mb-3" style="margin: 0px 3px;">
+                        <div>
+                            <label for="situacao" class="form-label">Status:</label>
+                        </div>
+                        <div>
+                            <select name="situacao" id="situacao" class="form-select">
+                                <?php if ($usuario["situacaoUsuario"] == 1) : ?>
+                                    <option value="1" selected>Ativo</option>
+                                    <option value="0">Inativo</option>
+                                <?php else : ?>
+                                    <option value="1">Ativo</option>
+                                    <option value="0" selected>Inativo</option>
+                                <?php endif; ?>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="row mb-3" style="margin: 0px 5px;">
+                        <div>
+                            <label for="perfil" class="form-label">Perfil:</label>
+                        </div>
+                        <div>
+                            <select name="perfil" id="perfil" class="form-select">
+                                <?php if ($usuario["perfil"] == "U") : ?>
+                                    <option value="U" selected>Usuário</option>
+                                    <option value="A">Administrador</option>
+                                <?php else : ?>
+                                    <option value="U">Usuário</option>
+                                    <option value="A" selected>Administrador</option>
+                                <?php endif; ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-danger">Salvar</button>
+                    </div>
+                </form>
+            </section>
         </div>
+        <br><br><br><br><br><br>
     <?php
     }
-    ?> <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    ?>
 
     <?php require_once './footer.php' ?>
 </body>

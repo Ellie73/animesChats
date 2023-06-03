@@ -16,5 +16,5 @@ $retorno = $chatConn->criarChat($chat);
 if ($retorno == null || $retorno == 0){
     header("location:../view/criarChat.php?msg=Chat não criado!!");
 }else{
-    header("location:../view/tema.php?id=".$tema);
+    header("location:../view/comunidade.php?id=".$tema);
 }

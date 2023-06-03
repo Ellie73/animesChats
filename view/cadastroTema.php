@@ -112,7 +112,8 @@ if ($_SESSION['perfil'] != 'A') {
                                 <p>***Somente JPG jpg jpeg png</p>
                                 <br>
                             </fieldset>
-                            <button type="submit" name="submit" id="submit" class="site-btn">Cadastrar</button>
+                            <button type="submit" name="submit" id="submit" class="btn btn-danger">Cadastrar</button>
+                            <button class="btn btn-outline-dark" onclick="window.history.back()">Cancelar</button>
                         </form>
                     </div>
                 </div>
@@ -124,5 +125,5 @@ if ($_SESSION['perfil'] != 'A') {
     <?php require_once './footer.php' ?>
 
 </body>
-
+<script src="../js/./fotoCadastro.js"></script>
 </html>

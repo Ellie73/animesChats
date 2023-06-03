@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 session_start();
 ?>
@@ -15,8 +15,7 @@ session_start();
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
@@ -61,43 +60,44 @@ session_start();
                                 <span class="icon_phone"></span>
                             </div>
                             <div class="input__item">
-                                <input type="text" name="email" id="email" class="inputUser" maxlength="100" placeholder="Email"
-                                    required> 
+                                <input type="text" name="email" id="email" class="inputUser" maxlength="100" placeholder="Email" required>
                                 <span class="icon_mail"></span>
                             </div>
                             <p style="color: red;">
                             <div class="input__item">
                                 <input type="password" placeholder="Senha" maxlength="100" name="senha" id="senha" required>
                                 <span class="icon_lock"></span>
-                            </div >
+                            </div>
                             <div class="singup_sexo">
-                            <p>Gênero:</p>
-                            <input type="radio" id="feminino" name="genero" value="F" required>
-                            <label for="feminino">Feminino</label>
-                            <br>
-                            <input type="radio" id="masculino" name="genero" value="M" required>
-                            <label for="masculino">Masculino</label>
-                            <br>
-                            <input type="radio" id="outro" name="genero" value="O" required>
-                            <label for="outro">Outro</label>
-                            <br><br>
+                                <p>Gênero:</p>
+                                <input type="radio" id="feminino" name="genero" value="F" required>
+                                <label for="feminino">Feminino</label>
+                                <br>
+                                <input type="radio" id="masculino" name="genero" value="M" required>
+                                <label for="masculino">Masculino</label>
+                                <br>
+                                <input type="radio" id="outro" name="genero" value="O" required>
+                                <label for="outro">Outro</label>
+                                <br><br>
                             </div>
                             <div class="input__item">
-                                <input type="date" name="nascimento" id="nascimento"
-                                    placeholder="Data de nascimento" required>
-                                    <span class="icon_calendar"></span>
+                                <input type="date" name="nascimento" id="nascimento" placeholder="Data de nascimento" required>
+                                <span class="icon_calendar"></span>
                             </div>
                             <div class="input__item">
-                                <input type="text" name="estado" id="estado" maxlength="100" class="inputUser" placeholder="Estado"
-                                    required>
-                                    <span class="icon_map"></span>
-                            </div>
-                            <div class="input__item">
-                                <input type="text" name="cidade" id="cidade" maxlength="100" class="inputUser" placeholder="Cidade"
-                                    required>
+                                <input type="text" name="estado" id="estado" maxlength="100" class="inputUser" placeholder="Estado" required>
                                 <span class="icon_map"></span>
                             </div>
-                            <button type="submit" class="site-btn">Cadastrar</button>
+                            <div class="input__item">
+                                <input type="text" name="cidade" id="cidade" maxlength="100" class="inputUser" placeholder="Cidade" required>
+                                <span class="icon_map"></span>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input type="checkbox" class="form-check-input" required>
+                                <label class="form-check-label">Ao se registrar, você concorda com os <a href="./termos.php">Termos de Uso e de privacidade</a> do Animes-Chats</label>
+                            </div>
+                            <button type="submit" class="btn btn-danger">Cadastrar</button>
+                            <button class="btn btn-outline-dark" onclick="window.history.back()">Cancelar</button>
                         </form>
                     </div>
                 </div>
@@ -106,8 +106,8 @@ session_start();
     </section>
     <!-- Login Section End -->
 
-        <?php require_once './footer.php' ?>
-        
+    <?php require_once './footer.php' ?>
+
 </body>
 
 </html>

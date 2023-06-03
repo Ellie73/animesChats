@@ -19,17 +19,17 @@ class chatDAO
             echo $e->getMessage();
         }
     }
-    public function exibirChat($tema)
+    public function exibirChat($local)
     {
         try {
             $conn = new PDO('mysql:host=localhost;dbname=anime-chats;charset=utf8', "root", "");
 
-            $sql = "SELECT * FROM chat WHERE tema=?";
+            $sql = "SELECT * FROM chat WHERE tema_comunidade=?";
 
             $stmt = $conn->prepare($sql);
-            $stmt->bindValue(1, $tema);
+            $stmt->bindValue(1, $local);
             $stmt->execute();
-            $retorno = $stmt->fetch(PDO::FETCH_ASSOC);
+            $retorno = $stmt->fetchALL(PDO::FETCH_ASSOC);
             
             return $retorno;
         

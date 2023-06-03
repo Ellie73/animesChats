@@ -37,11 +37,34 @@ session_start()
     <!-- Header Section Begin -->
     <?php require_once './menu.php' ?>
     <!-- Header End -->
-
+    
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="container">
-            <div class="hero__items set-bg" data-setbg="../img/hero/anime.jpg"></div>
+            <div class="hero__slider owl-carousel">
+                <div class="hero__items set-bg">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="hero__text">
+                                <h2>BEM VINDO AO ANIMES-CHATS</h2>
+                                <p></p>
+                                <a href="#"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero__items set-bg">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="hero__text">
+                                <h2>Aqui voce pode conhecer novas pessoas e conversar sobre seu anime favorito</h2>
+                                <p>Não perca tempo e participe de uma comunidade </p>
+                                <a href="#"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <!-- Hero Section End -->
@@ -74,7 +97,7 @@ session_start()
                                             <li>Shounen</li>
                                             <li>Anime</li>
                                         </ul>
-                                        <h5><a href="http://localhost/daniel/anime-chats/view/tema.php?id=2">Boruto: Naruto next generations</a></h5>
+                                        <h5><a href="./tema.php?id=2">Boruto: Naruto next generations</a></h5>
                                     </div>
                                 </div>
                             </div>
@@ -87,7 +110,7 @@ session_start()
                                             <li>Active</li>
                                             <li>Movie</li>
                                         </ul>
-                                        <h5><a href="http://localhost/daniel/anime-chats/view/tema.php?id=3">Ensemble Stars!</a></h5>
+                                        <h5><a href="./tema.php?id=3">Ensemble Stars!</a></h5>
                                     </div>
                                 </div>
                             </div>
@@ -100,7 +123,7 @@ session_start()
                                             <li>Active</li>
                                             <li>Movie</li>
                                         </ul>
-                                        <h5><a href="http://localhost/daniel/anime-chats/view/tema.php?id=4">ID: INVADED</a></h5>
+                                        <h5><a href="./tema.php?id=4">ID: INVADED</a></h5>
                                     </div>
                                 </div>
                             </div>
@@ -161,6 +184,7 @@ session_start()
                             </div>
                         </div>
                     </div>
+
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-8">
                     <div class="product__sidebar">
@@ -170,10 +194,10 @@ session_start()
                             </div>
                             <div class="filter__gallery">
                                 <div class="product__sidebar__view__item set-bg mix day years" data-setbg="../img/sidebar/tv-1.jpg">
-                                    <h5><a href="http://localhost/daniel/anime-chats/view/tema.php?id=2">Boruto: Naruto next generations</a></h5>
+                                    <h5><a href="./tema.php?id=2">Boruto: Naruto next generations</a></h5>
                                 </div>
                                 <div class="product__sidebar__view__item set-bg mix month week" data-setbg="../img/sidebar/tv-2.jpg">
-                                    <h5><a href="http://localhost/daniel/anime-chats/view/tema.php?id=4">ID: INVADED</a></h5>
+                                    <h5><a href="./tema.php?id=4">ID: INVADED</a></h5>
                                 </div>
                             </div>
                         </div>
@@ -183,7 +207,7 @@ session_start()
                             </div>
                             <div class="product__sidebar__comment__item">
                                 <div class="product__sidebar__comment__item__pic">
-                                    <img src="img/sidebar/comment-1.jpg" alt="">
+                                    <img src="../img/sidebar/comment-1.jpg" alt="">
                                 </div>
                                 <div class="product__sidebar__comment__item__text">
                                     <ul>

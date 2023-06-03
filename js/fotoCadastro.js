@@ -1,6 +1,6 @@
 const inputFile = document.querySelector("#foto");
 const pictureImage = document.querySelector(".picture__image");
-const pictureImageTxt = "Choose an image";
+const pictureImageTxt = "Escolha uma foto";
 pictureImage.innerHTML = pictureImageTxt;
 
 inputFile.addEventListener("change", function (e) {

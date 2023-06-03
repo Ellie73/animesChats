@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 if (isset($_SESSION['idusuario'])) {
     header("Location:./home.php?msg=Ja esta logado!");
@@ -18,8 +18,7 @@ if (isset($_SESSION['idusuario'])) {
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
@@ -43,13 +42,13 @@ if (isset($_SESSION['idusuario'])) {
     <!-- Header End -->
 
     <!-- Normal Breadcrumb Begin -->
-    <section class="normal-breadcrumb set-bg" data-setbg="../img/02.jpeg">
+    <section class="normal-breadcrumb set-bg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="normal__breadcrumb__text">
                         <h2>Login</h2>
-                        <p>Bem Vindo ao Animes Chats !</p>
+                        <p>Faça login para usufruir de todos os recursos do Animes Chats!</p>
                     </div>
                 </div>
             </div>
@@ -88,7 +87,7 @@ if (isset($_SESSION['idusuario'])) {
         </div>
     </section>
     <!-- Login Section End -->
-    
+
     <?php require_once './footer.php' ?>
 
 </body>

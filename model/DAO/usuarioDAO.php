@@ -118,4 +118,47 @@ public function deletarUsuario($idusuario){
         echo $e->getMessage();
     }
 }
+public function editarUsuario($usuario){
+    try{
+
+        $conn = new PDO('mysql:host=localhost;dbname=anime-chats;charset=utf8',"root","");
+
+        $sql = "UPDATE usuario SET nome=?,email=?,telefone=?,cidade=?,estado=?,foto=?, genero=?, nascimento=? WHERE id_usuario=?";
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(1,$usuario->getNome());
+        $stmt->bindValue(2,$usuario->getEmail());
+        $stmt->bindValue(3,$usuario->getTelefone());
+        $stmt->bindValue(4,$usuario->getCidade());
+        $stmt->bindValue(5,$usuario->getEstado());
+        $stmt->bindValue(6,$usuario->getFoto());
+        $stmt->bindValue(7,$usuario->getGenero());
+        $stmt->bindValue(8,$usuario->getNascimento());
+        $stmt->bindValue(9,$usuario->getIdusuario());
+        $retorno = $stmt->execute();
+
+        return $retorno;
+
+    }catch(PDOException $e){
+        echo $e->getMessage();
+    }
+}
+public function alterarSenha($usuario){
+    try{
+
+        $conn = new PDO('mysql:host=localhost;dbname=anime-chats;charset=utf8',"root","");
+
+        $sql = "UPDATE usuario SET senha=? WHERE id_usuario=?";
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(1,$usuario->getSenha());
+        $stmt->bindValue(2,$usuario->getIdusuario());
+        $retorno = $stmt->execute();
+
+        return $retorno;
+
+    }catch(PDOException $e){
+        echo $e->getMessage();
+    }
+}
 }

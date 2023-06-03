@@ -61,13 +61,13 @@ if ($_SESSION['perfil'] != 'A' and isset($_SESSION['idusuario'])) {
     <!-- Normal Breadcrumb End -->
 
     <!-- Blog Section Begin -->
-    <section class="blog spad">
+    <!-- <section class="blog spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="blog__item set-bg" data-setbg="../img/blog/blog-1.png" style="cursor: pointer;" onclick="window.location.href='./adm.php'">
+                            <div class="blog__item set-bg" data-setbg="../img/blog/blog-1.png" style="cursor: pointer;" onclick="window.location.href='./adm.php'" class="rounded-circle me-3" style="width: 2em; height: 2em; object-fit: cover;">
                                 <div class="blog__item__text">
                                     <h4><a href="./adm.php"></a></h4>
                                 </div>
@@ -116,10 +116,64 @@ if ($_SESSION['perfil'] != 'A' and isset($_SESSION['idusuario'])) {
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
+
+    <div class="image-session">
+    <div class="image-container">
+      <img src="../img/blog/blog-1.png" alt="Imagem 1" onclick="window.location.href='./adm.php'">
+      <label for="imagem1">USUÁRIOS</label>
+    </div>
+    <div class="image-container">
+      <img src="../img/blog/blog-4.png" alt="Imagem 2" onclick="window.location.href='./criarComunidade.php'">
+      <label for="imagem2">COMUNIDADES</label>
+    </div>
+    <div class="image-container">
+      <img src="../img/blog/blog-5.png" alt="Imagem 3" onclick="window.location.href='./cadastroTema.php'">
+      <label for="imagem3">ASSINATURA</label>
+    </div>
+    <div class="image-container">
+      <img src="../img/blog/blog-2.png" alt="Imagem 4" onclick="window.location.href='./cadastroTema.php'">
+      <label for="imagem4">CHATS</label>
+    </div>
+    <div class="image-container">
+      <img src="../img/blog/blog-3.png" alt="Imagem 5" onclick="window.location.href='./cadastroTema.php'">
+      <label for="imagem5">DENÚNCIAS</label>
+    </div>
+    <div class="image-container" onclick="window.location.href='./cadastroTema.php'">
+      <img src="../img/blog/blog-6.png" alt="Imagem 6">
+      <label for="imagem6">TEMAS</label>
+    </div>
+  </div>
     <!-- Blog Section End -->
 
     <?php require_once './footer.php' ?>
+    <style>
+    .image-session {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      cursor: pointer;
+    }
+    
+    .image-session .image-container {
+      width: 33.33%;
+      padding: 10px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    
+    .image-session .image-container img {
+      width: 100%;
+      max-width: 200px;
+      height: auto;
+    }
+    
+    .image-session .image-container label {
+      display: block;
+      margin-top: 5px;
+      cursor: pointer;
+    }
+  </style>
 
 
 </body>
