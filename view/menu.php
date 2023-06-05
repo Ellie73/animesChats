@@ -27,14 +27,14 @@
 <header class="header">
     <div class="">
         <div class="row">
-            <div class="col-lg-2">
+            <div class="col-lg-3">
                 <div class="header__logo">
                     <a href="./home.php">
-                        <img src="../img/logo02.png" alt="" width="100%">
+                        <img src="../img/logo02.png" alt="" width="90%">
                     </a>
                 </div>
             </div>
-            <div class="col-lg-9">
+            <div class="col-lg-8">
                 <div class="header__nav">
                     <nav class="header__menu mobile-menu">
                         <ul>

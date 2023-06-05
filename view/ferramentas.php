@@ -153,6 +153,7 @@ if ($_SESSION['perfil'] != 'A' and isset($_SESSION['idusuario'])) {
       flex-wrap: wrap;
       justify-content: center;
       cursor: pointer;
+      margin: 120px auto;
     }
     
     .image-session .image-container {

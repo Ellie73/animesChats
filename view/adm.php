@@ -48,7 +48,9 @@ if ($_SESSION['perfil'] != 'A') {
     <?php require_once './menu.php' ?>
     <!-- Header End -->
 
-    <h1 style="margin-bottom:30px;text-align: center;">Usuários cadastrados no sistema</h1>
+    <div class="normal__breadcrumb">
+        <h1>Usuários cadastrados no sistema</h1>
+    </div>
     <br><br>
     <?php
     if (!isset($_GET["idusuario"]) || $_GET["idusuario"] == 0) {
