@@ -93,10 +93,6 @@ session_start()
                                     <div class="product__item__pic set-bg" data-setbg="../img/trending/trend-1.jpg">
                                     </div>
                                     <div class="product__item__text">
-                                        <ul>
-                                            <li>Shounen</li>
-                                            <li>Anime</li>
-                                        </ul>
                                         <h5><a href="./tema.php?id=2">Boruto: Naruto next generations</a></h5>
                                     </div>
                                 </div>
@@ -106,10 +102,6 @@ session_start()
                                     <div class="product__item__pic set-bg" data-setbg="../img/trending/trend-2.jpg">
                                     </div>
                                     <div class="product__item__text">
-                                        <ul>
-                                            <li>Active</li>
-                                            <li>Movie</li>
-                                        </ul>
                                         <h5><a href="./tema.php?id=3">Ensemble Stars!</a></h5>
                                     </div>
                                 </div>
@@ -119,10 +111,6 @@ session_start()
                                     <div class="product__item__pic set-bg" data-setbg="../img/trending/trend-3.jpg">
                                     </div>
                                     <div class="product__item__text">
-                                        <ul>
-                                            <li>Active</li>
-                                            <li>Movie</li>
-                                        </ul>
                                         <h5><a href="./tema.php?id=4">ID: INVADED</a></h5>
                                     </div>
                                 </div>
@@ -148,10 +136,6 @@ session_start()
                                     <div class="product__item__pic set-bg" data-setbg="../img/popular/popular-1.jpg">
                                     </div>
                                     <div class="product__item__text">
-                                        <ul>
-                                            <li>Active</li>
-                                            <li>Movie</li>
-                                        </ul>
                                         <h5><a href="#">Sen to Chihiro no Kamikakushi</a></h5>
                                     </div>
                                 </div>
@@ -161,10 +145,6 @@ session_start()
                                     <div class="product__item__pic set-bg" data-setbg="../img/popular/popular-2.jpg">
                                     </div>
                                     <div class="product__item__text">
-                                        <ul>
-                                            <li>Active</li>
-                                            <li>Movie</li>
-                                        </ul>
                                         <h5><a href="#">Kizumonogatari III: Reiket su-hen</a></h5>
                                     </div>
                                 </div>
@@ -174,10 +154,6 @@ session_start()
                                     <div class="product__item__pic set-bg" data-setbg="../img/popular/popular-3.jpg">
                                     </div>
                                     <div class="product__item__text">
-                                        <ul>
-                                            <li>Active</li>
-                                            <li>Movie</li>
-                                        </ul>
                                         <h5><a href="#">Shirogane Tamashii hen Kouhan sen</a></h5>
                                     </div>
                                 </div>
@@ -190,7 +166,7 @@ session_start()
                     <div class="product__sidebar">
                         <div class="product__sidebar__view">
                             <div class="section-title">
-                                <h5>Tópicos recentes</h5>
+                                <h5>Chats recentes</h5>
                             </div>
                             <div class="filter__gallery">
                                 <div class="product__sidebar__view__item set-bg mix day years" data-setbg="../img/sidebar/tv-1.jpg">
@@ -210,10 +186,6 @@ session_start()
                                     <img src="../img/sidebar/comment-1.jpg" alt="">
                                 </div>
                                 <div class="product__sidebar__comment__item__text">
-                                    <ul>
-                                        <li>Active</li>
-                                        <li>Movie</li>
-                                    </ul>
                                     <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
                                 </div>
                             </div>
@@ -222,10 +194,6 @@ session_start()
                                     <img src="../img/sidebar/comment-2.jpg" alt="">
                                 </div>
                                 <div class="product__sidebar__comment__item__text">
-                                    <ul>
-                                        <li>Active</li>
-                                        <li>Movie</li>
-                                    </ul>
                                     <h5><a href="#">Shirogane Tamashii hen Kouhan sen</a></h5>
                                 </div>
                             </div>
