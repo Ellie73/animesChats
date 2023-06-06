@@ -1,11 +1,17 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Tempo de geração: 06-Jun-2023 às 12:09
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
+=======
+-- Tempo de geração: 06/06/2023 às 05:00
+-- Versão do servidor: 10.4.28-MariaDB
+-- Versão do PHP: 8.2.4
+>>>>>>> ab5c3a1cf61766acac55cb8ada8c9194537e3e3b
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,6 +30,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Estrutura da tabela `avaliacao`
 --
 
@@ -38,16 +45,19 @@ CREATE TABLE `avaliacao` (
 
 --
 -- Estrutura da tabela `chat`
+=======
+-- Estrutura para tabela `chat`
+>>>>>>> ab5c3a1cf61766acac55cb8ada8c9194537e3e3b
 --
 
 CREATE TABLE `chat` (
   `idchat` int(11) NOT NULL,
   `tema_comunidade` int(11) NOT NULL COMMENT 'foreign key',
   `titulo` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `chat`
+-- Despejando dados para a tabela `chat`
 --
 
 INSERT INTO `chat` (`idchat`, `tema_comunidade`, `titulo`) VALUES
@@ -61,7 +71,7 @@ INSERT INTO `chat` (`idchat`, `tema_comunidade`, `titulo`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `comunidade`
+-- Estrutura para tabela `comunidade`
 --
 
 CREATE TABLE `comunidade` (
@@ -72,10 +82,10 @@ CREATE TABLE `comunidade` (
   `situacao` varchar(1) NOT NULL,
   `descricao` varchar(3000) NOT NULL,
   `idtema` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `comunidade`
+-- Despejando dados para a tabela `comunidade`
 --
 
 INSERT INTO `comunidade` (`idcomunidade`, `idcriador`, `nome`, `foto`, `situacao`, `descricao`, `idtema`) VALUES
@@ -96,7 +106,7 @@ CREATE TABLE `denuncia` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `membro`
+-- Estrutura para tabela `membro`
 --
 
 CREATE TABLE `membro` (
@@ -105,12 +115,12 @@ CREATE TABLE `membro` (
   `idusuario` int(11) NOT NULL COMMENT 'foreign key',
   `tipo` varchar(100) NOT NULL,
   `situacao_membro` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `mensagem`
+-- Estrutura para tabela `mensagem`
 --
 
 CREATE TABLE `mensagem` (
@@ -120,10 +130,10 @@ CREATE TABLE `mensagem` (
   `chat` int(11) NOT NULL COMMENT 'foreign key',
   `data` date NOT NULL,
   `hora` time NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `mensagem`
+-- Despejando dados para a tabela `mensagem`
 --
 
 INSERT INTO `mensagem` (`idmensagem`, `conteudo`, `remetente`, `chat`, `data`, `hora`) VALUES
@@ -149,7 +159,7 @@ INSERT INTO `mensagem` (`idmensagem`, `conteudo`, `remetente`, `chat`, `data`, `
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `moderador`
+-- Estrutura para tabela `moderador`
 --
 
 CREATE TABLE `moderador` (
@@ -165,19 +175,19 @@ CREATE TABLE `moderador` (
   `cod_cvv` varchar(3) DEFAULT NULL,
   `vencimento_cartao` date DEFAULT NULL,
   `chave_pix` varchar(200) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `moderador`
+-- Despejando dados para a tabela `moderador`
 --
 
 INSERT INTO `moderador` (`idmoderador`, `idusuario`, `periodo`, `valor`, `data_assinatura`, `meio_pagamento`, `cpf`, `numero_cartao`, `nome_cartao`, `cod_cvv`, `vencimento_cartao`, `chave_pix`) VALUES
-(3, 14, 12, '15.92', '2023-05-28', 'C', 2147483647, 2147483647, 'Helen', '123', '2026-11-01', NULL);
+(3, 14, 12, 15.92, '2023-05-28', 'C', 2147483647, 2147483647, 'Helen', '123', '2026-11-01', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tema`
+-- Estrutura para tabela `tema`
 --
 
 CREATE TABLE `tema` (
@@ -190,10 +200,10 @@ CREATE TABLE `tema` (
   `estado` varchar(50) NOT NULL,
   `tipotema` varchar(50) NOT NULL,
   `fototema` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `tema`
+-- Despejando dados para a tabela `tema`
 --
 
 INSERT INTO `tema` (`idtema`, `nome`, `sinopse`, `genero`, `ano_estreia`, `quantidade`, `estado`, `tipotema`, `fototema`) VALUES
@@ -209,12 +219,27 @@ INSERT INTO `tema` (`idtema`, `nome`, `sinopse`, `genero`, `ano_estreia`, `quant
 (12, 'The Quintessential Quintuplets', 'Uesugi Fuutarou, um estudante do segundo ano do colegial que vem de uma família pobre, recebe uma irrecusável proposta para trabalhar como tutor... e descobre que suas pupilas são suas colegas de classe! E pra piorar, são gêmeas quíntuplas... Todas lindíssimas, mas com péssimas notas e um ódio mortal pelos estudos! Sua primeira missão será ganhar a confiança das garotas?! Todo dia é dia de festa nesta comédia romântica 500% adorável envolvendo as irmãs gêmeas da casa Nakano!', 'Comédia, Romance', 2019, 24, 'Em andamento', 'Anime', '../img/temas/MV5BZjg2MmRkZWUtY2QxNS00ZTdiLWE0ODItOGQyM2Y1ZDlkNjlmXkEyXkFqcGdeQXVyNTgyNTA4MjM@._V1_FMjpg_UX1000_.jpg'),
 (13, 'Yamada-kun to Lv999 no Koi wo Suru', 'Akane Kinoshita pegou seu namorado tendo um caso com uma garota de um jogo online e ficou completamente arrasada. Ela tenta desestressar matando uns bichos no jogo, e acaba desabafando sobre seu caso com Yamada, um jogador de sua guilda — mas ele responde com um \"tô nem aí\" curto e grosso. Entretanto, quando Akane decide invadir um encontro offline do jogo para se vingar de seu ex-namorado, ela ouve essas palavras marcantes ao vivo, e seu coração bate mais forte ao conhecer Yamada ao vivo...', 'Comédia, Romance', 2018, 93, 'Em andamento', 'Mangá', '../img/temas/capa.jpg'),
 (14, 'Mashle (Mashle: Magic and Muscles)', 'Este é um mundo de magia. Este é um mundo em que a magia é usada casualmente por todos. Em uma floresta profunda e escura neste mundo de magia, há um menino que está malhando obstinadamente. Seu nome é Mash Burnedead, e ele tem um segredo. Ele não pode usar magia. Tudo o que ele queria era viver uma vida tranquila com sua família, mas de repente as pessoas começaram a tentar matá-lo um dia e ele de alguma forma se viu matriculado na Escola de Magia. Lá, ele pretende se tornar um “Divino Visionário”, a elite da elite. Seus músculos definidos funcionarão contra os melhores e mais brilhantes do mundo mágico? A cortina sobe nesta fantasia mágica fora de ordem em que o poder de ser levantado esmaga qualquer feitiço!', 'Shounen, Comédia, Fantasia', 2020, 157, 'Em andamento', 'Mangá', '../img/temas/MV5BM2M1Yzc5OTMtNWQxYS00NTg5LThiYjQtODRhZGMwODVkNjAyXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg'),
+<<<<<<< HEAD
 (15, ' Kaguya-sama: Love Is War', 'Veio de boa família? Sim! Tem uma personalidade promissora? Sim!\r\nTodos os jovens de elite com futuros brilhantes acabam indo parar na Academia Shuchiin.\r\nE ambos os líderes do conselho estudantil, Kaguya Shinomiya e Miyuki Shirogane, estão apaixonados um pelo outro.\r\nMas seis meses se passaram e nada aconteceu?!\r\nAmbos são orgulhosos demais para confessar seu amor, e agora ambos estão brigando pra ver quem faz o outro se declarar primeiro!\r\nA parte mais divertida do amor é o jogo da conquista!\r\nUma nova comédia romântica, sobre as batalhas intelectuais de dois estudantes de elite apaixonados.', 'Seinen, Comédia, Romance', 2015, 281, 'Finalizado', 'Mangá', '../img/temas/Capturar3.JPG');
+=======
+(15, ' Kaguya-sama: Love Is War', 'Veio de boa família? Sim! Tem uma personalidade promissora? Sim!\r\nTodos os jovens de elite com futuros brilhantes acabam indo parar na Academia Shuchiin.\r\nE ambos os líderes do conselho estudantil, Kaguya Shinomiya e Miyuki Shirogane, estão apaixonados um pelo outro.\r\nMas seis meses se passaram e nada aconteceu?!\r\nAmbos são orgulhosos demais para confessar seu amor, e agora ambos estão brigando pra ver quem faz o outro se declarar primeiro!\r\nA parte mais divertida do amor é o jogo da conquista!\r\nUma nova comédia romântica, sobre as batalhas intelectuais de dois estudantes de elite apaixonados.', 'Seinen, Comédia, Romance', 2015, 281, 'Finalizado', 'Mangá', '../img/temas/Capturar3.JPG'),
+(16, 'True Beauty', 'Depois de assistir a vídeos de beleza on-line, uma tímida fã de quadrinhos domina a arte da maquiagem e vê sua posição social disparar ao se tornar a garota mais bonita da escola da noite para o dia. Mas seu status de elite será de curta duração? Por quanto tempo ela pode manter seu verdadeiro eu em segredo? E aquele garoto fofo que conhece o segredo dela?', 'Shoujo, Comédia, Romance, Vida Escolar', 2018, 115, 'Em andamento', 'Webtoon', '../img/temas/webtoon2.jpg'),
+(17, 'Advogada extraordinária Woo', 'A brilhante Woo Young Woo, uma advogada de 27 anos com Síndrome de Asperger, devido ao seu alto QI de 164, memória impressionante e processo de pensamento criativo, formou-se como a melhor de sua classe na prestigiosa Universidade Nacional de Seul, tanto para faculdade de direito quanto para a escola. No entanto, ela ainda se encontra lutando quando se trata de interações sociais.', 'Josei, Drama, Romance', 2022, 21, 'Em andamento', 'Webtoon', '../img/temas/webtoon.jpg'),
+(18, 'Buddy Daddies', 'Quando dois assassinos profissionais eliminam um perigoso mafioso, a última coisa que eles esperavam é que ele tivesse uma filhinha de quatro anos - agora órfã. Mas quando eles decidem assumir a guarda da criança, sua vida vira de pernas pro ar! Entre uma missão aqui e um tiroteio ali, os dois matadores de aluguel terão de achar tempo para preparar refeições nutritivas, estimular o crescimento intelectual da criança, e levar a pequena até a creche!', 'Ação, Comédia', 2023, 12, 'Finalizado', 'Anime', '../img/temas/Capturadetela.jpg'),
+(19, 'Cowboy Bebop', 'O advento dos portais hiperespaciais, que permitem a viagem entre planetas em tempo hábil, deram início a uma Era Espacial no Sistema Solar. Spike, um ex-mafioso, e Jet, um ex-policial, são \"cowboys\", caçadores de recomepensas que voam pelo universo em busca de cabeças a prêmio. Juntos com Faye, uma misteriosa mulher desmemoriada com uma imensa dívida; Ed, uma criança selvagem com um tino para o hacking; e Ein, um corgi dotado de inteligência humana; os cinco levam uma estranha vida em comunidade a bordo da nave interplanetária Bebop.', 'Ação, Drama, Ficção Científica', 1998, 26, 'Finalizado', 'Anime', '../img/temas/Cowboy_Bebop_key_visual.jpg'),
+(20, 'Death Note', 'Light Yagami é um estudante primoroso, com um currículo impecável, popular com as garotas, e entediado que só. Mas sua vida muda quando um Shinigami lhe oferece um caderno capaz de matar qualquer pessoa que ele quiser.', 'Sobrenatural, Suspense', 2006, 37, 'Finalizado', 'Anime', '../img/temas/death-note.jpg'),
+(21, 'Os Cavaleiros do Zodíaco', 'Os 88 Cavaleiros de Atena trajam desde os tempos mitológicos armaduras protegidas pelas constelações do céu para, assim, servir sua deusa e preservar a paz e o amor na Terra. Agora, nos tempos modernos, nasce uma nova Atena e, para que ela não seja assassinada ainda bebê por aqueles que estão ofuscados pelo poder e pela ganância, ela é levada para longe, onde cresce como Saori Kido. Uma nova batalha santa está para começar! Vão, jovens Cavaleiros, protejam sua Atena!', 'Fantasia, Artes marciais, Ficção mítica', 1986, 114, 'Finalizado', 'Anime', '../img/temas/Os-Cavaleiros-dos-Zodiaco-Dublado-Capa.jpg'),
+(22, 'Naruto', 'A Vila Oculta da Folha é lar dos ninjas mais sorrateiros. Mas doze anos atrás, uma temível Raposa de Nove Caudas aterrorizou a vila, até ser derrotada e selada no corpo de um garoto recém-nascido.', 'Shounen, Comédia, Artes marciais', 1999, 700, 'Finalizado', 'Mangá', '../img/temas/Naruto_vol._01.jpg'),
+(23, 'Pokémon', 'Enquanto viaja pelas diversas cidades de uma região para cumprir seu objetivo, Ash tem a oportunidade de capturar novos Pokémon, treiná-los para ajudá-lo nas lutas de ginásio e ajudar a preencher a PokéDex com todos os Pokémon nos quais já viu. Além disso, ele eventualmente enfrenta seus rivais em combate à Equipe Rocket, uma equipe especializada em roubar Pokémon poderosos.', 'Shounen, Aventura, Comédia', 1997, 902, 'Finalizado', 'Anime', '../img/temas/pokemon-legendado-todos-os-ep.jpg'),
+(24, 'Yu-Gi-Oh!', 'O estudante Yugi Mutou passou a maior parte de seu tempo sozinho jogando jogos – até que ele resolveu o Enigma do Milênio, um artefato egípcio misterioso! Possuída pelo quebra-cabeça, Yugi se torna o Yu-Gi-Oh, o Rei dos Jogos, e os enfrentará os desafios dos Jogos das Sombras – Jogos estranhos com grandes apostas e altos riscos, como apostar a sua alma e a alma de seus queridos amigos! O mangá contém novas histórias não vistas no anime, incluindo a origem de Yugi e seus amigos!', 'Shounen, Ação, Aventura, Fantasia, Sobrenatural', 1996, 343, 'Finalizado', 'Mangá', '../img/temas/Yugioh_-_The_Gospel_of_Truth.jpg'),
+(25, 'Bleach', 'Kurosaki Ichigo é um estudante de 15 anos que tem uma estranha capacidade de ver, tocar e falar com espíritos de pessoas mortas. Logo que o Shinigami (Deus da Morte) Kuchiki Rukia toma conhecimento dos poderes dele ela decide investigá-lo, e acaba em uma luta com um Hollow que foi atraído pelo forte poder espiritual de Ichigo, antes de ser derrotada pela criatura, Rukia passa seus poderes a Ichigo, o qual se torna um Shinigami, e após derrotar o Hollow ingressa em uma jornada para proteger os humanos e os espíritos da ameaça dos Hollows.', 'Shounen, Ação, Aventura, Comédia, Sobrenatural', 2004, 686, 'Finalizado', 'Mangá', '../img/temas/bleach.jpg'),
+(26, 'Demon Slayer', 'O mangá conta a história de Tanjiro, o filho mais velho de uma família que é massacrada por um demônio e, a única sobrevivente do incidente foi umas das suas irmãs, que por causa do massacre acaba se transformando em um demônio. Então, o protagonista, Tanjiro, sai em uma jornada para tentar achar uma ”cura” para a sua irmã.', 'Ação, Aventura, Fantasia, Luta', 2016, 205, 'Finalizado', 'Mangá', '../img/temas/kimetsu_6jp8.jpg');
+>>>>>>> ab5c3a1cf61766acac55cb8ada8c9194537e3e3b
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuario`
+-- Estrutura para tabela `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -230,10 +255,10 @@ CREATE TABLE `usuario` (
   `foto` varchar(255) DEFAULT NULL,
   `nascimento` date NOT NULL,
   `situacaoUsuario` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `usuario`
+-- Despejando dados para a tabela `usuario`
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nome`, `email`, `senha`, `estado`, `cidade`, `genero`, `perfil`, `telefone`, `foto`, `nascimento`, `situacaoUsuario`) VALUES
@@ -246,6 +271,7 @@ INSERT INTO `usuario` (`id_usuario`, `nome`, `email`, `senha`, `estado`, `cidade
 --
 
 --
+<<<<<<< HEAD
 -- Índices para tabela `avaliacao`
 --
 ALTER TABLE `avaliacao`
@@ -253,17 +279,21 @@ ALTER TABLE `avaliacao`
 
 --
 -- Índices para tabela `chat`
+=======
+-- Índices de tabela `chat`
+>>>>>>> ab5c3a1cf61766acac55cb8ada8c9194537e3e3b
 --
 ALTER TABLE `chat`
   ADD PRIMARY KEY (`idchat`);
 
 --
--- Índices para tabela `comunidade`
+-- Índices de tabela `comunidade`
 --
 ALTER TABLE `comunidade`
   ADD PRIMARY KEY (`idcomunidade`);
 
 --
+<<<<<<< HEAD
 -- Índices para tabela `denuncia`
 --
 ALTER TABLE `denuncia`
@@ -271,37 +301,40 @@ ALTER TABLE `denuncia`
 
 --
 -- Índices para tabela `membro`
+=======
+-- Índices de tabela `membro`
+>>>>>>> ab5c3a1cf61766acac55cb8ada8c9194537e3e3b
 --
 ALTER TABLE `membro`
   ADD PRIMARY KEY (`idmembro`);
 
 --
--- Índices para tabela `mensagem`
+-- Índices de tabela `mensagem`
 --
 ALTER TABLE `mensagem`
   ADD PRIMARY KEY (`idmensagem`);
 
 --
--- Índices para tabela `moderador`
+-- Índices de tabela `moderador`
 --
 ALTER TABLE `moderador`
   ADD PRIMARY KEY (`idmoderador`);
 
 --
--- Índices para tabela `tema`
+-- Índices de tabela `tema`
 --
 ALTER TABLE `tema`
   ADD PRIMARY KEY (`idtema`);
 
 --
--- Índices para tabela `usuario`
+-- Índices de tabela `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id_usuario`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
@@ -350,7 +383,11 @@ ALTER TABLE `moderador`
 -- AUTO_INCREMENT de tabela `tema`
 --
 ALTER TABLE `tema`
+<<<<<<< HEAD
   MODIFY `idtema` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+=======
+  MODIFY `idtema` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+>>>>>>> ab5c3a1cf61766acac55cb8ada8c9194537e3e3b
 
 --
 -- AUTO_INCREMENT de tabela `usuario`

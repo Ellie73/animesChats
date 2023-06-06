@@ -49,7 +49,13 @@ if ($_SESSION['perfil'] != 'A') {
     <?php require_once './menu.php' ?>
     <!-- Header End -->
 
+<<<<<<< HEAD
     <h1 class="crud">Usuários cadastrados no sistema</h1>
+=======
+    <div class="normal__breadcrumb">
+        <h1>Usuários cadastrados no sistema</h1>
+    </div>
+>>>>>>> ab5c3a1cf61766acac55cb8ada8c9194537e3e3b
     <br><br>
     <?php
     if (!isset($_GET["idusuario"]) || $_GET["idusuario"] == 0) {

@@ -27,14 +27,18 @@
 <header class="header">
     <div class="">
         <div class="row">
-            <div class="col-lg-2">
+            <div class="col-lg-3">
                 <div class="header__logo">
                     <a href="./home.php">
+<<<<<<< HEAD
                         <img src="../img/logo02.png" alt="Animes-Chats" >
+=======
+                        <img src="../img/logo02.png" alt="" width="90%">
+>>>>>>> ab5c3a1cf61766acac55cb8ada8c9194537e3e3b
                     </a>
                 </div>
             </div>
-            <div class="col-lg-9">
+            <div class="col-lg-8">
                 <div class="header__nav">
                     <nav class="header__menu mobile-menu">
                         <ul>
