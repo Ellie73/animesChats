@@ -19,15 +19,16 @@ foreach ( $mensagens as $mensagem ) {
                         <a href=anime-watching.html><img src="'.$mensagem['foto'].'" alt=""></a>
                     </div>
                     <div class="anime__review__item__text">
-                        <h6>'.$mensagem['nome'].' - <span>'.$mensagem['data'].'</span></h6>
-                        <p>' . $mensagem['conteudo'] . '</p>
-                        <p><span>'.$mensagem['hora'].'</span></p>
+                        <h6>'.$mensagem['nome'].' - <span>'.date("d/m/Y", strtotime($mensagem['data'])).'</span></h6>
+                        <p style="font-size:1em;">' . $mensagem['conteudo'] . '</p>
+                        <p><span>'.date("H:i", strtotime($mensagem['hora'])).'</span></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>';
 }
+echo"<br><br>";
 ?>
 
  

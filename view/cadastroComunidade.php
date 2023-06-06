@@ -44,7 +44,7 @@ session_start();
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-left">
-                    <div class="normal__breadcrumb__text">
+                    <div class="normal__breadcrumb">
                         <h2>Criar comunidade</h2>
                     </div>
                 </div>

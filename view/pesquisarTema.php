@@ -1,5 +1,8 @@
 <?php
 session_start();
+if ($_GET['page']==null || $_GET['page']==0){
+    header("Location:./home.php?msg=Página indefinida!");
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -24,6 +27,7 @@ session_start();
     <link rel="stylesheet" href="css/nice-select.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="icon" href="../img/favicon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -43,8 +47,8 @@ session_start();
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
-                        <a href="../home.php"><i class="fa fa-home"></i> Home</a>
-                        <a href="categories.html">Categorias</a>
+                        <a href="./home.php"><i class="fa fa-home"></i> Home</a>
+                        <a href="#">Categorias</a>
                         <span><a href="./pesquisarTema.php?type=<?= $_GET['type'] ?>&page=1"><?= $_GET['type'] ?></a></span>
                     </div>
                 </div>
@@ -70,9 +74,7 @@ session_start();
                                     <div class="product__page__filter">
                                         <p>Ordem:</p>
                                         <select>
-                                            <option value="">A-Z</option>
-                                            <option value="">1-10</option>
-                                            <option value="">10-50</option>
+                                            <option selected>A-Z</option>
                                         </select>
                                     </div>
                                 </div>
@@ -88,8 +90,10 @@ session_start();
                             ?>
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="<?=$tema["fototema"]?>" onclick="">
+                                    <a href="./tema.php?id=<?=$tema["idtema"]?>">
+                                    <div class="product__item__pic set-bg" data-setbg="<?=$tema["fototema"]?>">
                                     </div>
+                                    </a>
                                     <div class="product__item__text">
                                         <h5><a href="./tema.php?id=<?=$tema["idtema"]?>"><?=$tema["nome"]?></a></h5>
                                     </div>

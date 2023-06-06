@@ -26,6 +26,7 @@ session_start()
     <link rel="stylesheet" href="../css/style.css" type="text/css">
     <link rel="stylesheet" href="../css/cadastroTema.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="../img/favicon.png" type="image/x-icon">
     <title>Assinatura</title>
 </head>
 

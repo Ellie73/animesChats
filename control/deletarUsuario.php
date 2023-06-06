@@ -4,12 +4,12 @@ session_start();
 //deletarUsuarioControl.php
 require_once "../model/DAO/usuarioDAO.php";
 
-// if($_SESSION["perfil"] != "A"){
-//     header("location:../view/adotar.php?msg=Sem permissão para acesso!");
-// }
+if($_SESSION["perfil"] != "A"){
+    header("location:../view/adm.php");
+}
 
 if(!isset($_GET["idusuario"]) && !isset($_GET["nome"])){
-    header("location:../view/ferramentas-adm.php?msg=Usuário não selecionado!");
+    header("location:../view/adm.php?msg=Usuário não selecionado!");
 }
 
 $idusuario = $_GET["idusuario"];

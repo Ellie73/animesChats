@@ -33,6 +33,7 @@ if ($_SESSION['perfil'] != 'A' and isset($_SESSION['idusuario'])) {
     <link rel="stylesheet" href="./css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="./css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <link rel="icon" href="../img/favicon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -51,7 +52,7 @@ if ($_SESSION['perfil'] != 'A' and isset($_SESSION['idusuario'])) {
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="normal__breadcrumb__text">
-                        <h2>Ferramentas</h2>
+                        <h2>Ferramentas do Administrador</h2>
                         <p></p>
                     </div>
                 </div>
@@ -124,26 +125,27 @@ if ($_SESSION['perfil'] != 'A' and isset($_SESSION['idusuario'])) {
       <label for="imagem1">USUÁRIOS</label>
     </div>
     <div class="image-container">
-      <img src="../img/blog/blog-4.png" alt="Imagem 2" onclick="window.location.href='./criarComunidade.php'">
+      <img src="../img/blog/blog-4.png" alt="Imagem 2" onclick="window.location.href='./comunidadeCrud.php'">
       <label for="imagem2">COMUNIDADES</label>
     </div>
     <div class="image-container">
       <img src="../img/blog/blog-5.png" alt="Imagem 3" onclick="window.location.href='./cadastroTema.php'">
-      <label for="imagem3">ASSINATURA</label>
+      <label for="imagem3">ASSINANTES</label>
     </div>
     <div class="image-container">
-      <img src="../img/blog/blog-2.png" alt="Imagem 4" onclick="window.location.href='./cadastroTema.php'">
+      <img src="../img/blog/blog-2.png" alt="Imagem 4" onclick="window.location.href='./temaCrud.php'">
       <label for="imagem4">CHATS</label>
     </div>
     <div class="image-container">
       <img src="../img/blog/blog-3.png" alt="Imagem 5" onclick="window.location.href='./cadastroTema.php'">
       <label for="imagem5">DENÚNCIAS</label>
     </div>
-    <div class="image-container" onclick="window.location.href='./cadastroTema.php'">
+    <div class="image-container" onclick="window.location.href='./temaCrud.php'">
       <img src="../img/blog/blog-6.png" alt="Imagem 6">
       <label for="imagem6">TEMAS</label>
     </div>
   </div>
+  <br><br><br>
     <!-- Blog Section End -->
 
     <?php require_once './footer.php' ?>

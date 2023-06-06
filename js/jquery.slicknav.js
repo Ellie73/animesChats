@@ -2,13 +2,13 @@
     var
     // default settings object.
         defaults = {
-            label: 'MENU',
+            label: '',
             duplicate: true,
             duration: 200,
             easingOpen: 'swing',
             easingClose: 'swing',
-            closedSymbol: '&#9658;',
-            openedSymbol: '&#9660;',
+            closedSymbol: '⠀',
+            openedSymbol: '⠀',
             prependTo: 'body',
             appendTo: '',
             parentTag: 'a',

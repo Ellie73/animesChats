@@ -22,11 +22,12 @@
   <link rel="stylesheet" href="../css/owl.carousel.min.css" type="text/css">
   <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
   <link rel="stylesheet" href="../css/style.css" type="text/css">
+  <link rel="icon" href="../img/favicon.png" type="image/x-icon">
 </head>
 <?php
 session_start();
 if (isset($_GET['id'])) {
-  $idtema = $_GET['id'];
+  $idcomunidade = $_GET['id'];
 } else {
   header("location:home.php");
 }
@@ -37,19 +38,19 @@ if (isset($_GET['id'])) {
 if (isset($_SESSION['idusuario'])) {
   // Está logado
 } else {
-  header("Location:./login.php");
+  header("Location:./login.php?msg=Faça login para acessar!");
 }
 
 ?>
 
-<!-- trazer tema -->
+<!-- trazer comunidade -->
 
 
 <?php
-require_once "../model/DAO/temaDAO.php";
-$temaConn = new temaDAO();
-$retorno = $temaConn->exibirTema($idtema);
-if ($retorno == null || empty($retorno)) {
+require_once "../model/DAO/comunidadeDAO.php";
+$comunidadeConn = new comunidadeDAO();
+$comunidade = $comunidadeConn->comunidade($idcomunidade);
+if ($comunidade == null || empty($comunidade)) {
   header("location:../view/home.php?msg=Error!");
 }
 ?>
@@ -70,33 +71,29 @@ if ($retorno == null || empty($retorno)) {
       <div class="anime__details__content">
         <div class="row">
           <div class="col-lg-3">
-            <div class="anime__details__pic set-bg" data-setbg="<?= $retorno["fototema"]; ?>">
+            <div class="anime__details__pic set-bg" data-setbg="<?= $comunidade["foto"]; ?>">
             </div>
           </div>
           <div class="col-lg-9">
             <div class="anime__details__text">
               <div class="anime__details__title">
-                <h3><?= $retorno["nome"]; ?></h3>
+                <h3><?= $comunidade["nome"]; ?></h3>
                 <!-- <span>フェイト／ステイナイト, Feito／sutei naito</span> -->
               </div>
-              <p><?= $retorno["sinopse"]; ?></p>
+              <p><?= $comunidade["descricao"]; ?></p>
               <div class="anime__details__widget">
                 <div class="row">
                   <div class="col-lg-6 col-md-6">
                     <ul>
-                      <li><span>Tipo:</span><?= $retorno["tipotema"] ?></li>
-                      <li><span>Cap/Ep:</span><?= $retorno["quantidade"]; ?></li>
-                      <li><span>Ano de estreia:</span><?= $retorno["ano_estreia"] ?></li>
-                      <li><span>Status:</span><?= $retorno["estado"]; ?></li>
-                      <li><span>Genêro:</span><?= $retorno["genero"]; ?></li>
+                      <li><span>Moderador:</span><?= $comunidade["nome_usuario"] ?></li>
                     </ul>
                   </div>
                 </div>
               </div>
               <div class="anime__details__btn">
                 <?php
-                if ($_SESSION['perfil'] == 'A') {
-                  echo '<a href="./criarChat.php?id=' . $retorno["idtema"] . '"class="follow-btn"> Cadastrar novo chat</a>';
+                if ($_SESSION['perfil'] == 'A' || $_SESSION['idusuario'] == $comunidade['idcriador']) {
+                  echo '<a href="./criarChat.php?id=' . $comunidade["idcomunidade"] . '"class="follow-btn"> Cadastrar novo chat</a>';
                 }
                 ?>
               </div>
@@ -110,18 +107,20 @@ if ($retorno == null || empty($retorno)) {
             <div class="section-title">
               <h4>Chats</h4>
             </div>
+            <ul>
+              <?php
+              require_once "../model/DAO/chatDAO.php";
+              $chatConn = new chatDAO();
+              $chats = $chatConn->exibirChat($idcomunidade);
+              foreach ($chats as $chat) {
+                echo '<li><a onclick="atualizarObjectData(\'./chat.php?idchat=' . $chat["idchat"] . '\', event);" href="">' . $chat["titulo"] . '</a></li><br><br>';
+              }
+              ?>
+            </ul>
           </div>
-          <?php
-          require_once "../model/DAO/chatDAO.php";
-          $chatConn = new chatDAO();
-          $chats = $chatConn->exibirChat($idtema);
-          foreach ($chats as $chat) {
-            echo '<a onclick="atualizarObjectData(\'./chat.php?idchat=' . $chat["idchat"] . '\', event);" href="">' . $chat["titulo"] . '</a><br><br>';
-          }
-          ?>
         </div>
       </div>
-      <object id="chat-object" data="" type="text/html" width="100%" height="400"></object>
+      <object id="chat-object" data="" type="text/html" width="100%" height="600"></object>
   </section>
   <!-- Anime Section End -->
   <?php require_once './footer.php' ?>

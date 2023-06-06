@@ -12,24 +12,28 @@ $tipo = $_POST["tipo"];
 $quantidade = $_POST["quantidade"];
 $estadotema = $_POST["estadotema"];
 
-//Foto
+// Verifica se o formulário foi enviado
 if (isset($_POST["submit"])) {
     $foto = $_FILES["foto"];
     $extensao = explode(".", $foto["name"]);
 
-    //Verifica extensão
+    // Verifica extensão
     if ($extensao[sizeof($extensao) - 1] == "jpg" || $extensao[sizeof($extensao) - 1] == "jpeg" || $extensao[sizeof($extensao) - 1] == "JPG" || $extensao[sizeof($extensao) - 1] == "png") {
         move_uploaded_file($foto["tmp_name"], "../img/temas/" . $foto["name"]);
-        $fototema = "../img/temas/" . $_FILES["foto"]["name"];
+        $foto = "../img/temas/" . $_FILES["foto"]["name"];
     } else {
-        echo "Arquivo não aceito!";
+        header("location:../view/cadastroTema.php?msg=Foto não aceita! Somente são permitidas imagens JPG, JPEG e PNG.");
+        exit;
     }
 } else {
     header("location:../view/cadastroTema.php?msg=Foto não enviada!");
+    exit;
 }
-//Verifica se o usuario colocou ou nao uma foto
-if ($fototema == null || empty($fototema)) {
-    echo "Escolha uma foto";
+
+// Verifica se o usuário colocou ou não uma foto
+if ($foto == null || empty($foto)) {
+    header("location:../view/cadastroTema.php?msg=Escolha uma foto");
+    exit;
 }
 //Classe tema
 $tema = new temaDTO($nometema, $sinopse, $generotema, $estreia, $tipo, $quantidade, $estadotema, $fototema);

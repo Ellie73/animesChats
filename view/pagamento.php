@@ -5,12 +5,9 @@ $valor = $_GET['valor'];
 $periodo = $_GET['periodo'];
 $dataAtual = date("Y-m-d"); // Obtém a data atual
 $dataNova = date("Y-m-d", strtotime("+$periodo months", strtotime($dataAtual)));
-if (isset($_SESSION['idusuario'])) {
-    // Está logado
-} else {
-    header("Location:./login.php");
-}
-if ($_SESSION['perfil'] != 'U') {
+if (empty($_SESSION['idusuario'])) {
+    header("Location:./login.php?msg=Faça login para assinar!");
+}elseif ($_SESSION['perfil'] != 'U') {
     header("Location:./home.php?msg=Já é moderador ou superior!");
 }
 ?>
@@ -38,6 +35,7 @@ if ($_SESSION['perfil'] != 'U') {
     <link rel="stylesheet" href="../css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="../css/style.css" type="text/css">
+    <link rel="icon" href="../img/favicon.png" type="image/x-icon">
 </head>
 
 <body>

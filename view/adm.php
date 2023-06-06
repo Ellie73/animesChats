@@ -36,6 +36,7 @@ if ($_SESSION['perfil'] != 'A') {
     <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="../css/style.css" type="text/css">
     <link rel="stylesheet" href="../css/cadastroTema.css">
+    <link rel="icon" href="../img/favicon.png" type="image/x-icon">
 </head>
 
 <body style='background-color:#cccbcb'>
@@ -48,7 +49,7 @@ if ($_SESSION['perfil'] != 'A') {
     <?php require_once './menu.php' ?>
     <!-- Header End -->
 
-    <h1 style="margin-bottom:30px;text-align: center;">Usuários cadastrados no sistema</h1>
+    <h1 class="crud">Usuários cadastrados no sistema</h1>
     <br><br>
     <?php
     if (!isset($_GET["idusuario"]) || $_GET["idusuario"] == 0) {
@@ -130,11 +131,11 @@ if ($_SESSION['perfil'] != 'A') {
                     <div class="row mb-3">
                         <div class="col">
                             <label for="nome" class="form-label">Nome:</label>
-                            <input type="text" id="nome" name="nome" value="<?= $usuario["nome"] ?>" class="form-control">
+                            <input type="text" id="nome" name="nome" value="<?= $usuario["nome"] ?>" class="form-control" required>
                         </div>
                         <div class="col">
                             <label for="email" class="form-label">E-mail:</label>
-                            <input type="text" id="email" name="email" value="<?= $usuario["email"] ?>" class="form-control">
+                            <input type="text" id="email" name="email" value="<?= $usuario["email"] ?>" class="form-control" required>
                         </div>
                     </div>
                     <div class="row mb-3" style="margin: 0px 3px;">
@@ -142,7 +143,7 @@ if ($_SESSION['perfil'] != 'A') {
                             <label for="situacao" class="form-label">Status:</label>
                         </div>
                         <div>
-                            <select name="situacao" id="situacao" class="form-select">
+                            <select name="situacao" id="situacao" class="form-select" required>
                                 <?php if ($usuario["situacaoUsuario"] == 1) : ?>
                                     <option value="1" selected>Ativo</option>
                                     <option value="0">Inativo</option>
@@ -159,7 +160,7 @@ if ($_SESSION['perfil'] != 'A') {
                             <label for="perfil" class="form-label">Perfil:</label>
                         </div>
                         <div>
-                            <select name="perfil" id="perfil" class="form-select">
+                            <select name="perfil" id="perfil" class="form-select" required>
                                 <?php if ($usuario["perfil"] == "U") : ?>
                                     <option value="U" selected>Usuário</option>
                                     <option value="A">Administrador</option>

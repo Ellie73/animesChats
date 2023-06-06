@@ -3,5 +3,5 @@
 //logoutControl.php
     session_start();
     session_destroy();
-    header("location:../view/home.php?msg=Saída efetuada com sucesso!");
+    header("location:../view/home.php?msg=Sua conta foi desconectada");
 ?>

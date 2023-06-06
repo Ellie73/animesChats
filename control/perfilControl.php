@@ -25,10 +25,11 @@ if(isset($_POST["upload"])){
         move_uploaded_file($foto["tmp_name"],"../img/usuarios/".$foto["name"]);
         $foto = "../img/usuarios/".$_FILES["foto"]["name"];
     }else{
-        echo "Arquivo de foto invalido!";
+        header("location:../view/perfil.php?msg=Foto não aceita! Somente são permitidas imagens JPG, JPEG e PNG.");
+        exit;
     }
 }else{
-    header("location:../view/editarPerfil.php?msg=Erro ao enviar foto!");
+    header("location:../view/perfil.php?msg=Erro ao enviar foto!");
 }
 //Verifica se o usuario colocou ou nao uma foto
 if (empty($_FILES["foto"]["name"])) {

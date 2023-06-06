@@ -26,6 +26,7 @@ session_start()
     <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="../css/style.css" type="text/css">
     <link rel="stylesheet" href="../css/cadastroTema.css">
+    <link rel="icon" href="../img/favicon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -47,6 +48,7 @@ session_start()
                         <div class="col-lg-6">
                             <div class="hero__text">
                                 <h2>BEM VINDO AO ANIMES-CHATS</h2>
+                                <p>Leia, comente e avalie sobre seus temas favoritos</p>
                                 <p></p>
                                 <a href="#"></a>
                             </div>
@@ -57,7 +59,7 @@ session_start()
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="hero__text">
-                                <h2>Aqui voce pode conhecer novas pessoas e conversar sobre seu anime favorito</h2>
+                                <h2>AQUI VOCÊ PODE CONHECER NOVAS PESSOAS E CONVERSAR SOBRE DIVERSOS TEMAS</h2>
                                 <p>Não perca tempo e participe de uma comunidade </p>
                                 <a href="#"></a>
                             </div>
@@ -83,7 +85,7 @@ session_start()
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4">
                                 <div class="btn__all">
-                                    <a href="#" class="primary-btn">Ver mais <span class="arrow_right"></span></a>
+                                    <a href="./pesquisarTema.php?type=anime&page=1" class="primary-btn">Ver mais <span class="arrow_right"></span></a>
                                 </div>
                             </div>
                         </div>
@@ -138,7 +140,7 @@ session_start()
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4">
                                 <div class="btn__all">
-                                    <a href="#" class="primary-btn">Ver mais <span class="arrow_right"></span></a>
+                                    <a href="./homeComunidade.php?page=1" class="primary-btn">Ver mais <span class="arrow_right"></span></a>
                                 </div>
                             </div>
                         </div>

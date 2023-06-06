@@ -1,5 +1,8 @@
 <?php
 session_start();
+if ($_GET['page']==null || $_GET['page']==0){
+    header("Location:./home.php?msg=Página indefinida!");
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -24,6 +27,7 @@ session_start();
     <link rel="stylesheet" href="css/nice-select.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="icon" href="../img/favicon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -69,9 +73,7 @@ session_start();
                                     <div class="product__page__filter">
                                         <p>Ordem:</p>
                                         <select>
-                                            <option value="">A-Z</option>
-                                            <option value="">1-10</option>
-                                            <option value="">10-50</option>
+                                            <option selected>A-Z</option>
                                         </select>
                                     </div>
                                 </div>
@@ -87,8 +89,10 @@ session_start();
                             ?>
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <div class="product__item">
+                                    <a href="./comunidade.php?id=<?=$comunidade["idcomunidade"]?>">
                                     <div class="product__item__pic set-bg" data-setbg="<?=$comunidade["foto"]?>">
                                     </div>
+                                </a>
                                     <div class="product__item__text">
                                         <h5><a href="./comunidade.php?id=<?=$comunidade["idcomunidade"]?>"><?=$comunidade["nome"]?></a></h5>
                                     </div>

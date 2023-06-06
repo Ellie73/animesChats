@@ -33,17 +33,21 @@ $usuario = $usuarioConn->pesquisarUsuario($_SESSION["idusuario"]);
     <link rel="stylesheet" href="../css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="../css/style.css" type="text/css">
+    <link rel="icon" href="../img/favicon.png" type="image/x-icon">
 
 </head>
-
 <body style='background-color:#cccbcb'>
     <!-- Header Section Begin -->
     <?php require_once './menu.php' ?>
     <!-- Header End -->
+    
+</head>
+<body>
+ 
     <section class="flex">
         <section>
             <div>
-                <h1>Perfil</h1>
+                <h1 style="font-weight: 700;"><span style="color:tomato;">P</span>ERFIL</h1>
             </div>
             <form action="../control/perfilControl.php" method="POST" enctype="multipart/form-data">
                 <input type="file" id="foto" name="foto" src="<?= $usuario["foto"] ?>" hidden>

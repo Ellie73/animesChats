@@ -34,6 +34,7 @@ if ($_SESSION['perfil'] != 'A') {
     <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="../css/style.css" type="text/css">
     <link rel="stylesheet" href="../css/cadastroTema.css">
+    <link rel="icon" href="../img/favicon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -51,7 +52,7 @@ if ($_SESSION['perfil'] != 'A') {
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-left">
-                    <div class="normal__breadcrumb__text">
+                    <div class="normal__breadcrumb__texto">
                         <h2>Cadastro de um novo Tema</h2>
                     </div>
                 </div>
@@ -62,20 +63,20 @@ if ($_SESSION['perfil'] != 'A') {
                             <fieldset>
                                 <div class="input__item">
                                     <input type="text" name="nometema" id="nometema" class="inputUser" placeholder="Nome do Tema" maxlength="100" required>
-                                    
+                                    <span class="icon_pencil"></span>
                                 </div>
                                 <div class="inputBox">
-                                    <textarea name="sinopse" id="sinopse" cols="80" rows="10" class="inputUser" placeholder="Sinopse |" maxlength="3000" required></textarea>
+                                    <textarea name="sinopse" id="sinopse" cols="80" rows="10" class="inputUser" placeholder="Sinopse" maxlength="3000" required></textarea>
                                 </div>
                                 <br>
                                 <div class="input__item">
                                     <input type="text" name="generotema" id="generotema" class="inputUser" maxlength="100" placeholder="Gênero" required>
-                                    
+                                    <span class="icon_genius"></span> 
                                 </div>
                                 <p style="color: red;">
                                 <div class="input__item">
                                     <input type="number" name="estreia" id="estreia" class="inputUser" min="1" max="2024" placeholder="Ano de estreia" required>
-                                    
+                                    <span class="icon_calendar"></span>
                                 </div>
                                 <div class="singup_sexo">
                                     <p>Tipo</p>
@@ -91,7 +92,7 @@ if ($_SESSION['perfil'] != 'A') {
                                 </div>
                                 <div class="input__item">
                                     <input type="number" name="quantidade" id="quantidade" min="1" max="2024" class="inputUser" placeholder="Quantidade de Cap/Ep" required>
-                                    
+                                    <span class="icon_book"></span>
                                 </div>
                                 <div class="inputBox">
                                     <label for="estadotema">Estado de publicação:</label>

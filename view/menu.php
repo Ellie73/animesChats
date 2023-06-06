@@ -30,7 +30,7 @@
             <div class="col-lg-2">
                 <div class="header__logo">
                     <a href="./home.php">
-                        <img src="../img/logo02.png" alt="" width="100%">
+                        <img src="../img/logo02.png" alt="Animes-Chats" >
                     </a>
                 </div>
             </div>
@@ -38,7 +38,7 @@
                 <div class="header__nav">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <li><a href="">Categorias <span class="arrow_carrot-down"></span></a>
+                            <li id="categorias"><a href="">Categorias <span class="arrow_carrot-down"></span></a>
                                 <ul class="dropdown">
                                     <li><a href="./pesquisarTema.php?type=anime&page=1">Anime</a></li>
                                     <li><a href="./pesquisarTema.php?type=manga&page=1">Mangá</a></li>
@@ -58,8 +58,11 @@
                                 if ($_SESSION['perfil'] == 'A') {
                                     echo '<li title="Ferramentas ADM"><a href="./ferramentas.php"><span class="icon_flowchart"></span></a></li>';
                                 }
+                                elseif ($_SESSION['perfil'] == 'M') {
+                                    echo '<li title="Moderação"><a href="./moderador.php"><span class="icon_star"></span></a></li>';
+                                }
                                 if (isset($_SESSION['idusuario'])) {
-                                    echo '<li title="Sair"><a href="./logout.php"><span class="icon_close"></span>Sair</a></li>';
+                                    echo '<li title="Sair"><a href="./logout.php">Sair</a></li>';
                                 }
                             } else {
                                 echo '<li title="Login/Cadastre-se"><a href="./login.php"><img src="../img/usuarios/user.png" class="rounded-circle me-3" style="width: 2em; height: 2em; object-fit: cover;"></a></li>';

@@ -22,22 +22,19 @@
     <link rel="stylesheet" href="../css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="../css/style.css" type="text/css">
+    <link rel="icon" href="../img/favicon.png" type="image/x-icon">
 </head>
 <?php
 session_start();
 if (isset($_GET['id'])) {
     $idtema = $_GET['id'];
-} else {
-    header("location:home.php");
+} elseif (empty($_GET['id'])) {
+    header("location:home.php?msg=Página não encontrada!");
 }
-// if( $_SESSION['situacaoUsuario'] != 1) {
-//     header("location:home.php?error=Usuário não está logado ou está inativo");
-//         exit;
-//     }
 if (isset($_SESSION['idusuario'])) {
     // Está logado
-}else{
-    header("Location:./login.php");
+} elseif (empty($_SESSION['idusuario'])) {
+    header("Location:./login.php?msg=Faça login para acessar!");
 }
 
 ?>
@@ -49,8 +46,9 @@ if (isset($_SESSION['idusuario'])) {
 require_once "../model/DAO/temaDAO.php";
 $temaConn = new temaDAO();
 $retorno = $temaConn->exibirTema($idtema);
-if($retorno == null || empty($retorno)){
-    header("location:../view/home.php?msg=Error!");}
+if ($retorno == null || empty($retorno)) {
+    header("location:../view/home.php?msg=Página não encontrada!");
+}
 ?>
 
 <body>
@@ -60,7 +58,7 @@ if($retorno == null || empty($retorno)){
     </div>
 
     <!-- Header Section Begin -->
-<?php require_once './menu.php' ?>
+    <?php require_once './menu.php' ?>
     <!-- Header End -->
 
     <!-- Breadcrumb Begin -->
@@ -127,65 +125,43 @@ if($retorno == null || empty($retorno)){
                     <div class="anime__details__review">
                         <div class="section-title">
                             <h4>Comunidades de <?= $retorno["nome"]; ?></h4>
-
-                        <!-- </div>
-                        <div class="anime__review__item">
-                            <div class="anime__review__item__pic">
-                                <a href=anime-watching.html><img src="" alt=""></a>
+                            <br><br>
+                            <div class="row">
+                                <?php
+                                //comunidades
+                                require_once "../model/DAO/comunidadeDAO.php";
+                                $comunidadeConn = new comunidadeDAO();
+                                $comunidades = $comunidadeConn->listarComunidadesTema($idtema);
+                                foreach ($comunidades as $comunidade) {
+                                ?>
+                                    <div class="col-lg-4 col-md-6 col-sm-6">
+                                        <div class="product__item">
+                                            <a href="./comunidade.php?id=<?= $comunidade["idcomunidade"] ?>">
+                                                <div class="product__item__pic set-bg" data-setbg="<?= $comunidade["foto"] ?>">
+                                                </div>
+                                            </a>
+                                            <br>
+                                            <div class="product__item__text">
+                                                <h5><a href="./comunidade.php?id=<?= $comunidade["idcomunidade"] ?>"><?= $comunidade["nome"] ?></a></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php
+                                }
+                                ?>
                             </div>
-                            <div class="anime__review__item__text">
-                                <h6>$mensagem['remetente'] - <span>$mensagem['hora']</span></h6>
-                                <p>$mensagem['conteudo']</p>
-                            </div>
+                                <?php 
+                                if ($comunidades==null || $comunidades==0){ echo"<h2>".$retorno["nome"]." não possui comunidades ainda</h2>";}
+                                ?>
                         </div>
-
-                        <div class="anime__review__item">
-                            <div class="anime__review__item__pic">
-                                <a href=anime-watching.html><img src="img/anime/review-2.jpg" alt=""></a>
-                            </div>
-                            <div class="anime__review__item__text">
-                                <h6>Lewis Mann - <span>5 Hour ago</span></h6>
-                                <p>Finally it came out ages ago</p>
-                            </div>
-                        </div>
-                        <div class="anime__review__item">
-                            <div class="anime__review__item__pic">
-                                <a href=anime-watching.html><img src="img/anime/review-2.jpg" alt=""></a>
-                            </div>
-                            <div class="anime__review__item__text">
-                                <h6>Lewis Mann - <span>5 Hour ago</span></h6>
-                                <p>Finally it came out ages ago</p>
-                            </div>
-                        </div>
-                        <div class="anime__review__item">
-                            <div class="anime__review__item__pic">
-                                <a href=anime-watching.html><img src="img/anime/review-2.jpg" alt=""></a>
-                            </div>
-                            <div class="anime__review__item__text">
-                                <h6>Lewis Mann - <span>5 Hour ago</span></h6>
-                                <p>Finally it came out ages ago</p>
-                            </div>
-                        </div> -->
                     </div>
+
                 </div>
-
             </div>
-        </div>
     </section>
-    <!-- Anime Section End -->
-    <!-- 
-        <?php
-        // require_once "../model/DAO/chatDAO.php";
-        // $chatConn = new chatDAO();
-        // $retorno = $chatConn->exibirChat($idtema);
-        // foreach($retorno as $chat){
-        //     echo $chat["titulo"]."<br><br>";
-        // }
-        ?> 
--->
 
-        <?php require_once './footer.php' ?>
-        
+    <?php require_once './footer.php' ?>
+
 </body>
 
 </html>

@@ -26,6 +26,7 @@ session_start();
     <link rel="stylesheet" href="../css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="../css/style.css" type="text/css">
+    <link rel="icon" href="../img/favicon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -43,8 +44,8 @@ session_start();
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-left">
-                    <div class="normal__breadcrumb__text">
-                        <h2>Cadastro</h2>
+                    <div class="normal__breadcrumb__texto">
+                        <h2>Cadastrar novo usuário</h2>
                     </div>
                 </div>
                 <div class="col-lg-6">

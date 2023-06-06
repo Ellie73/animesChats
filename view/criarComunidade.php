@@ -34,6 +34,7 @@ if ($_SESSION['perfil'] != 'A' && $_SESSION['perfil'] != 'M') {
     <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="../css/style.css" type="text/css">
     <link rel="stylesheet" href="../css/cadastroTema.css">
+    <link rel="icon" href="../img/favicon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -51,7 +52,7 @@ if ($_SESSION['perfil'] != 'A' && $_SESSION['perfil'] != 'M') {
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-left">
-                    <div class="normal__breadcrumb__text">
+                    <div class="normal__breadcrumb__texto">
                         <h2>Criar uma nova comunidade</h2>
                     </div>
                 </div>
@@ -62,7 +63,7 @@ if ($_SESSION['perfil'] != 'A' && $_SESSION['perfil'] != 'M') {
                             <fieldset>
                                 <div class="input__item">
                                     <input type="text" name="nome" id="nome" class="inputUser" placeholder="Nome da comunidade" maxlength="100" required>
-
+                                    <span class="icon_pencil"></span>
                                 </div>
                                 <div class="inputBox">
                                     <textarea name="descricao" id="descricao" cols="80" rows="10" class="inputUser" placeholder="Descrição da comunidade..." maxlength="3000" required></textarea>
@@ -71,7 +72,7 @@ if ($_SESSION['perfil'] != 'A' && $_SESSION['perfil'] != 'M') {
                                 <br>
                                 <div>
                                     <select name="tema" id="tema" required>
-                                        <option value="Nenhum" selected>Nenhum</option>
+                                        <option value="0" selected>Nenhum</option>
                                         <?php
                                         require_once "../model/DAO/temaDAO.php";
                                         $temaConn = new temaDAO();
@@ -84,8 +85,7 @@ if ($_SESSION['perfil'] != 'A' && $_SESSION['perfil'] != 'M') {
                                         ?>
                                     </select>
                                 </div>
-                                <br><br>
-                                <h5>Escolha uma foto para sua comunidade:</h5>
+                                <br>
                                 <br>
                                 <div class="inputBox">
                                     <label class="picture" for="foto" tabIndex="0">

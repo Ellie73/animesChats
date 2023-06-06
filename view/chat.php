@@ -37,24 +37,22 @@
     <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="../css/style.css" type="text/css">
 </head>
+<body>
+
 <h1>Bem-vindo</h1>
 <input hidden id="chat" value="<?=$chat?>">
 	<div id="mensagens">  </div>
-	<form id="form-chat">
+	<form id="form-chat" class="form-chat">
 		<label for="mensagem">Mensagem:</label>
-		<input type="text" id="conteudo" name="conteudo">
+		<input type="text" id="conteudo" name="conteudo" autofocus>
     <input type="text" id="chat" name="chat" value="<?= $idchat ?>" hidden>
     <input type="text" id="remetente" name="remetente" value="<?= $_SESSION['idusuario'] ?>" hidden>
 		<button type="submit">Enviar</button>
 	</form>
-
 </body>
-
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../js/chat.js"></script>
 <script src="../js/enviarMensagem.js"></script>
+
 </html>
-
-
-
