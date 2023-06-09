@@ -52,11 +52,7 @@ if ($_SESSION['perfil'] != 'A' && $_SESSION['perfil'] != 'M') {
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-left">
-<<<<<<< HEAD
                     <div class="normal__breadcrumb__texto">
-=======
-                    <div class="normal__breadcrumb">
->>>>>>> ab5c3a1cf61766acac55cb8ada8c9194537e3e3b
                         <h2>Criar uma nova comunidade</h2>
                     </div>
                 </div>
@@ -72,8 +68,7 @@ if ($_SESSION['perfil'] != 'A' && $_SESSION['perfil'] != 'M') {
                                 <div class="inputBox">
                                     <textarea name="descricao" id="descricao" cols="80" rows="10" class="inputUser" placeholder="Descrição da comunidade..." maxlength="3000" required></textarea>
                                 </div>
-                                <br>
-                                <h5>Tema da comunidade </h5>
+                                <h5>Tema da comunidade: </h5>
                                 <br>
                                 <div>
                                     <select name="tema" id="tema" required>
@@ -90,12 +85,7 @@ if ($_SESSION['perfil'] != 'A' && $_SESSION['perfil'] != 'M') {
                                         ?>
                                     </select>
                                 </div>
-<<<<<<< HEAD
                                 <br>
-=======
-                                <br><br><br>
-                                <h5>Escolha uma foto para sua comunidade</h5>
->>>>>>> ab5c3a1cf61766acac55cb8ada8c9194537e3e3b
                                 <br>
                                 <div class="inputBox">
                                     <label class="picture" for="foto" tabIndex="0">

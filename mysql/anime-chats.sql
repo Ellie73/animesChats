@@ -1,17 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
-<<<<<<< HEAD
--- Tempo de geração: 06-Jun-2023 às 12:09
+-- Tempo de geração: 09-Jun-2023 às 14:07
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
-=======
--- Tempo de geração: 06/06/2023 às 05:00
--- Versão do servidor: 10.4.28-MariaDB
--- Versão do PHP: 8.2.4
->>>>>>> ab5c3a1cf61766acac55cb8ada8c9194537e3e3b
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,164 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
-<<<<<<< HEAD
--- Estrutura da tabela `avaliacao`
---
-
-CREATE TABLE `avaliacao` (
-  `idavaliacao` int(11) NOT NULL,
-  `idavaliador` int(11) NOT NULL,
-  `comentario` varchar(255) NOT NULL,
-  `nota` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `chat`
-=======
--- Estrutura para tabela `chat`
->>>>>>> ab5c3a1cf61766acac55cb8ada8c9194537e3e3b
---
-
-CREATE TABLE `chat` (
-  `idchat` int(11) NOT NULL,
-  `tema_comunidade` int(11) NOT NULL COMMENT 'foreign key',
-  `titulo` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `chat`
---
-
-INSERT INTO `chat` (`idchat`, `tema_comunidade`, `titulo`) VALUES
-(1, 3, 'Jogos'),
-(2, 3, 'mangá 2015'),
-(3, 3, 'anime'),
-(4, 3, 'anime2'),
-(5, 2, 'boruto é fraco'),
-(6, 2, 'Jogos');
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `comunidade`
---
-
-CREATE TABLE `comunidade` (
-  `idcomunidade` int(11) NOT NULL,
-  `idcriador` int(11) NOT NULL COMMENT 'foreign key',
-  `nome` varchar(100) NOT NULL,
-  `foto` varchar(255) NOT NULL,
-  `situacao` varchar(1) NOT NULL,
-  `descricao` varchar(3000) NOT NULL,
-  `idtema` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `comunidade`
---
-
-INSERT INTO `comunidade` (`idcomunidade`, `idcriador`, `nome`, `foto`, `situacao`, `descricao`, `idtema`) VALUES
-(2, 7, 'Fãs de Boruto', '../img/comunidades/trend-1.jpg', '1', 'Bem-vindo à nossa comunidade dedicada aos fãs de Boruto! Aqui você encontrará um espaço perfeito para se conectar com outros entusiastas do universo ninja e compartilhar sua paixão pelo mundo de Boruto.\r\n\r\nNossa comunidade é um local animado, repleto de discussões sobre o mangá, anime, personagens e teorias emocionantes. Junte-se a nós para explorar os eventos da nova geração de ninjas em Konoha, liderada por Boruto Uzumaki, filho do lendário Naruto.\r\n\r\nCompartilhe suas opiniões sobre as reviravoltas da trama, as habilidades únicas dos personagens e as conexões com a série predecessora, Naruto. Troque ideias sobre os arcos narrativos, lutas épicas, desenvolvimento dos personagens e a evolução do universo ninja como um todo.\r\n\r\nAlém disso, aqui você encontrará informações atualizadas sobre lançamentos de episódios, capítulos do mangá, notícias e eventos relacionados a Boruto. Fique por dentro de todas as novidades e esteja preparado para participar de conversas emocionantes e teorias envolventes.\r\n\r\nNossa comunidade valoriza o respeito e a diversidade de opiniões, proporcionando um ambiente acolhedor para todos os fãs. Todos são bem-vindos para expressar sua paixão por Boruto, compartilhar suas teorias, criar fanarts, cosplays e interagir com outros membros.\r\n\r\nEstamos entusiasmados por tê-lo aqui! Junte-se à nossa comunidade de fãs de Boruto e mergulhe em um mundo repleto de aventura, emoção e camaradagem ninja.', 2);
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `denuncia`
---
-
-CREATE TABLE `denuncia` (
-  `iddenuncia` int(11) NOT NULL,
-  `iddenunciante` int(11) NOT NULL,
-  `boletim` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `membro`
---
-
-CREATE TABLE `membro` (
-  `idmembro` int(11) NOT NULL,
-  `idcomunidade` int(11) NOT NULL COMMENT 'foreign key',
-  `idusuario` int(11) NOT NULL COMMENT 'foreign key',
-  `tipo` varchar(100) NOT NULL,
-  `situacao_membro` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `mensagem`
---
-
-CREATE TABLE `mensagem` (
-  `idmensagem` int(11) NOT NULL,
-  `conteudo` varchar(255) NOT NULL,
-  `remetente` int(11) NOT NULL COMMENT 'foreign key',
-  `chat` int(11) NOT NULL COMMENT 'foreign key',
-  `data` date NOT NULL,
-  `hora` time NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `mensagem`
---
-
-INSERT INTO `mensagem` (`idmensagem`, `conteudo`, `remetente`, `chat`, `data`, `hora`) VALUES
-(1, 'aaaaaaaaaaaaa', 7, 1, '2023-05-02', '10:27:33'),
-(2, 'bbbbbbbb', 7, 1, '2023-05-01', '16:33:17'),
-(3, 'cccccccccc', 7, 1, '2023-05-02', '03:41:34'),
-(4, 'al', 7, 5, '2023-05-30', '12:33:11'),
-(5, 'oi', 7, 5, '2023-05-30', '12:49:59'),
-(6, 'como esta?', 7, 5, '2023-05-30', '13:20:28'),
-(7, 'oi', 7, 2, '2023-05-30', '13:25:04'),
-(8, 'como vai?', 7, 2, '2023-05-30', '13:27:18'),
-(9, 'voce', 7, 2, '2023-05-30', '13:27:22'),
-(10, 'oi', 7, 2, '2023-05-30', '13:28:09'),
-(11, 'oi', 7, 5, '2023-05-30', '15:05:18'),
-(12, 'oi', 7, 5, '2023-06-04', '09:43:58'),
-(13, 'bom dia', 7, 5, '2023-06-04', '09:46:48'),
-(14, 'oi', 7, 6, '2023-06-04', '09:46:57'),
-(15, 'a', 7, 1, '2023-06-04', '09:59:26'),
-(16, 'a', 7, 1, '2023-06-04', '09:59:27'),
-(17, 'a', 7, 1, '2023-06-04', '09:59:27'),
-(18, 'a', 7, 1, '2023-06-04', '09:59:28');
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `moderador`
---
-
-CREATE TABLE `moderador` (
-  `idmoderador` int(11) NOT NULL,
-  `idusuario` int(11) NOT NULL COMMENT 'foreign key',
-  `periodo` int(11) NOT NULL,
-  `valor` decimal(11,2) NOT NULL,
-  `data_assinatura` date NOT NULL,
-  `meio_pagamento` varchar(1) NOT NULL,
-  `cpf` int(11) DEFAULT NULL,
-  `numero_cartao` int(16) DEFAULT NULL,
-  `nome_cartao` varchar(100) DEFAULT NULL,
-  `cod_cvv` varchar(3) DEFAULT NULL,
-  `vencimento_cartao` date DEFAULT NULL,
-  `chave_pix` varchar(200) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `moderador`
---
-
-INSERT INTO `moderador` (`idmoderador`, `idusuario`, `periodo`, `valor`, `data_assinatura`, `meio_pagamento`, `cpf`, `numero_cartao`, `nome_cartao`, `cod_cvv`, `vencimento_cartao`, `chave_pix`) VALUES
-(3, 14, 12, 15.92, '2023-05-28', 'C', 2147483647, 2147483647, 'Helen', '123', '2026-11-01', NULL);
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `tema`
+-- Estrutura da tabela `tema`
 --
 
 CREATE TABLE `tema` (
@@ -200,10 +37,10 @@ CREATE TABLE `tema` (
   `estado` varchar(50) NOT NULL,
   `tipotema` varchar(50) NOT NULL,
   `fototema` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Despejando dados para a tabela `tema`
+-- Extraindo dados da tabela `tema`
 --
 
 INSERT INTO `tema` (`idtema`, `nome`, `sinopse`, `genero`, `ano_estreia`, `quantidade`, `estado`, `tipotema`, `fototema`) VALUES
@@ -219,9 +56,6 @@ INSERT INTO `tema` (`idtema`, `nome`, `sinopse`, `genero`, `ano_estreia`, `quant
 (12, 'The Quintessential Quintuplets', 'Uesugi Fuutarou, um estudante do segundo ano do colegial que vem de uma família pobre, recebe uma irrecusável proposta para trabalhar como tutor... e descobre que suas pupilas são suas colegas de classe! E pra piorar, são gêmeas quíntuplas... Todas lindíssimas, mas com péssimas notas e um ódio mortal pelos estudos! Sua primeira missão será ganhar a confiança das garotas?! Todo dia é dia de festa nesta comédia romântica 500% adorável envolvendo as irmãs gêmeas da casa Nakano!', 'Comédia, Romance', 2019, 24, 'Em andamento', 'Anime', '../img/temas/MV5BZjg2MmRkZWUtY2QxNS00ZTdiLWE0ODItOGQyM2Y1ZDlkNjlmXkEyXkFqcGdeQXVyNTgyNTA4MjM@._V1_FMjpg_UX1000_.jpg'),
 (13, 'Yamada-kun to Lv999 no Koi wo Suru', 'Akane Kinoshita pegou seu namorado tendo um caso com uma garota de um jogo online e ficou completamente arrasada. Ela tenta desestressar matando uns bichos no jogo, e acaba desabafando sobre seu caso com Yamada, um jogador de sua guilda — mas ele responde com um \"tô nem aí\" curto e grosso. Entretanto, quando Akane decide invadir um encontro offline do jogo para se vingar de seu ex-namorado, ela ouve essas palavras marcantes ao vivo, e seu coração bate mais forte ao conhecer Yamada ao vivo...', 'Comédia, Romance', 2018, 93, 'Em andamento', 'Mangá', '../img/temas/capa.jpg'),
 (14, 'Mashle (Mashle: Magic and Muscles)', 'Este é um mundo de magia. Este é um mundo em que a magia é usada casualmente por todos. Em uma floresta profunda e escura neste mundo de magia, há um menino que está malhando obstinadamente. Seu nome é Mash Burnedead, e ele tem um segredo. Ele não pode usar magia. Tudo o que ele queria era viver uma vida tranquila com sua família, mas de repente as pessoas começaram a tentar matá-lo um dia e ele de alguma forma se viu matriculado na Escola de Magia. Lá, ele pretende se tornar um “Divino Visionário”, a elite da elite. Seus músculos definidos funcionarão contra os melhores e mais brilhantes do mundo mágico? A cortina sobe nesta fantasia mágica fora de ordem em que o poder de ser levantado esmaga qualquer feitiço!', 'Shounen, Comédia, Fantasia', 2020, 157, 'Em andamento', 'Mangá', '../img/temas/MV5BM2M1Yzc5OTMtNWQxYS00NTg5LThiYjQtODRhZGMwODVkNjAyXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg'),
-<<<<<<< HEAD
-(15, ' Kaguya-sama: Love Is War', 'Veio de boa família? Sim! Tem uma personalidade promissora? Sim!\r\nTodos os jovens de elite com futuros brilhantes acabam indo parar na Academia Shuchiin.\r\nE ambos os líderes do conselho estudantil, Kaguya Shinomiya e Miyuki Shirogane, estão apaixonados um pelo outro.\r\nMas seis meses se passaram e nada aconteceu?!\r\nAmbos são orgulhosos demais para confessar seu amor, e agora ambos estão brigando pra ver quem faz o outro se declarar primeiro!\r\nA parte mais divertida do amor é o jogo da conquista!\r\nUma nova comédia romântica, sobre as batalhas intelectuais de dois estudantes de elite apaixonados.', 'Seinen, Comédia, Romance', 2015, 281, 'Finalizado', 'Mangá', '../img/temas/Capturar3.JPG');
-=======
 (15, ' Kaguya-sama: Love Is War', 'Veio de boa família? Sim! Tem uma personalidade promissora? Sim!\r\nTodos os jovens de elite com futuros brilhantes acabam indo parar na Academia Shuchiin.\r\nE ambos os líderes do conselho estudantil, Kaguya Shinomiya e Miyuki Shirogane, estão apaixonados um pelo outro.\r\nMas seis meses se passaram e nada aconteceu?!\r\nAmbos são orgulhosos demais para confessar seu amor, e agora ambos estão brigando pra ver quem faz o outro se declarar primeiro!\r\nA parte mais divertida do amor é o jogo da conquista!\r\nUma nova comédia romântica, sobre as batalhas intelectuais de dois estudantes de elite apaixonados.', 'Seinen, Comédia, Romance', 2015, 281, 'Finalizado', 'Mangá', '../img/temas/Capturar3.JPG'),
 (16, 'True Beauty', 'Depois de assistir a vídeos de beleza on-line, uma tímida fã de quadrinhos domina a arte da maquiagem e vê sua posição social disparar ao se tornar a garota mais bonita da escola da noite para o dia. Mas seu status de elite será de curta duração? Por quanto tempo ela pode manter seu verdadeiro eu em segredo? E aquele garoto fofo que conhece o segredo dela?', 'Shoujo, Comédia, Romance, Vida Escolar', 2018, 115, 'Em andamento', 'Webtoon', '../img/temas/webtoon2.jpg'),
 (17, 'Advogada extraordinária Woo', 'A brilhante Woo Young Woo, uma advogada de 27 anos com Síndrome de Asperger, devido ao seu alto QI de 164, memória impressionante e processo de pensamento criativo, formou-se como a melhor de sua classe na prestigiosa Universidade Nacional de Seul, tanto para faculdade de direito quanto para a escola. No entanto, ela ainda se encontra lutando quando se trata de interações sociais.', 'Josei, Drama, Romance', 2022, 21, 'Em andamento', 'Webtoon', '../img/temas/webtoon.jpg'),
@@ -233,167 +67,57 @@ INSERT INTO `tema` (`idtema`, `nome`, `sinopse`, `genero`, `ano_estreia`, `quant
 (23, 'Pokémon', 'Enquanto viaja pelas diversas cidades de uma região para cumprir seu objetivo, Ash tem a oportunidade de capturar novos Pokémon, treiná-los para ajudá-lo nas lutas de ginásio e ajudar a preencher a PokéDex com todos os Pokémon nos quais já viu. Além disso, ele eventualmente enfrenta seus rivais em combate à Equipe Rocket, uma equipe especializada em roubar Pokémon poderosos.', 'Shounen, Aventura, Comédia', 1997, 902, 'Finalizado', 'Anime', '../img/temas/pokemon-legendado-todos-os-ep.jpg'),
 (24, 'Yu-Gi-Oh!', 'O estudante Yugi Mutou passou a maior parte de seu tempo sozinho jogando jogos – até que ele resolveu o Enigma do Milênio, um artefato egípcio misterioso! Possuída pelo quebra-cabeça, Yugi se torna o Yu-Gi-Oh, o Rei dos Jogos, e os enfrentará os desafios dos Jogos das Sombras – Jogos estranhos com grandes apostas e altos riscos, como apostar a sua alma e a alma de seus queridos amigos! O mangá contém novas histórias não vistas no anime, incluindo a origem de Yugi e seus amigos!', 'Shounen, Ação, Aventura, Fantasia, Sobrenatural', 1996, 343, 'Finalizado', 'Mangá', '../img/temas/Yugioh_-_The_Gospel_of_Truth.jpg'),
 (25, 'Bleach', 'Kurosaki Ichigo é um estudante de 15 anos que tem uma estranha capacidade de ver, tocar e falar com espíritos de pessoas mortas. Logo que o Shinigami (Deus da Morte) Kuchiki Rukia toma conhecimento dos poderes dele ela decide investigá-lo, e acaba em uma luta com um Hollow que foi atraído pelo forte poder espiritual de Ichigo, antes de ser derrotada pela criatura, Rukia passa seus poderes a Ichigo, o qual se torna um Shinigami, e após derrotar o Hollow ingressa em uma jornada para proteger os humanos e os espíritos da ameaça dos Hollows.', 'Shounen, Ação, Aventura, Comédia, Sobrenatural', 2004, 686, 'Finalizado', 'Mangá', '../img/temas/bleach.jpg'),
-(26, 'Demon Slayer', 'O mangá conta a história de Tanjiro, o filho mais velho de uma família que é massacrada por um demônio e, a única sobrevivente do incidente foi umas das suas irmãs, que por causa do massacre acaba se transformando em um demônio. Então, o protagonista, Tanjiro, sai em uma jornada para tentar achar uma ”cura” para a sua irmã.', 'Ação, Aventura, Fantasia, Luta', 2016, 205, 'Finalizado', 'Mangá', '../img/temas/kimetsu_6jp8.jpg');
->>>>>>> ab5c3a1cf61766acac55cb8ada8c9194537e3e3b
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `usuario`
---
-
-CREATE TABLE `usuario` (
-  `id_usuario` int(11) NOT NULL,
-  `nome` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `senha` varchar(100) NOT NULL,
-  `estado` varchar(100) NOT NULL,
-  `cidade` varchar(100) NOT NULL,
-  `genero` varchar(1) NOT NULL,
-  `perfil` varchar(1) NOT NULL,
-  `telefone` varchar(17) NOT NULL,
-  `foto` varchar(255) DEFAULT NULL,
-  `nascimento` date NOT NULL,
-  `situacaoUsuario` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `usuario`
---
-
-INSERT INTO `usuario` (`id_usuario`, `nome`, `email`, `senha`, `estado`, `cidade`, `genero`, `perfil`, `telefone`, `foto`, `nascimento`, `situacaoUsuario`) VALUES
-(7, 'Daniel Souza de Lima', 'danielsouzalimabsb@gmail.com', 'e8d95a51f3af4a3b134bf6bb680a213a', 'Distrito Federal', 'Samambaia Sul', 'M', 'A', '61986175242', '../img/usuarios/3e69b9aa-0fc7-4d11-b79b-a879f3e8049d.jpeg', '2005-05-19', 1),
-(13, 'Janaina', 'janaina@gmail.com', 'e8d95a51f3af4a3b134bf6bb680a213a', 'Distrito Federal', 'Ceilandia', 'F', 'U', '61986456251', '../img/usuarios/user.png', '2023-05-17', 1),
-(14, 'Helen Eloísia', 'helen@gmail.com', 'e8d95a51f3af4a3b134bf6bb680a213a', 'Distrito Federal', 'Ceilandia', 'F', 'M', '(61) 98617-5242', '../img/usuarios/user.png', '2005-01-31', 1);
+(26, 'Demon Slayer', 'O mangá conta a história de Tanjiro, o filho mais velho de uma família que é massacrada por um demônio e, a única sobrevivente do incidente foi umas das suas irmãs, que por causa do massacre acaba se transformando em um demônio. Então, o protagonista, Tanjiro, sai em uma jornada para tentar achar uma ”cura” para a sua irmã.', 'Ação, Aventura, Fantasia, Luta', 2016, 205, 'Finalizado', 'Mangá', '../img/temas/kimetsu_6jp8.jpg'),
+(27, 'Suas Mentiras Eternas', 'Rosén Walker foi presa por assassinar o próprio marido aos 17 anos. Após destruir o orgulho do Exército Imperial ao fugir duas vezes da prisão, ela é capturada novamente um ano após sua última fuga e é sentenciada a prisão perpétua. Em um navio a caminho da Ilha Monte, onde apenas os piores prisioneiros são levados, outra fuga é planejada… “Qual é o seu crime?” “Sou inocente…” “É raro um prisioneiro admitir honestamente o crime que cometeu.” Ian Connor, um ideologista firme que está encarregado do transporte dela, não deixa nenhuma brecha. “Não diga nada inútil, apenas responda o que perguntei.” Rosén, a melhor do império em fugir de prisões, e Ian Connor, um jovem herói de guerra amado por todo o império. Suas histórias se desenrolam no navio a caminho da pior prisão do planeta! Agora você é o juiz: Rosén Walker é uma mentirosa? Ou não?', 'Shoujo, Drama, Fantasia, Romance', 2021, 66, 'Em andamento', 'Manhwa', '../img/temas/yel.jpg'),
+(28, 'Bastard', '\"Tem um serial killer em minha casa.\" Bastard é uma série thriller que conta a história de um garoto e seu pai, que tem um relacionamento não de pai e filho, mas de assassino e cúmplice.', 'Psicológico, Drama, Mistério', 2015, 93, 'Finalizado', 'Manhwa', '../img/temas/205549.jpg'),
+(29, 'Noblesse', 'Por 820 anos ele esteve adormecido sem o conhecimento do avanço e progresso científico da humanidade. A terra que uma vez ele conhecia se tornou um lugar desconhecido com nova tecnologia, atitudes e estilos de vida. Depois de despertar, Cadis Etrama Di Raizel (ou Rai), procura se familiarizar com esta área. Ele encontra seu leal servo, Frankenstein, que atualmente é o diretor de uma escola sul coreana. Rai decide que esta escola é o local perfeito para ajudá-lo a aprender sobre o mundo moderno. Se matricula e começa a se associar com um grupo de estudantes amigáveis a fim de se enturmar. Mas este novo mundo não é mais seguro do que o antigo, e o digno e inepto tecnologicamente Rai se encontra preso em aventuras tanto ridículas quanto perigosas.', 'Shounen, Aventura, Drama, Sobrenatural, ', 2007, 544, 'Finalizado', 'Manhwa', '../img/temas/1b33195fbe69f9cfbe74585e97ff6eb4.jpg'),
+(30, 'The Beginning After The End', 'Rei Grey conquistou força, riquezas e prestígio sem iguais em um mundo governado pela habilidade marcial. Entretanto, a solidão acompanha de perto aqueles de grande poder. Por detrás da máscara de um glorioso e poderoso rei, reside a casca vazia de um homem destituído de propósito e vontade. Renascido em um novo mundo repleto de magia e monstros, o Rei Grey terá a chance de refazer sua vida. Corrigir os erros do passado não será seu único desafio, pois um perigo oculto cresce a cada instante, ameaçando destruir tudo que ele trabalhou para criar, o fazendo questionar a verdadeira razão de ter recebido uma nova vida…', 'Ação, Artes Marciais, Drama, Fantasia', 2020, 175, 'Em andamento', 'Manhwa', '../img/temas/the-beginning-after-the-end-novel-chapter-1-chapter-420.jpg'),
+(31, 'Tomb Raider King', 'De repente, tumbas misteriosas começaram a aparecer em todo o mundo com artefatos especiais que concedem habilidades mágicas ao soldador. Logo a corrida entre os humanos para coletar os artefatos e pisar nos fracos como as baratas começaram.\r\n\r\nJoo Heon Suh, uma escavadeira, e explorador são traídos por seus companheiros que o deixaram morrer. Quase à beira da morte, ele é subitamente transportado 15 anos no passado enquanto retém suas memórias.', 'Ação, Aventura, Fantasia, Sobrenatural', 2020, 411, 'Em andamento', 'Manhwa', '../img/temas/Capturar4.JPG'),
+(32, 'Second Life Ranker ', 'Cha Yeon Woo decidiu escalar uma torre misteriosa depois que seu irmão gêmeo é traído por seus companheiros e morto. Assim, para descobrir o mistério por trás da morte de seu irmão e vingar ele tenta escalar o Obelisco.\r\nÉ a torre de Deus Sol composta por 100 andares. Cada andar é governado por demônios e às vezes deuses. Jogadores de diferentes dimensões e universo lutam e sobem a torre para alcançar o ápice, pois diz-se que uma pessoa que conquistou esta torre se tornará o próprio Deus.', 'Ação, Aventura, Fantasia', 2019, 158, 'Em andamento', 'Manhwa', '../img/temas/Capturar5.JPG'),
+(33, 'The Last Human', 'Zuo Tian Chen é o último humano vivo em uma cidade infestada de zumbis. Em seus momentos finais, ele acorda milagrosamente em sua sala de aula 10 anos no passado exatamente um dia antes da queda do meteoro que aniquilou a humanidade.\r\n\r\nMesmo sendo um adolescente fraco, com todo conhecimento que possui ele irá salvar as pessoas importantes que perdeu, e mudará seu destino.', 'Aventura, Terror, Drama, Apocalipse', 2018, 510, 'Em andamento', 'Manhua', '../img/temas/59820872.jpg'),
+(34, 'Star Martial God Technique', 'No mundo existem 12 caminhos para subir a Torre de Deus, e contam as lendas que esse caminhos levam a lendária estrada da imortalidade. A fim de proteger sua família, Ye Xin He participa da prova seletiva da Academia Estrela Celestial.\r\n\r\nYe Xin He pertence a Família Pena Verde, uma ramificação da Família Lua Escura. Por serem vassalos costumam ser humilhados e passar necessidades na época de escassez. Por isso o jovem quer se tornar forte e ajudar sua família a prosperar. Sendo um raro usuário da técnica marcial da estrela, Ye Xin He apresenta grande potencial dentro da academia sendo aclamado como um gênio o que é muito bom para seu futuro. Mas também chama atenção de muitas pessoas mal intencionadas. ', 'Ação, Aventura, Sobrenatural, Romance', 2016, 607, 'Em andamento', 'Manhua', '../img/temas/Capturar6.JPG'),
+(35, 'July Found by Chance', 'O que você faria se descobrisse que na verdade era um personagem de uma história em quadrinhos? E um personagem extra em cima disso? Mude o curso da história, obviamente!', 'Drama, Escolar, Romance, Sobrenatural', 2018, 53, 'Em andamento', 'Webtoon', '../img/temas/44649148.jpg'),
+(36, 'Sono Bisque Doll wa Koi wo Suru', 'Wakana Gojou é um garoto de quinze anos que foi socialmente traumatizado no passado devido a suas paixões. Aquele incidente deixou uma marca nele que o fez ser um recluso social. Até que um dia ele teve um encontro com Kitagawa, que é um gyaru sociável, que é o completo oposto dele. Eles logo compartilham suas paixões uns com os outros, o que leva a um relacionamento estranho.', 'Romance, Seinen, Slice of Life, Vida Escolar', 2018, 91, 'Em andamento', 'Mangá', '../img/temas/Sono_Bisque_Doll_wa_Koi_o_Suru.jpg'),
+(37, 'Tomo-chan Is a Girl!', 'Aizawa Tomo cresceu em um dojo de karatê e tem vivido como uma tomboy até o ensino médio. Como resultado, seu amigo/interesse amoroso de infância, Kubota Junichirou, não a trata como uma garota. Agora... como fazer com que ele a veja como uma garota? Hmm... batê-lo até que entenda?', 'Comédia, Escolar, Romance', 2015, 954, 'Finalizado', 'Mangá', '../img/temas/tomo-chan_.jpg'),
+(38, 'Hunter X Hunter', 'Gon pode ser um garoto do campo, mas tem grandes aspirações. Apesar dos protestos de sua tia Mito, Gon decide seguir os passos de seu pai e se tornar um caçador lendário. Os aspirantes a Hunter começam sua jornada em um navio agitado pela tempestade, onde Gon conhece Leorio e Kurapika, os únicos outros candidatos que não são devastados por ataques de enjoo. Tendo sobrevivido aos terrores do alto mar, Gon e seus companheiros agora precisam provar seu valor em uma variedade de testes para encontrar o indescritível Exam Hall. E quando eles chegarem lá, eles vão sair vivos...?', 'Artes marciais, Aventura, Fantasia', 1998, 400, 'Em andamento', 'Mangá', '../img/temas/hunter.jpg'),
+(39, 'Slam Dunk', 'Hanamichi Sakuragi é um colegial delinquente de topete ruivo, cansado de tomar fora das garotas que preferem os esportistas! Mas a sua vida começa a mudar quando se apaixona por Haruko, que o convida a jogar basquete no time da escola! Sakuragi consegue entrar no time, e agora irá encarar muitos desafios com a equipe do colégio Shohoku no campeonato nacional.', 'Comédia, Drama, Escolar, Esportes', 1990, 276, 'Finalizado', 'Mangá', '../img/temas/Slam_Dunk.jpg'),
+(40, 'Cheese in the Trap', 'Ao voltar à faculdade depois de uma pausa de um ano, Hong Seol, uma estudante esforçada, sem querer acaba tendo problemas com um cara perfeito, o suspeito, Jung Yu. A partir disso, sua vida começa a ficar cheia de problemas e Seol tinha quase certeza de que tudo era culpa de Jung Yu. Então, por que de repente ele está sendo tão amigável um ano mais tarde?', 'Comédia, Drama, Romance', 2010, 300, 'Finalizado', 'Manhwa', '../img/temas/cheese.jpg'),
+(41, 'Tower Of God', '“O que você deseja? Dinheiro e riqueza? Honra e orgulho? Autoridade e poder? Vingança? Ou algo que transcende a todos eles? O que quer que você deseje – isso está aqui.”\r\nBam, que ficou sozinho a vida inteira entrou na torre para perseguir sua única amiga, Rachel, mas como ele sobreviverá sem ter nenhuma força ou poder especial?', 'Ação, Aventura, Fantasia, Ficção', 2010, 550, 'Em andamento', 'Manhwa', '../img/temas/tower.jpg'),
+(42, 'The God of High School', 'Enquanto uma ilha está quase desaparecendo da face da terra, uma organização misteriosa está enviando convites de um torneio para todos os lutadores habilidosos do mundo. Se você ganhar, poderá ter o que quiser. Eles estão recrutando apenas os melhores para lutar contra os melhores e reivindicar o título de The God of High School!', 'Ação, Aventura, Comédia, Fantasia', 2011, 560, 'Em andamento', 'Manhwa', '../img/temas/The_God_of_High_School.jpg'),
+(43, 'Reverse Villain', 'Jung-Woo é a personificação do mal e tem como sonho um dia ser poderoso o bastante para conquistar todo o Murim, mas é impedido por Shin-Ryong, o seu arqui-inimigo. E, mais uma vez, Jung-Woo é vencido pelo seu nêmesis retornando ao ciclo de reencarnações na qual está preso. Na sua sexta reencarnação, Jung-Woo é enviado para os tempos modernos, onde ele decide se preparar da melhor forma possível para enfrentar o seu arqui-inimigo e não ser derrotado mais uma vez.', 'Ação, Comédia, Harem, Isekai', 2019, 110, 'Finalizado', 'Manhwa', '../img/temas/thumbnail.jpg'),
+(44, 'Omniscient Reader', '“Esse é um desenrolar que eu já conheço”. No momento em que pensei isso, o mundo foi destruído e um novo universo surgiu. A nova vida de um leitor comum começa no mundo de uma novel, a novel que só ele terminou.', 'Aventura, Drama, Fantasia, Psicológico, Sobrenatural', 2020, 161, 'Em andamento', 'Manhwa', '../img/temas/capa1.jpg'),
+(45, 'Fights Break Sphere', 'Em uma terra onde não há magia, uma terra onde os fortes fazem as leis e os fracos tem que obedecer, uma terra cheia de tesouros fascinantes e de uma beleza indescritível, mas que também está preenchida com perigos inimagináveis. Xiao Yan, que mostrou ter um talento nunca visto em décadas, de repente perdeu tudo há 3 anos – seus poderes, ', 'Ação, Sobrenatural, Romance, Comédia', 2018, 400, 'Em andamento', 'Manhua', '../img/temas/fights-break-sphere-manhua.jpg'),
+(46, 'Feng Qi Cang Lan', 'XiaoWan, o melhor jogador do jogo de realidade virtual Cang Lan, é empurrado de um penhasco por um desgraçado do mal. Em vez de morrer, ela acaba em outro mundo onde as artes marciais e a essência espiritual determinam o destino de alguém. XiaoWan, que foi considerado inútil por todas as pessoas neste mundo, não levará seu destino como é! Ela será capaz de se tornar a melhor do mundo também? Vamos ver!', ' Fantasia, Romance, Sobrenatural', 2013, 330, 'Em andamento', 'Manhua', '../img/temas/feng-qi-cang-lan.jpg'),
+(47, 'I Am Han Sanqian', 'Já faz 3 anos desde que Han Sanqian entrou pra família Zuo Su e foi taxado pelos seus membros como um genro lixo. Para evitar que sua esposa Su Yingxia seja humilhada pelos outros, Han Sanqian trabalhou em segredo para se tornar um super genro e se preparar para devolver na mesma moeda o que fizeram com sua esposa.', 'Drama, Romance, Shounen, Sobrenatural', 2020, 115, 'Em andamento', 'Manhua', '../img/temas/5fe640c1109ce_capa.jpg'),
+(48, 'Revenge of a Fierce Princess', 'Ela era poderosa e tinha artes marciais incomparáveis em sua vida anterior, mas foi violada e difamada e isso resultou em sua morte. Depois do seu renascimento, prometeu se vingar...', 'Ação, Drama, Fantasia, Histórico, Romance', 2018, 181, 'Em andamento', 'Manhua', '../img/temas/external_cover.jpg'),
+(49, 'Eternal Club', 'Chen Li passou seu tempo trabalhando na Cidade Mo, vagabundeando, sem nenhuma esperança à vista… Ele queria mudar, e se tornar um grande sucesso, ter dinheiro, ter poder, ter mulheres, mas… ele era apenas uma pessoa medíocre! Numa noite chuvosa, Chen Li adquire uma habilidade especial, ele podia comprar e vender “vida útil”, das pessoas. Ele podia realizar parcialmente “aceleração e desaceleração do tempo”! Assim, Chen Li se propôs a mudar seu destino contra as probabilidades, rumo ao trono soberano dos céus, e a construir o “Eternal Club”!', 'Ação, Drama, Fantasia, Sobrenatural', 2021, 191, 'Em andamento', 'Manhua', '../img/temas/EternalClubIcon.jpg'),
+(50, 'Martial Peak', 'A jornada para o Pico Marcial é algo longo e solitário. Indo de encontro com a adversidade, você deve sobreviver e permanecer vivo. Apenas aqueles que superarem os limites continuarão a jornada rumo ao objetivo de se tornar o mais forte. A Sky Tower testa seus discípulos de maneiras bem complexas para esta jornada. Um dia, o menosprezado Yang Kai conseguiu obter um livro negro, fazendo-o tomar rumo ao pico do mundo marcial!', ' Ação, Aventura, Comédia, Fantasia, Histórico, Romance', 2020, 2024, 'Em andamento', 'Manhua', '../img/temas/martial-peak-ch-1-6.jpg'),
+(51, 'Grandmaster of Demonic Cultivation: Mo Dao Zu Shi', 'Temido e odiado por suas habilidades sinistras, Wei Wuxian - o grande mestre do cultivo demoníaco - foi levado à morte quando os clãs mais poderosos se uniram para destruí-lo.\r\n\r\nTreze anos depois, Wei Wuxian renasce. Convocado por um jovem que sacrificou sua alma em um ritual proibido, Wei Wuxian agora é obrigado a buscar vingança em nome do estranho ou arriscar a destruição de sua própria alma. Mas quando uma entidade maligna surge, um rosto familiar do passado de Wei Wuxian aparece repentinamente em meio ao caos - um poderoso cultivador que ajudará a iluminar as verdades sombrias que os cercam.', 'Xianxia, Mistério, Fantasia, Yaoi', 2016, 126, 'Finalizado', 'Manhua', '../img/temas/51+msxH4qWL._SX353_BO1,204,203,200_.jpg'),
+(52, 'Heaven Official’s Blessing', 'Por você, eu me tornarei invencível! \"Você ouviu? Aquele lixo de Oficial dos Céus está tendo um caso com o maioral número um do Reino Fantasma!\" Xie Lian era o Príncipe da Coroa do reino de Xian Le; amado pelos cidadãos e o queridinho do mundo. Sem surpresa, ele ascendeu para os céus em uma idade muito jovem, porém quem diria que depois de sua ascensão, aquele que uma vez foi adorado por milhões e conhecido e admirado por todos, cairia tão abruptamente, completamente desonrado, se tornando a Chacota dos Três Reinos. Oitocentos anos após sua queda, Xie Lian ascendeu novamente e tumultuosamente. Desta vez, ele era um deus sem qualquer devoto ou mérito. Parece que com o tumulto de sua re-ascensão, ele chamou atenção de um temido Rei Fantasma, o maioral que controlava todos os fantasmas e o mais temido pelos céus. Mas por que um mero deus falido atrairia a atenção de alguém como um famoso e temido Rei Fantasma?', '  Ação, Comédia, Drama, Fantasia, Mistério, Romance, Yaoi', 2019, 89, 'Em andamento', 'Manhua', '../img/temas/817zhtRO6JL._AC_UF1000,1000_QL80_.jpg'),
+(53, 'Song of the Long March', 'Pouco depois de a astrologia prever que a destruição cairá sobre a Dinastia Tang, um golpe de estado liderado pelo próprio irmão do príncipe herdeiro Li o mata, sua esposa e filhos. A filha de Li, a princesa Yongning, consegue escapar, mas logo é declarada morta ao lado de sua família. Cheia de ira, a princesa jura vingá-los ao assumir a identidade de um jovem, Li Chang Ge, e se mudar para a província de Shou para alcançar seus objetivos.\r\n\r\nLi Chang Ge usa sua inteligência para ganhar a confiança do imperador Shou e rapidamente sobe na hierarquia militar como uma estrategista brilhante. Desenhado de forma cativante, Canção da Longa Marcha retrata a jornada adolescente da menina mal-humorada em direção a inúmeras aventuras desconhecidas, camaradagem fiel, bem como inimizade formidável que a espera ao longo do caminho.', 'Ação, Aventura, Drama, Histórico', 2011, 53, 'Em andamento', 'Manhua', '../img/temas/choukakou-v01-001.jpg'),
+(54, ' Lookism', 'Em uma sociedade onde aparência significa tudo, Park Hyumg Suk, pequeno, gordo e não atraente, sofre bullying diariamente, mas nunca falou a sua mãe super trabalhadeira sobre isso. Um dia, quando sua mãe o vê sofrendo bullying, ela o envia para uma escola melhor. Mas infelizmente, ele descobre que sua nova escola é tão cruel quanto a anterior. Uma noite, ele acorda e descobre que de repente ficou alto, forte e incrivelmente bonito. Quando volta para a cama e encontra o seu corpo antigo corpo dormindo. Ele agora tem uma mente e dois corpos. Toda vez que um dorme, o outro corpo acorda, e toda vez que um acorda o outro dorme. Com medo de sofrer bullying novamente na nova escola, ele decide usar o seu novo corpo para ir à escola. Mas como será isso? Será que ele finalmente será aceito?', 'Ação, Comédia, Drama, Ecchi, Escolar, Sobrenatural', 2014, 452, 'Em andamento', 'Webtoon', '../img/temas/lookism.png'),
+(55, 'Operation Name Pure Love', 'Eu testemunhei meu namorado e minha melhor amiga se beijando. Estou confusa… há uma quantidade fixa de amor que cada pessoa receberá em sua vida? E a quantidade de amor que posso receber é “0”??? Su-Ae está tentando mudar seu destino, e Eun-Hyuk, que está preso em tal plano, entrou de cabeça! Eu estava apenas tentando fingir estar tendo um caso para fazer ciúmes no meu namorado, mas estou realmente me envolvendo?! Este plano… vai funcionar?', 'Drama, Escolar, Romance', 2022, 65, 'Em andamento', 'Webtoon', '../img/temas/202205202212206776.jpg'),
+(56, 'Remarried Empress', 'Navier era a imperatriz perfeita, no entanto, o imperador queria uma esposa, não um colega. E assim, o imperador abandonou a imperatriz Navier e colocou um escravo garota ao lado dele. Isso foi bom, até Navier ouvir o Imperador prometer à garota escrava a posição da Imperatriz. Depois de muita agonia, Navier decidiu que se casaria novamente com o imperador do país vizinho.', ' Drama, Fantasia, Histórico, Romance', 2019, 136, 'Em andamento', 'Webtoon', '../img/temas/thumbnail.png');
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
-<<<<<<< HEAD
--- Índices para tabela `avaliacao`
---
-ALTER TABLE `avaliacao`
-  ADD PRIMARY KEY (`idavaliacao`);
-
---
--- Índices para tabela `chat`
-=======
--- Índices de tabela `chat`
->>>>>>> ab5c3a1cf61766acac55cb8ada8c9194537e3e3b
---
-ALTER TABLE `chat`
-  ADD PRIMARY KEY (`idchat`);
-
---
--- Índices de tabela `comunidade`
---
-ALTER TABLE `comunidade`
-  ADD PRIMARY KEY (`idcomunidade`);
-
---
-<<<<<<< HEAD
--- Índices para tabela `denuncia`
---
-ALTER TABLE `denuncia`
-  ADD PRIMARY KEY (`iddenuncia`);
-
---
--- Índices para tabela `membro`
-=======
--- Índices de tabela `membro`
->>>>>>> ab5c3a1cf61766acac55cb8ada8c9194537e3e3b
---
-ALTER TABLE `membro`
-  ADD PRIMARY KEY (`idmembro`);
-
---
--- Índices de tabela `mensagem`
---
-ALTER TABLE `mensagem`
-  ADD PRIMARY KEY (`idmensagem`);
-
---
--- Índices de tabela `moderador`
---
-ALTER TABLE `moderador`
-  ADD PRIMARY KEY (`idmoderador`);
-
---
--- Índices de tabela `tema`
+-- Índices para tabela `tema`
 --
 ALTER TABLE `tema`
   ADD PRIMARY KEY (`idtema`);
 
 --
--- Índices de tabela `usuario`
+-- AUTO_INCREMENT de tabelas despejadas
 --
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id_usuario`),
-  ADD UNIQUE KEY `email` (`email`);
-
---
--- AUTO_INCREMENT para tabelas despejadas
---
-
---
--- AUTO_INCREMENT de tabela `avaliacao`
---
-ALTER TABLE `avaliacao`
-  MODIFY `idavaliacao` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `chat`
---
-ALTER TABLE `chat`
-  MODIFY `idchat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT de tabela `comunidade`
---
-ALTER TABLE `comunidade`
-  MODIFY `idcomunidade` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT de tabela `denuncia`
---
-ALTER TABLE `denuncia`
-  MODIFY `iddenuncia` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `membro`
---
-ALTER TABLE `membro`
-  MODIFY `idmembro` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `mensagem`
---
-ALTER TABLE `mensagem`
-  MODIFY `idmensagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-
---
--- AUTO_INCREMENT de tabela `moderador`
---
-ALTER TABLE `moderador`
-  MODIFY `idmoderador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `tema`
 --
 ALTER TABLE `tema`
-<<<<<<< HEAD
-  MODIFY `idtema` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-=======
-  MODIFY `idtema` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
->>>>>>> ab5c3a1cf61766acac55cb8ada8c9194537e3e3b
-
---
--- AUTO_INCREMENT de tabela `usuario`
---
-ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `idtema` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

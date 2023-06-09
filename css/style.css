@@ -384,12 +384,7 @@ ol {
 }
 
 .header__logo {
-<<<<<<< HEAD
 	padding: 10px 0 0 0;
-=======
-	padding: 10px 80px 10px;
-	margin-right: 0;
->>>>>>> ab5c3a1cf61766acac55cb8ada8c9194537e3e3b
 }
 
 .header__logo a {
@@ -401,12 +396,13 @@ ol {
 	text-align: center;
 }
 
+
 .header__menu ul li {
 	list-style: none;
 	display: inline-block;
 	position: relative;
 	margin-right: 5px;
-	padding: 10px 0 10px;
+	padding: 19px 0 19px;
 }
 
 .header__menu ul li.active a {
@@ -416,11 +412,11 @@ ol {
 
 .header__menu ul li:hover a {
 	color: #ffffff;
-	font-size: 1.3em;
+	font-size: 1.4em;
 }
 
 .header__menu ul li:hover .dropdown {
-	top: 78px;
+	top: 70px;
 	opacity: 1;
 	visibility: visible;
 }
@@ -507,7 +503,7 @@ ol {
 }
 
 .hero__items {
-	padding: 250px 0 200px 50px;
+	padding: 250px 0 180px 50px;
 	border-radius: 5px;
 }
 
@@ -1374,24 +1370,6 @@ ol {
 	text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.9);
 }
 
-.normal__breadcrumb h1 {
-	color: #3d3d3d;
-	font-size: 61px;
-	font-family: "Mulish", sans-serif;
-	font-weight: 700;
-	margin-bottom: 30px;
-	margin-top: 50px;
-	text-align: center;
-}
-
-.normal__breadcrumb h2 {
-	color: #3d3d3d;
-	font-size: 48px;
-	font-family: "Oswald", sans-serif;
-	font-weight: 700;
-	margin-bottom: 22px;
-}
-
 .normal__breadcrumb__text p {
 	color: #ffffff;
 	font-size: 1.6em;
@@ -1465,6 +1443,7 @@ ol {
 	color: black;
 	line-height: 34px;
 }
+
 
 /*---------------------
   Assinatura
@@ -1563,6 +1542,10 @@ ol {
 	text-align: center;
 	font-weight: 700;
 	margin-top: 20px;
+}
+
+.card {
+	margin: 70px auto;
 }
 
 /*---------------------
@@ -1924,12 +1907,12 @@ ol {
 	content: "";
 }
 
-.login__form h3 {
-	color: #3d3d3d;
-	font-size: 43px;
+.login__form h2 {
+	color: #303030;
 	font-weight: 700;
 	font-family: "Oswald", sans-serif;
 	margin-bottom: 30px;
+	font-size: 42px;
 }
 
 .login__form form .input__item {
@@ -2004,12 +1987,12 @@ ol {
 	padding-left: 30px;
 }
 
-.login__register h3 {
-	color: #3d3d3d;
-	font-size: 43px;
+.login__register h2 {
+	color: #303030;
 	font-weight: 700;
 	font-family: "Oswald", sans-serif;
-	margin-bottom: 22px;
+	font-size: 42px;
+	margin-bottom: 30px;
 }
 
 .login__register .primary-btn {
@@ -2018,15 +2001,19 @@ ol {
 }
 
 .login__form .singup_sexo {
-	font-size: 15px;
+	font-size: 20px;
 	color: black;
 	margin-top: 36px;
+	font-weight: 500;
+	font-family: "Mulish", sans-serif;
 }
 
 .login__form .singup_sexo p {
-	font-size: 15px;
+	font-size: 23px;
 	color: black;
 	margin-top: 36px;
+	font-weight: 500;
+	font-family: "Mulish", sans-serif;
 }
 
 /*---------------------

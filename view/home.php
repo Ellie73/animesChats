@@ -168,7 +168,7 @@ session_start()
                     <div class="product__sidebar">
                         <div class="product__sidebar__view">
                             <div class="section-title">
-                                <h5>Chats recentes</h5>
+                                <h5>Tópicos recentes</h5>
                             </div>
                             <div class="filter__gallery">
                                 <div class="product__sidebar__view__item set-bg mix day years" data-setbg="../img/sidebar/tv-1.jpg">
