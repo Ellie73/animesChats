@@ -52,7 +52,7 @@ if ($_SESSION['perfil'] != 'A' and isset($_SESSION['idusuario'])) {
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="normal__breadcrumb__text">
-                        <h2>Ferramentas do Administrador</h2>
+                        <h2>Ferramentas do Administrador <i class="fa fa-wrench"></i></span></h2>
                         <p></p>
                     </div>
                 </div>
@@ -129,15 +129,15 @@ if ($_SESSION['perfil'] != 'A' and isset($_SESSION['idusuario'])) {
       <label for="imagem2">COMUNIDADES</label>
     </div>
     <div class="image-container">
-      <img src="../img/blog/blog-5.png" alt="Imagem 3" onclick="window.location.href='./cadastroTema.php'">
+      <img src="../img/blog/blog-5.png" alt="Imagem 3" onclick="window.location.href='./assinantes.php'">
       <label for="imagem3">ASSINANTES</label>
     </div>
     <div class="image-container">
-      <img src="../img/blog/blog-2.png" alt="Imagem 4" onclick="window.location.href='./temaCrud.php'">
-      <label for="imagem4">CHATS</label>
+      <img src="../img/blog/blog-2.png" alt="Imagem 4" onclick="window.location.href='./pesquisarMensagem.php'">
+      <label for="imagem4">MENSAGENS</label>
     </div>
     <div class="image-container">
-      <img src="../img/blog/blog-3.png" alt="Imagem 5" onclick="window.location.href='./cadastroTema.php'">
+      <img src="../img/blog/blog-3.png" alt="Imagem 5" onclick="window.location.href='./verDenuncias.php'">
       <label for="imagem5">DENÚNCIAS</label>
     </div>
     <div class="image-container" onclick="window.location.href='./temaCrud.php'">
@@ -155,7 +155,6 @@ if ($_SESSION['perfil'] != 'A' and isset($_SESSION['idusuario'])) {
       flex-wrap: wrap;
       justify-content: center;
       cursor: pointer;
-      margin: 120px auto;
     }
     
     .image-session .image-container {

@@ -49,7 +49,7 @@ if (isset($_SESSION['idusuario'])) {
                 <div class="col-lg-12 text-center">
                     <div class="normal__breadcrumb__text">
                         <h2>Login</h2>
-                        <p>Faça login para usufruir de todos os recursos do Animes Chats!</p>
+                        <p>Faça login para usufruir de todos os recursos do Animes Chats!  <i class="material-icons">info_outline</i></p>
                     </div>
                 </div>
             </div>
@@ -81,7 +81,7 @@ if (isset($_SESSION['idusuario'])) {
                 <div class="col-lg-6">
                     <div class="login__register">
                         <h3> Ou </h3>
-                        <a href="./cadastroUsuario.php" class="primary-btn">Cadastre-se</a>
+                        <a href="./cadastroUsuario.php" class="site-btn">Cadastre-se</a>
                     </div>
                 </div>
             </div>

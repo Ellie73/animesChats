@@ -23,22 +23,20 @@
     <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="../css/style.css" type="text/css">
     <link rel="stylesheet" href="../css/cadastroTema.css">
+    <link rel="icon" href="../img/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <header class="header">
     <div class="">
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-2">
                 <div class="header__logo">
                     <a href="./home.php">
-<<<<<<< HEAD
                         <img src="../img/logo02.png" alt="Animes-Chats" >
-=======
-                        <img src="../img/logo02.png" alt="" width="90%">
->>>>>>> ab5c3a1cf61766acac55cb8ada8c9194537e3e3b
                     </a>
                 </div>
             </div>
-            <div class="col-lg-8">
+            <div class="col-lg-9">
                 <div class="header__nav">
                     <nav class="header__menu mobile-menu">
                         <ul>
@@ -60,13 +58,13 @@
                                 echo '<li title="'.$_SESSION['nome'].'"><a href="./perfil.php"><img src="'.$_SESSION['foto'].'" class="rounded-circle me-3" style="width: 2em; height: 2em; object-fit: cover;"></a></li>';
                                 // Se o perfil do usuário for 'A', exibe o botão de administração
                                 if ($_SESSION['perfil'] == 'A') {
-                                    echo '<li title="Ferramentas ADM"><a href="./ferramentas.php"><span class="icon_flowchart"></span></a></li>';
+                                    echo '<li title="Ferramentas ADM"><a href="./ferramentas.php"><span><i class="fa fa-gears"></i></span></a></li>';
                                 }
                                 elseif ($_SESSION['perfil'] == 'M') {
-                                    echo '<li title="Moderação"><a href="./moderador.php"><span class="icon_star"></span></a></li>';
+                                    echo '<li title="Moderação"><a href="./moderador.php"><span><i class="fa fa-gears"></i></span></a></li>';
                                 }
                                 if (isset($_SESSION['idusuario'])) {
-                                    echo '<li title="Sair"><a href="./logout.php">Sair</a></li>';
+                                    echo '<li title="Sair"><a href="./logout.php"><i class="fa fa-sign-out"></i></a></li>';
                                 }
                             } else {
                                 echo '<li title="Login/Cadastre-se"><a href="./login.php"><img src="../img/usuarios/user.png" class="rounded-circle me-3" style="width: 2em; height: 2em; object-fit: cover;"></a></li>';

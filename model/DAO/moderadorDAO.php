@@ -57,4 +57,49 @@ class moderadorDAO
             echo $e;
         }
     }
+    public function tirarModeracao($idusuario)
+    {
+        try {
+            $conn = new PDO('mysql:host=localhost;dbname=anime-chats;charset=utf8', "root", "");
+
+            $sql = "UPDATE usuario SET perfil='U' WHERE id_usuario=?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindValue(1, $idusuario);
+            $retorno = $stmt->execute();
+            return $retorno;
+        } catch (PDOException $e) {
+            echo $e;
+        }
+    }
+    public function assinantes()
+    {
+        try {
+            $conn = new PDO('mysql:host=localhost;dbname=anime-chats;charset=utf8', "root", "");
+
+            $sql = "SELECT m.*, u.perfil, u.nome, u.id_usuario
+            FROM moderador m
+            JOIN usuario u ON m.idusuario = u.id_usuario WHERE u.perfil = 'M';
+            ";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+            $retorno = $stmt->fetchALL(PDO::FETCH_ASSOC);
+            return $retorno;
+        } catch (PDOException $e) {
+            echo $e;
+        }
+    }
+    public function deletarModeracao($idusuario)
+    {
+        try {
+            $conn = new PDO('mysql:host=localhost;dbname=anime-chats;charset=utf8', "root", "");
+
+            $sql = "DELETE FROM moderador WHERE idusuario=?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindValue(1, $idusuario);
+            $retorno = $stmt->execute();
+            return $retorno;
+        } catch (PDOException $e) {
+            echo $e;
+        }
+    }
 }

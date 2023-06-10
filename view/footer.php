@@ -1,4 +1,4 @@
-</html>
+
 <!-- Footer Section Begin -->
 <footer class="footer">
     <div class="page-up">
@@ -7,7 +7,7 @@
     <br><br>
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-4">
                 <div class="col-md-6">
                     <h4>Categorias</h4>
                     <ul class="footer-links">
@@ -20,7 +20,7 @@
                     <br>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-4">
                 <div class="col-md-6">
                     <h4>Acesso rápido</h4>
                     <ul class="footer-links">
@@ -39,11 +39,11 @@
                     <br>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-4">
                 <div class="col-md-6">
-                    <h4>Denunciar</h4>
+                    <h4>Denunciar <i class="fa fa-warning"></i></h4>
                     <ul class="footer-links">
-                        <li><a href="./">Fazer uma denúncia</a></li>
+                        <li><a href="./denunciar.php">Fazer uma denúncia</a></li>
                         <li><a href="./termos.php">Termos de uso</a></li>
                     </ul>
                     <br>
@@ -64,8 +64,8 @@
 <div class="search-model">
     <div class="h-100 d-flex align-items-center justify-content-center">
         <div class="search-close-switch"><i class="icon_close"></i></div>
-        <form class="search-model-form">
-            <input type="text" id="search-input" placeholder="Pesquise aqui.....">
+        <form class="search-model-form" action="./procura.php" method="GET">
+            <input type="text" id="search-input" name="search-input" placeholder="Pesquise aqui...">
         </form>
     </div>
 </div>
@@ -90,3 +90,4 @@ if (isset($_GET['msg'])) {
 <script src="../js/owl.carousel.min.js"></script>
 <script src="../js/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</html>

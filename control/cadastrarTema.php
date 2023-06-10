@@ -11,6 +11,7 @@ $estreia = $_POST["estreia"];
 $tipo = $_POST["tipo"];
 $quantidade = $_POST["quantidade"];
 $estadotema = $_POST["estadotema"];
+$foto = null; // Inicializa a variável $foto
 
 // Verifica se o formulário foi enviado
 if (isset($_POST["submit"])) {
@@ -36,13 +37,13 @@ if ($foto == null || empty($foto)) {
     exit;
 }
 //Classe tema
-$tema = new temaDTO($nometema, $sinopse, $generotema, $estreia, $tipo, $quantidade, $estadotema, $fototema);
+$tema = new temaDTO($nometema, $sinopse, $generotema, $estreia, $tipo, $quantidade, $estadotema, $foto);
 
 //Conexão com o banco de dados
 $temaConn = new temaDAO();
 $retorno = $temaConn->cadastrarTema($tema);
 if ($retorno != null || $retorno != 0){
-    header("location:../view/home.php?msg=Tema cadastrado com sucesso!");
+    header("location:../view/temaCrud.php?msg=Tema cadastrado com sucesso!");
 } else {
-    header("location:../view/cadastroTema.php?msg=foto não aceita somente jpg jpeg png!!");
+    header("location:../view/cadastroTema.php?msg=Ocorreu um erro!");
 }

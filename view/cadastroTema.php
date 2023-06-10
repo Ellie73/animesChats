@@ -52,11 +52,7 @@ if ($_SESSION['perfil'] != 'A') {
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-left">
-<<<<<<< HEAD
                     <div class="normal__breadcrumb__texto">
-=======
-                    <div class="normal__breadcrumb">
->>>>>>> ab5c3a1cf61766acac55cb8ada8c9194537e3e3b
                         <h2>Cadastro de um novo Tema</h2>
                     </div>
                 </div>
@@ -90,18 +86,18 @@ if ($_SESSION['perfil'] != 'A') {
                                     <input type="radio" id="manga" name="tipo" value="Mangá" required>
                                     <label for="mangá">Mangá</label>
                                     <br>
-                                    <input type="radio" id="manhwa" name="tipo" value="Manhwa" required>
-                                    <label for="mangá">Manhwa</label>
+                                    <input type="radio" id="manga" name="tipo" value="Manhwa" required>
+                                    <label for="manhwa">Manhwa</label>
                                     <br>
                                     <input type="radio" id="manhua" name="tipo" value="Manhua" required>
-                                    <label for="mangá">Manhua</label>
+                                    <label for="manhua">Manhua</label>
                                     <br>
                                     <input type="radio" id="webtoon" name="tipo" value="Webtoon" required>
                                     <label for="webtoon">Webtoon</label>
                                     <br><br>
                                 </div>
                                 <div class="input__item">
-                                    <input type="number" name="quantidade" id="quantidade" min="1" max="2024" class="inputUser" placeholder="Quantidade de Cap/Ep" required>
+                                    <input type="number" name="quantidade" id="quantidade" min="1" class="inputUser" placeholder="Quantidade de Cap/Ep" required>
                                     <span class="icon_book"></span>
                                 </div>
                                 <div class="inputBox">

@@ -16,7 +16,7 @@ foreach ( $mensagens as $mensagem ) {
             <div class="anime__details__review">
                 <div class="anime__review__item">
                     <div class="anime__review__item__pic">
-                        <a href=anime-watching.html><img src="'.$mensagem['foto'].'" alt=""></a>
+                        <a><img src="'.$mensagem['foto'].'" alt=""></a>
                     </div>
                     <div class="anime__review__item__text">
                         <h6>'.$mensagem['nome'].' - <span>'.date("d/m/Y", strtotime($mensagem['data'])).'</span></h6>

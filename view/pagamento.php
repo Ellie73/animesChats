@@ -113,7 +113,7 @@ if (empty($_SESSION['idusuario'])) {
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="postal-code" class="form-label">Valor Mensal</label>
-                                        <input type="number" class="form-control" id="postal-code" step="0.01" value="<?= $valor ?>" readonly required>
+                                        <input type="number" class="form-control" name="valor" id="valor" step="0.01" value="<?= $valor ?>" readonly required>
                                     </div>
                                 </div>
                                 <div class="row">

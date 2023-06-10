@@ -38,7 +38,7 @@ session_start()
     <!-- Header Section Begin -->
     <?php require_once './menu.php' ?>
     <!-- Header End -->
-    
+
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="container">
@@ -90,33 +90,30 @@ session_start()
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="../img/trending/trend-1.jpg">
-                                    </div>
-                                    <div class="product__item__text">
-                                        <h5><a href="./tema.php?id=2">Boruto: Naruto next generations</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="../img/trending/trend-2.jpg">
-                                    </div>
-                                    <div class="product__item__text">
-                                        <h5><a href="./tema.php?id=3">Ensemble Stars!</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="../img/trending/trend-3.jpg">
-                                    </div>
-                                    <div class="product__item__text">
-                                        <h5><a href="./tema.php?id=4">ID: INVADED</a></h5>
+
+                            <?php
+                            require_once '../model/DAO/temaDAO.php';
+                            $temaConn = new temaDAO();
+                            $temas = $temaConn->popularesTema();
+                            foreach ($temas as $tema) {
+                            ?>
+                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                    <div class="product__item">
+                                        <a href="./tema.php?id=<?= $tema['idtema'] ?>">
+                                            <div class="product__item__pic set-bg" data-setbg="<?= $tema['fototema'] ?>">
+                                            </div>
+                                            <div class="product__item__text">
+                                                <ul>
+                                                    <li><?= $tema['genero'] ?></li>
+                                                </ul>
+                                                <h5><a href="./tema.php?id=<?= $tema['idtema'] ?>"><?= $tema['nome'] ?></a></h5>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
-                            </div>
+                            <?php
+                            }
+                            ?>
                         </div>
                     </div>
                     <div class="popular__product">
@@ -133,33 +130,29 @@ session_start()
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="../img/popular/popular-1.jpg">
-                                    </div>
-                                    <div class="product__item__text">
-                                        <h5><a href="#">Sen to Chihiro no Kamikakushi</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="../img/popular/popular-2.jpg">
-                                    </div>
-                                    <div class="product__item__text">
-                                        <h5><a href="#">Kizumonogatari III: Reiket su-hen</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="../img/popular/popular-3.jpg">
-                                    </div>
-                                    <div class="product__item__text">
-                                        <h5><a href="#">Shirogane Tamashii hen Kouhan sen</a></h5>
+                            <?php
+                            require_once '../model/DAO/comunidadeDAO.php';
+                            $comunidadeConn = new comunidadeDAO();
+                            $comunidades = $comunidadeConn->comunidadeRecente();
+                            foreach ($comunidades as $comunidade) {
+                            ?>
+                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                    <div class="product__item">
+                                        <a href="./comunidade.php?id=<?= $comunidade["idcomunidade"] ?>">
+                                            <div class="product__item__pic set-bg" data-setbg="<?= $comunidade["foto"] ?>">
+                                            </div>
+                                        </a>
+                                        <div class="product__item__text">
+                                            <ul>
+                                                <li><?= $comunidade["nome_tema"] ?></li>
+                                            </ul>
+                                            <h5><a href="./comunidade.php?id=<?= $comunidade["idcomunidade"] ?>"><?= $comunidade["nome"] ?></a></h5>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            <?php
+                            }
+                            ?>
                         </div>
                     </div>
 
@@ -168,7 +161,7 @@ session_start()
                     <div class="product__sidebar">
                         <div class="product__sidebar__view">
                             <div class="section-title">
-                                <h5>Chats recentes</h5>
+                                <h5>Tópicos recentes</h5>
                             </div>
                             <div class="filter__gallery">
                                 <div class="product__sidebar__view__item set-bg mix day years" data-setbg="../img/sidebar/tv-1.jpg">
@@ -183,22 +176,26 @@ session_start()
                             <div class="section-title">
                                 <h5>Os mais comentados</h5>
                             </div>
-                            <div class="product__sidebar__comment__item">
-                                <div class="product__sidebar__comment__item__pic">
-                                    <img src="../img/sidebar/comment-1.jpg" alt="">
+                            <?php
+                            $temas = $temaConn->comentadosTema();
+                            foreach ($temas as $tema) {
+                            ?>
+                                <div class="product__sidebar__comment__item">
+                                    <a href="./tema.php?id=<?= $tema['idtema'] ?>">
+                                        <div class="product__sidebar__comment__item__pic">
+                                            <img src="<?= $tema['fototema'] ?>" alt="<?= $tema['nome'] ?>" style="max-width: 80px;height: auto;">
+                                        </div>
+                                    </a>
+                                    <div class="product__sidebar__comment__item__text">
+                                        <ul>
+                                            <li><?= $tema['genero'] ?></li>
+                                        </ul>
+                                        <h5><a href="./tema.php?id=<?= $tema['idtema'] ?>"><?= $tema['nome'] ?></a></h5>
+                                    </div>
                                 </div>
-                                <div class="product__sidebar__comment__item__text">
-                                    <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
-                                </div>
-                            </div>
-                            <div class="product__sidebar__comment__item">
-                                <div class="product__sidebar__comment__item__pic">
-                                    <img src="../img/sidebar/comment-2.jpg" alt="">
-                                </div>
-                                <div class="product__sidebar__comment__item__text">
-                                    <h5><a href="#">Shirogane Tamashii hen Kouhan sen</a></h5>
-                                </div>
-                            </div>
+                            <?php
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>

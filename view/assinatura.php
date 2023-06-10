@@ -46,7 +46,7 @@ session_start()
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="normal__breadcrumb__text">
-                        <h2>Planos de Assinatura</h2>
+                        <h2>Planos de Assinatura <i class="material-icons">assignment</i></h2>
                         <p></p>
                     </div>
                 </div>

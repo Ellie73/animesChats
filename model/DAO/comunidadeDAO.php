@@ -151,6 +151,27 @@ class comunidadeDAO
             echo $e->getMessage();
         }
     }
+    public function alterarComunidadeMod($comunidade){
+        try{
+    
+            $conn = new PDO('mysql:host=localhost;dbname=anime-chats;charset=utf8',"root","");
+    
+            $sql = "UPDATE comunidade SET nome=?, foto=?, descricao=?, idtema=? WHERE idcomunidade=?";
+    
+            $stmt = $conn->prepare($sql);
+            $stmt->bindValue(1,$comunidade->getNome());
+            $stmt->bindValue(2,$comunidade->getFoto());
+            $stmt->bindValue(3,$comunidade->getDescricao());
+            $stmt->bindValue(4,$comunidade->getIdTema());
+            $stmt->bindValue(5,$comunidade->getIdComunidade());
+            $retorno = $stmt->execute();
+    
+            return $retorno;
+    
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
     public function deletarComunidade($idcomunidade){
         try{
     
@@ -168,4 +189,58 @@ class comunidadeDAO
             echo $e->getMessage();
         }
     }
+    public function comunidadeRecente(){
+        try{
+    
+            $conn = new PDO('mysql:host=localhost;dbname=anime-chats;charset=utf8',"root","");
+    
+            $sql = "SELECT c.idcomunidade, c.idcriador, c.nome, c.foto, c.situacao, c.descricao, t.nome AS nome_tema
+            FROM comunidade c
+            JOIN tema t ON c.idtema = t.idtema
+            ORDER BY c.idcomunidade DESC
+            LIMIT 3;
+            ";
+    
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+            $retorno = $stmt->fetchALL(PDO::FETCH_ASSOC);
+    
+            return $retorno;
+    
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
+    public function buscarComunidade($nome)
+    {
+        try {
+            $conn = new PDO('mysql:host=localhost;dbname=anime-chats;charset=utf8', "root", "");
+            $sql = "SELECT * FROM comunidade WHERE nome LIKE ?;
+            ";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindValue(1, "%{$nome}%");
+            $stmt->execute();
+            $retorno = $stmt->fetchALL(PDO::FETCH_ASSOC);
+            return $retorno;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+    public function listarComunidadesMod($idcriador){
+        try{
+    
+            $conn = new PDO('mysql:host=localhost;dbname=anime-chats;charset=utf8',"root","");
+    
+            $sql = "SELECT * FROM comunidade WHERE idcriador=?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindValue(1,$idcriador);
+            $stmt->execute();
+            $retorno = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $retorno;
+    
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
+
 }
