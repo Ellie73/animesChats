@@ -70,7 +70,11 @@ if ($_SESSION['perfil'] != 'A' && $_SESSION['perfil'] != 'M') {
                                 </div>
                                 <h5>Tema da comunidade: </h5>
                                 <br>
+<<<<<<< HEAD
                                 <div><i class="material-icons">assignment</i>
+=======
+                                <div>
+>>>>>>> 6f93337edcbf7080f3c64eb244bcf58dd3691b99
                                     <select name="tema" id="tema" required>
                                         <option value="0" selected>Nenhum</option>
                                         <?php

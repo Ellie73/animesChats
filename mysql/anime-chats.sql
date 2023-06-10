@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Tempo de geração: 10-Jun-2023 às 21:56
+=======
+-- Tempo de geração: 09-Jun-2023 às 14:07
+>>>>>>> 6f93337edcbf7080f3c64eb244bcf58dd3691b99
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -24,6 +28,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Estrutura da tabela `avaliacao`
 --
 
@@ -230,6 +235,8 @@ INSERT INTO `moderador` (`idmoderador`, `idusuario`, `periodo`, `valor`, `data_a
 -- --------------------------------------------------------
 
 --
+=======
+>>>>>>> 6f93337edcbf7080f3c64eb244bcf58dd3691b99
 -- Estrutura da tabela `tema`
 --
 
@@ -281,6 +288,7 @@ INSERT INTO `tema` (`idtema`, `nome`, `sinopse`, `genero`, `ano_estreia`, `quant
 (31, 'Tomb Raider King', 'De repente, tumbas misteriosas começaram a aparecer em todo o mundo com artefatos especiais que concedem habilidades mágicas ao soldador. Logo a corrida entre os humanos para coletar os artefatos e pisar nos fracos como as baratas começaram.\r\n\r\nJoo Heon Suh, uma escavadeira, e explorador são traídos por seus companheiros que o deixaram morrer. Quase à beira da morte, ele é subitamente transportado 15 anos no passado enquanto retém suas memórias.', 'Ação, Aventura, Fantasia, Sobrenatural', 2020, 411, 'Em andamento', 'Manhwa', '../img/temas/Capturar4.JPG'),
 (32, 'Second Life Ranker ', 'Cha Yeon Woo decidiu escalar uma torre misteriosa depois que seu irmão gêmeo é traído por seus companheiros e morto. Assim, para descobrir o mistério por trás da morte de seu irmão e vingar ele tenta escalar o Obelisco.\r\nÉ a torre de Deus Sol composta por 100 andares. Cada andar é governado por demônios e às vezes deuses. Jogadores de diferentes dimensões e universo lutam e sobem a torre para alcançar o ápice, pois diz-se que uma pessoa que conquistou esta torre se tornará o próprio Deus.', 'Ação, Aventura, Fantasia', 2019, 158, 'Em andamento', 'Manhwa', '../img/temas/Capturar5.JPG'),
 (33, 'The Last Human', 'Zuo Tian Chen é o último humano vivo em uma cidade infestada de zumbis. Em seus momentos finais, ele acorda milagrosamente em sua sala de aula 10 anos no passado exatamente um dia antes da queda do meteoro que aniquilou a humanidade.\r\n\r\nMesmo sendo um adolescente fraco, com todo conhecimento que possui ele irá salvar as pessoas importantes que perdeu, e mudará seu destino.', 'Aventura, Terror, Drama, Apocalipse', 2018, 510, 'Em andamento', 'Manhua', '../img/temas/59820872.jpg'),
+<<<<<<< HEAD
 (34, 'Star Martial God Technique', 'No mundo existem 12 caminhos para subir a Torre de Deus, e contam as lendas que esse caminhos levam a lendária estrada da imortalidade. A fim de proteger sua família, Ye Xin He participa da prova seletiva da Academia Estrela Celestial.\r\n\r\nYe Xin He pertence a Família Pena Verde, uma ramificação da Família Lua Escura. Por serem vassalos costumam ser humilhados e passar necessidades na época de escassez. Por isso o jovem quer se tornar forte e ajudar sua família a prosperar. Sendo um raro usuário da técnica marcial da estrela, Ye Xin He apresenta grande potencial dentro da academia sendo aclamado como um gênio o que é muito bom para seu futuro. Mas também chama atenção de muitas pessoas mal intencionadas. ', 'Ação, Aventura, Sobrenatural, Romance', 2016, 607, 'Em andamento', 'Manhua', '../img/temas/Capturar6.JPG');
 
 -- --------------------------------------------------------
@@ -312,12 +320,38 @@ INSERT INTO `usuario` (`id_usuario`, `nome`, `email`, `senha`, `estado`, `cidade
 (7, 'Daniel Souza de Lima', 'danielsouzalimabsb@gmail.com', 'e8d95a51f3af4a3b134bf6bb680a213a', 'Distrito Federal', 'Samambaia Sul', 'M', 'A', '61986175242', '../img/usuarios/3e69b9aa-0fc7-4d11-b79b-a879f3e8049d.jpeg', '2005-05-19', 1),
 (13, 'Janaina', 'janaina@gmail.com', 'e8d95a51f3af4a3b134bf6bb680a213a', 'Distrito Federal', 'Ceilandia', 'F', 'M', '61986456251', '../img/usuarios/user.png', '2023-05-17', 1),
 (14, 'Helen Eloísia', 'helen@gmail.com', 'e8d95a51f3af4a3b134bf6bb680a213a', 'Distrito Federal', 'Ceilandia', 'F', 'M', '(61) 98617-5242', '../img/usuarios/user.png', '2005-01-31', 1);
+=======
+(34, 'Star Martial God Technique', 'No mundo existem 12 caminhos para subir a Torre de Deus, e contam as lendas que esse caminhos levam a lendária estrada da imortalidade. A fim de proteger sua família, Ye Xin He participa da prova seletiva da Academia Estrela Celestial.\r\n\r\nYe Xin He pertence a Família Pena Verde, uma ramificação da Família Lua Escura. Por serem vassalos costumam ser humilhados e passar necessidades na época de escassez. Por isso o jovem quer se tornar forte e ajudar sua família a prosperar. Sendo um raro usuário da técnica marcial da estrela, Ye Xin He apresenta grande potencial dentro da academia sendo aclamado como um gênio o que é muito bom para seu futuro. Mas também chama atenção de muitas pessoas mal intencionadas. ', 'Ação, Aventura, Sobrenatural, Romance', 2016, 607, 'Em andamento', 'Manhua', '../img/temas/Capturar6.JPG'),
+(35, 'July Found by Chance', 'O que você faria se descobrisse que na verdade era um personagem de uma história em quadrinhos? E um personagem extra em cima disso? Mude o curso da história, obviamente!', 'Drama, Escolar, Romance, Sobrenatural', 2018, 53, 'Em andamento', 'Webtoon', '../img/temas/44649148.jpg'),
+(36, 'Sono Bisque Doll wa Koi wo Suru', 'Wakana Gojou é um garoto de quinze anos que foi socialmente traumatizado no passado devido a suas paixões. Aquele incidente deixou uma marca nele que o fez ser um recluso social. Até que um dia ele teve um encontro com Kitagawa, que é um gyaru sociável, que é o completo oposto dele. Eles logo compartilham suas paixões uns com os outros, o que leva a um relacionamento estranho.', 'Romance, Seinen, Slice of Life, Vida Escolar', 2018, 91, 'Em andamento', 'Mangá', '../img/temas/Sono_Bisque_Doll_wa_Koi_o_Suru.jpg'),
+(37, 'Tomo-chan Is a Girl!', 'Aizawa Tomo cresceu em um dojo de karatê e tem vivido como uma tomboy até o ensino médio. Como resultado, seu amigo/interesse amoroso de infância, Kubota Junichirou, não a trata como uma garota. Agora... como fazer com que ele a veja como uma garota? Hmm... batê-lo até que entenda?', 'Comédia, Escolar, Romance', 2015, 954, 'Finalizado', 'Mangá', '../img/temas/tomo-chan_.jpg'),
+(38, 'Hunter X Hunter', 'Gon pode ser um garoto do campo, mas tem grandes aspirações. Apesar dos protestos de sua tia Mito, Gon decide seguir os passos de seu pai e se tornar um caçador lendário. Os aspirantes a Hunter começam sua jornada em um navio agitado pela tempestade, onde Gon conhece Leorio e Kurapika, os únicos outros candidatos que não são devastados por ataques de enjoo. Tendo sobrevivido aos terrores do alto mar, Gon e seus companheiros agora precisam provar seu valor em uma variedade de testes para encontrar o indescritível Exam Hall. E quando eles chegarem lá, eles vão sair vivos...?', 'Artes marciais, Aventura, Fantasia', 1998, 400, 'Em andamento', 'Mangá', '../img/temas/hunter.jpg'),
+(39, 'Slam Dunk', 'Hanamichi Sakuragi é um colegial delinquente de topete ruivo, cansado de tomar fora das garotas que preferem os esportistas! Mas a sua vida começa a mudar quando se apaixona por Haruko, que o convida a jogar basquete no time da escola! Sakuragi consegue entrar no time, e agora irá encarar muitos desafios com a equipe do colégio Shohoku no campeonato nacional.', 'Comédia, Drama, Escolar, Esportes', 1990, 276, 'Finalizado', 'Mangá', '../img/temas/Slam_Dunk.jpg'),
+(40, 'Cheese in the Trap', 'Ao voltar à faculdade depois de uma pausa de um ano, Hong Seol, uma estudante esforçada, sem querer acaba tendo problemas com um cara perfeito, o suspeito, Jung Yu. A partir disso, sua vida começa a ficar cheia de problemas e Seol tinha quase certeza de que tudo era culpa de Jung Yu. Então, por que de repente ele está sendo tão amigável um ano mais tarde?', 'Comédia, Drama, Romance', 2010, 300, 'Finalizado', 'Manhwa', '../img/temas/cheese.jpg'),
+(41, 'Tower Of God', '“O que você deseja? Dinheiro e riqueza? Honra e orgulho? Autoridade e poder? Vingança? Ou algo que transcende a todos eles? O que quer que você deseje – isso está aqui.”\r\nBam, que ficou sozinho a vida inteira entrou na torre para perseguir sua única amiga, Rachel, mas como ele sobreviverá sem ter nenhuma força ou poder especial?', 'Ação, Aventura, Fantasia, Ficção', 2010, 550, 'Em andamento', 'Manhwa', '../img/temas/tower.jpg'),
+(42, 'The God of High School', 'Enquanto uma ilha está quase desaparecendo da face da terra, uma organização misteriosa está enviando convites de um torneio para todos os lutadores habilidosos do mundo. Se você ganhar, poderá ter o que quiser. Eles estão recrutando apenas os melhores para lutar contra os melhores e reivindicar o título de The God of High School!', 'Ação, Aventura, Comédia, Fantasia', 2011, 560, 'Em andamento', 'Manhwa', '../img/temas/The_God_of_High_School.jpg'),
+(43, 'Reverse Villain', 'Jung-Woo é a personificação do mal e tem como sonho um dia ser poderoso o bastante para conquistar todo o Murim, mas é impedido por Shin-Ryong, o seu arqui-inimigo. E, mais uma vez, Jung-Woo é vencido pelo seu nêmesis retornando ao ciclo de reencarnações na qual está preso. Na sua sexta reencarnação, Jung-Woo é enviado para os tempos modernos, onde ele decide se preparar da melhor forma possível para enfrentar o seu arqui-inimigo e não ser derrotado mais uma vez.', 'Ação, Comédia, Harem, Isekai', 2019, 110, 'Finalizado', 'Manhwa', '../img/temas/thumbnail.jpg'),
+(44, 'Omniscient Reader', '“Esse é um desenrolar que eu já conheço”. No momento em que pensei isso, o mundo foi destruído e um novo universo surgiu. A nova vida de um leitor comum começa no mundo de uma novel, a novel que só ele terminou.', 'Aventura, Drama, Fantasia, Psicológico, Sobrenatural', 2020, 161, 'Em andamento', 'Manhwa', '../img/temas/capa1.jpg'),
+(45, 'Fights Break Sphere', 'Em uma terra onde não há magia, uma terra onde os fortes fazem as leis e os fracos tem que obedecer, uma terra cheia de tesouros fascinantes e de uma beleza indescritível, mas que também está preenchida com perigos inimagináveis. Xiao Yan, que mostrou ter um talento nunca visto em décadas, de repente perdeu tudo há 3 anos – seus poderes, ', 'Ação, Sobrenatural, Romance, Comédia', 2018, 400, 'Em andamento', 'Manhua', '../img/temas/fights-break-sphere-manhua.jpg'),
+(46, 'Feng Qi Cang Lan', 'XiaoWan, o melhor jogador do jogo de realidade virtual Cang Lan, é empurrado de um penhasco por um desgraçado do mal. Em vez de morrer, ela acaba em outro mundo onde as artes marciais e a essência espiritual determinam o destino de alguém. XiaoWan, que foi considerado inútil por todas as pessoas neste mundo, não levará seu destino como é! Ela será capaz de se tornar a melhor do mundo também? Vamos ver!', ' Fantasia, Romance, Sobrenatural', 2013, 330, 'Em andamento', 'Manhua', '../img/temas/feng-qi-cang-lan.jpg'),
+(47, 'I Am Han Sanqian', 'Já faz 3 anos desde que Han Sanqian entrou pra família Zuo Su e foi taxado pelos seus membros como um genro lixo. Para evitar que sua esposa Su Yingxia seja humilhada pelos outros, Han Sanqian trabalhou em segredo para se tornar um super genro e se preparar para devolver na mesma moeda o que fizeram com sua esposa.', 'Drama, Romance, Shounen, Sobrenatural', 2020, 115, 'Em andamento', 'Manhua', '../img/temas/5fe640c1109ce_capa.jpg'),
+(48, 'Revenge of a Fierce Princess', 'Ela era poderosa e tinha artes marciais incomparáveis em sua vida anterior, mas foi violada e difamada e isso resultou em sua morte. Depois do seu renascimento, prometeu se vingar...', 'Ação, Drama, Fantasia, Histórico, Romance', 2018, 181, 'Em andamento', 'Manhua', '../img/temas/external_cover.jpg'),
+(49, 'Eternal Club', 'Chen Li passou seu tempo trabalhando na Cidade Mo, vagabundeando, sem nenhuma esperança à vista… Ele queria mudar, e se tornar um grande sucesso, ter dinheiro, ter poder, ter mulheres, mas… ele era apenas uma pessoa medíocre! Numa noite chuvosa, Chen Li adquire uma habilidade especial, ele podia comprar e vender “vida útil”, das pessoas. Ele podia realizar parcialmente “aceleração e desaceleração do tempo”! Assim, Chen Li se propôs a mudar seu destino contra as probabilidades, rumo ao trono soberano dos céus, e a construir o “Eternal Club”!', 'Ação, Drama, Fantasia, Sobrenatural', 2021, 191, 'Em andamento', 'Manhua', '../img/temas/EternalClubIcon.jpg'),
+(50, 'Martial Peak', 'A jornada para o Pico Marcial é algo longo e solitário. Indo de encontro com a adversidade, você deve sobreviver e permanecer vivo. Apenas aqueles que superarem os limites continuarão a jornada rumo ao objetivo de se tornar o mais forte. A Sky Tower testa seus discípulos de maneiras bem complexas para esta jornada. Um dia, o menosprezado Yang Kai conseguiu obter um livro negro, fazendo-o tomar rumo ao pico do mundo marcial!', ' Ação, Aventura, Comédia, Fantasia, Histórico, Romance', 2020, 2024, 'Em andamento', 'Manhua', '../img/temas/martial-peak-ch-1-6.jpg'),
+(51, 'Grandmaster of Demonic Cultivation: Mo Dao Zu Shi', 'Temido e odiado por suas habilidades sinistras, Wei Wuxian - o grande mestre do cultivo demoníaco - foi levado à morte quando os clãs mais poderosos se uniram para destruí-lo.\r\n\r\nTreze anos depois, Wei Wuxian renasce. Convocado por um jovem que sacrificou sua alma em um ritual proibido, Wei Wuxian agora é obrigado a buscar vingança em nome do estranho ou arriscar a destruição de sua própria alma. Mas quando uma entidade maligna surge, um rosto familiar do passado de Wei Wuxian aparece repentinamente em meio ao caos - um poderoso cultivador que ajudará a iluminar as verdades sombrias que os cercam.', 'Xianxia, Mistério, Fantasia, Yaoi', 2016, 126, 'Finalizado', 'Manhua', '../img/temas/51+msxH4qWL._SX353_BO1,204,203,200_.jpg'),
+(52, 'Heaven Official’s Blessing', 'Por você, eu me tornarei invencível! \"Você ouviu? Aquele lixo de Oficial dos Céus está tendo um caso com o maioral número um do Reino Fantasma!\" Xie Lian era o Príncipe da Coroa do reino de Xian Le; amado pelos cidadãos e o queridinho do mundo. Sem surpresa, ele ascendeu para os céus em uma idade muito jovem, porém quem diria que depois de sua ascensão, aquele que uma vez foi adorado por milhões e conhecido e admirado por todos, cairia tão abruptamente, completamente desonrado, se tornando a Chacota dos Três Reinos. Oitocentos anos após sua queda, Xie Lian ascendeu novamente e tumultuosamente. Desta vez, ele era um deus sem qualquer devoto ou mérito. Parece que com o tumulto de sua re-ascensão, ele chamou atenção de um temido Rei Fantasma, o maioral que controlava todos os fantasmas e o mais temido pelos céus. Mas por que um mero deus falido atrairia a atenção de alguém como um famoso e temido Rei Fantasma?', '  Ação, Comédia, Drama, Fantasia, Mistério, Romance, Yaoi', 2019, 89, 'Em andamento', 'Manhua', '../img/temas/817zhtRO6JL._AC_UF1000,1000_QL80_.jpg'),
+(53, 'Song of the Long March', 'Pouco depois de a astrologia prever que a destruição cairá sobre a Dinastia Tang, um golpe de estado liderado pelo próprio irmão do príncipe herdeiro Li o mata, sua esposa e filhos. A filha de Li, a princesa Yongning, consegue escapar, mas logo é declarada morta ao lado de sua família. Cheia de ira, a princesa jura vingá-los ao assumir a identidade de um jovem, Li Chang Ge, e se mudar para a província de Shou para alcançar seus objetivos.\r\n\r\nLi Chang Ge usa sua inteligência para ganhar a confiança do imperador Shou e rapidamente sobe na hierarquia militar como uma estrategista brilhante. Desenhado de forma cativante, Canção da Longa Marcha retrata a jornada adolescente da menina mal-humorada em direção a inúmeras aventuras desconhecidas, camaradagem fiel, bem como inimizade formidável que a espera ao longo do caminho.', 'Ação, Aventura, Drama, Histórico', 2011, 53, 'Em andamento', 'Manhua', '../img/temas/choukakou-v01-001.jpg'),
+(54, ' Lookism', 'Em uma sociedade onde aparência significa tudo, Park Hyumg Suk, pequeno, gordo e não atraente, sofre bullying diariamente, mas nunca falou a sua mãe super trabalhadeira sobre isso. Um dia, quando sua mãe o vê sofrendo bullying, ela o envia para uma escola melhor. Mas infelizmente, ele descobre que sua nova escola é tão cruel quanto a anterior. Uma noite, ele acorda e descobre que de repente ficou alto, forte e incrivelmente bonito. Quando volta para a cama e encontra o seu corpo antigo corpo dormindo. Ele agora tem uma mente e dois corpos. Toda vez que um dorme, o outro corpo acorda, e toda vez que um acorda o outro dorme. Com medo de sofrer bullying novamente na nova escola, ele decide usar o seu novo corpo para ir à escola. Mas como será isso? Será que ele finalmente será aceito?', 'Ação, Comédia, Drama, Ecchi, Escolar, Sobrenatural', 2014, 452, 'Em andamento', 'Webtoon', '../img/temas/lookism.png'),
+(55, 'Operation Name Pure Love', 'Eu testemunhei meu namorado e minha melhor amiga se beijando. Estou confusa… há uma quantidade fixa de amor que cada pessoa receberá em sua vida? E a quantidade de amor que posso receber é “0”??? Su-Ae está tentando mudar seu destino, e Eun-Hyuk, que está preso em tal plano, entrou de cabeça! Eu estava apenas tentando fingir estar tendo um caso para fazer ciúmes no meu namorado, mas estou realmente me envolvendo?! Este plano… vai funcionar?', 'Drama, Escolar, Romance', 2022, 65, 'Em andamento', 'Webtoon', '../img/temas/202205202212206776.jpg'),
+(56, 'Remarried Empress', 'Navier era a imperatriz perfeita, no entanto, o imperador queria uma esposa, não um colega. E assim, o imperador abandonou a imperatriz Navier e colocou um escravo garota ao lado dele. Isso foi bom, até Navier ouvir o Imperador prometer à garota escrava a posição da Imperatriz. Depois de muita agonia, Navier decidiu que se casaria novamente com o imperador do país vizinho.', ' Drama, Fantasia, Histórico, Romance', 2019, 136, 'Em andamento', 'Webtoon', '../img/temas/thumbnail.png');
+>>>>>>> 6f93337edcbf7080f3c64eb244bcf58dd3691b99
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
+<<<<<<< HEAD
 -- Índices para tabela `avaliacao`
 --
 ALTER TABLE `avaliacao`
@@ -354,12 +388,15 @@ ALTER TABLE `moderador`
   ADD PRIMARY KEY (`idmoderador`);
 
 --
+=======
+>>>>>>> 6f93337edcbf7080f3c64eb244bcf58dd3691b99
 -- Índices para tabela `tema`
 --
 ALTER TABLE `tema`
   ADD PRIMARY KEY (`idtema`);
 
 --
+<<<<<<< HEAD
 -- Índices para tabela `usuario`
 --
 ALTER TABLE `usuario`
@@ -405,11 +442,16 @@ ALTER TABLE `mensagem`
 --
 ALTER TABLE `moderador`
   MODIFY `idmoderador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+=======
+-- AUTO_INCREMENT de tabelas despejadas
+--
+>>>>>>> 6f93337edcbf7080f3c64eb244bcf58dd3691b99
 
 --
 -- AUTO_INCREMENT de tabela `tema`
 --
 ALTER TABLE `tema`
+<<<<<<< HEAD
   MODIFY `idtema` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
@@ -417,6 +459,9 @@ ALTER TABLE `tema`
 --
 ALTER TABLE `usuario`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+=======
+  MODIFY `idtema` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+>>>>>>> 6f93337edcbf7080f3c64eb244bcf58dd3691b99
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

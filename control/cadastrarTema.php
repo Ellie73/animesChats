@@ -43,7 +43,13 @@ $tema = new temaDTO($nometema, $sinopse, $generotema, $estreia, $tipo, $quantida
 $temaConn = new temaDAO();
 $retorno = $temaConn->cadastrarTema($tema);
 if ($retorno != null || $retorno != 0){
+<<<<<<< HEAD
     header("location:../view/temaCrud.php?msg=Tema cadastrado com sucesso!");
 } else {
     header("location:../view/cadastroTema.php?msg=Ocorreu um erro!");
+=======
+    header("location:../view/ferramentas.php?msg=Tema cadastrado com sucesso!");
+} else {
+    header("location:../view/cadastrotema.php?msg=Ocorreu um erro!");
+>>>>>>> 6f93337edcbf7080f3c64eb244bcf58dd3691b99
 }
