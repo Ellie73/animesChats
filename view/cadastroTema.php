@@ -86,11 +86,7 @@ if ($_SESSION['perfil'] != 'A') {
                                     <input type="radio" id="manga" name="tipo" value="Mangá" required>
                                     <label for="mangá">Mangá</label>
                                     <br>
-<<<<<<< HEAD
                                     <input type="radio" id="manga" name="tipo" value="Manhwa" required>
-=======
-                                    <input type="radio" id="manhwa" name="tipo" value="Manhwa" required>
->>>>>>> 6f93337edcbf7080f3c64eb244bcf58dd3691b99
                                     <label for="manhwa">Manhwa</label>
                                     <br>
                                     <input type="radio" id="manhua" name="tipo" value="Manhua" required>

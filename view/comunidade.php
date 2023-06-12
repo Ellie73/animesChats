@@ -68,6 +68,7 @@ if ($comunidade == null || empty($comunidade)) {
   <!-- Anime Section Begin -->
   <section class="anime-details spad">
     <div class="container">
+    <i class="material-icons" style="font-size:36px;cursor: pointer;color:#333;" title="Voltar" onclick="window.history.back()">keyboard_return</i>
       <div class="anime__details__content">
         <div class="row">
           <div class="col-lg-3">

@@ -81,7 +81,7 @@ class temaDAO
     {
         try {
             $conn = new PDO('mysql:host=localhost;dbname=anime-chats;charset=utf8', "root", "");
-            $sql = "SELECT * FROM tema";
+            $sql = "SELECT * FROM tema ORDER BY nome";
             $stmt = $conn->prepare($sql);
             $stmt->execute();
             $retorno = $stmt->fetchALL(PDO::FETCH_ASSOC);

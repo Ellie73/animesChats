@@ -49,7 +49,6 @@ if ($_SESSION['perfil'] != 'A') {
     <?php require_once './menu.php' ?>
     <!-- Header End -->
 
-<<<<<<< HEAD
     <div class="container mt-5">
         <h1 class="crud">Usuários cadastrados no sistema</h1>
         <br><br>
@@ -69,26 +68,6 @@ if ($_SESSION['perfil'] != 'A') {
                             <th>Excluir</th>
                         </tr>
                     </thead>
-=======
-    <h1 class="crud">Usuários cadastrados no sistema</h1>
-    <br><br>
-    <?php
-    if (!isset($_GET["idusuario"]) || $_GET["idusuario"] == 0) {
-    ?>
-        <div class="container">
-            <div class="table">
-                <table>
-                    <tr>
-                        <th>ID do usuário</th>
-                        <th>Nome</th>
-                        <th>E-mail</th>
-                        <th>Status</th>
-                        <th>Perfil</th>
-                        <th>Alterar</th>
-                        <th>Excluir</th>
-                    </tr>
-
->>>>>>> 6f93337edcbf7080f3c64eb244bcf58dd3691b99
                     <?php
                     //usuarios
                     require_once "../model/DAO/usuarioDAO.php";

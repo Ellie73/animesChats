@@ -63,7 +63,7 @@ if (isset($_SESSION['idusuario'])) {
             <div class="row">
                 <div class="col-lg-6">
                     <div class="login__form">
-                        <h2>Login</h2>
+                        <h3>Login</h3>
                         <form action="../control/loginControl.php" method="post">
                             <div class="input__item">
                                 <input type="text" placeholder="Email" name="email" required autofocus>
@@ -80,13 +80,8 @@ if (isset($_SESSION['idusuario'])) {
                 </div>
                 <div class="col-lg-6">
                     <div class="login__register">
-<<<<<<< HEAD
                         <h3> Ou </h3>
                         <a href="./cadastroUsuario.php" class="site-btn">Cadastre-se</a>
-=======
-                        <h2> Ou </h2>
-                        <a href="./cadastroUsuario.php" class="primary-btn">Cadastre-se</a>
->>>>>>> 6f93337edcbf7080f3c64eb244bcf58dd3691b99
                     </div>
                 </div>
             </div>

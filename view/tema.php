@@ -97,10 +97,11 @@ require_once '../model/DTO/avaliacaoDTO.PHP';
     <!-- Breadcrumb Begin -->
     <div class="breadcrumb-option">
         <div class="container">
+        <i class="material-icons" style="font-size:36px;cursor: pointer;color:#333;" title="Voltar" onclick="window.history.back()">keyboard_return</i>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
-                        <a href="./home.php"><i class="fa fa-home"></i> Home</a>
+                        <a href="./home.php"><i class="fa fa-home" style="font-size:20px;"></i> Home</a>
                         <a href="#">Categorias</a>
                         <span><a href="./pesquisarTema.php?type=<?= $retorno["tipotema"] ?>&page=1"><?= $retorno["tipotema"] ?></a></span>
                     </div>

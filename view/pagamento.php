@@ -50,7 +50,7 @@ if (empty($_SESSION['idusuario'])) {
     <div class="container">
         <div class="row justify-content-center mt-5">
             <div class="col-lg-6">
-                <div class ="card">
+                <div class="card">
                     <div class="card-body">
                         <select id="formaPagamento" onchange="mostrarFormulario(this.value)">
                             <option value="cartao" selected>Cartão</option>
