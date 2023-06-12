@@ -54,7 +54,7 @@
             Copyright &copy;
             <script>
                 document.write(new Date().getFullYear());
-            </script> Todos os direitos reservados
+            </script> Todos os direitos reservados a Animes Chats.
         </p>
     </div>
 </footer>
