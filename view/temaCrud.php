@@ -214,9 +214,9 @@ if ($_SESSION['perfil'] != 'A') {
                 </div>
             </form>
         </section>
+        </div>
+    <br><br>
     </div>
-
-    <br><br><br><br><br><br>
 <?php
         }
 ?>

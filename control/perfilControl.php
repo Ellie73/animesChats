@@ -12,29 +12,36 @@ $estado = $_POST["estado"];
 $cidade = $_POST["cidade"];
 $genero = $_POST["genero"];
 $nascimento = $_POST["nascimento"];
+$foto = null; // Inicializa a variável $foto
 
-if(isset($_POST["upload"])){
-
-    $foto = $_FILES["foto"];
-
-    $extensao = explode(".",$foto["name"]);
-    
-//If extensao[ (sizeof extensao) - 1] be different of jpg, do
-
-    if($extensao[sizeof($extensao)-1] == "jpg" || $extensao[sizeof($extensao)-1] == "jpeg" || $extensao[sizeof($extensao)-1] == "JPG" || $extensao[sizeof($extensao)-1] == "png"){
-        move_uploaded_file($foto["tmp_name"],"../img/usuarios/".$foto["name"]);
-        $foto = "../img/usuarios/".$_FILES["foto"]["name"];
-    }else{
-        header("location:../view/perfil.php?msg=Foto não aceita! Somente são permitidas imagens JPG, JPEG e PNG.");
-        exit;
-    }
-}else{
-    header("location:../view/perfil.php?msg=Erro ao enviar foto!");
-}
 //Verifica se o usuario colocou ou nao uma foto
 if (empty($_FILES["foto"]["name"])) {
     $foto = $_SESSION["foto"];
 } 
+
+if(isset($_POST["upload"])){
+    $foto = $_FILES["foto"];
+
+    // Verifica se foi selecionada uma nova foto
+    if ($foto["error"] !== UPLOAD_ERR_NO_FILE) {
+        $extensao = explode(".", $foto["name"]);
+        
+        // Verifica a extensão da foto
+        if ($extensao[sizeof($extensao)-1] == "jpg" || $extensao[sizeof($extensao)-1] == "jpeg" || $extensao[sizeof($extensao)-1] == "JPG" || $extensao[sizeof($extensao)-1] == "png"){
+            move_uploaded_file($foto["tmp_name"], "../img/usuarios/" . $foto["name"]);
+            $foto = "../img/usuarios/" . $_FILES["foto"]["name"];
+        } else {
+            header("location:../view/perfil.php?msg=Foto não aceita! Somente são permitidas imagens JPG, JPEG e PNG.");
+            exit;
+        }
+    } else {
+        // Se não foi selecionada uma nova foto, mantém a foto anterior
+        $foto = $_POST["fotoantiga"];
+    }
+} else {
+    header("location:../view/perfil.php?msg=Erro ao enviar foto!");
+}
+
 
 //instancia da classe usuario
 $usuario = new usuarioDTO($nome,$email,"",$telefone,$estado,$cidade,$foto,$genero,$nascimento,"","");

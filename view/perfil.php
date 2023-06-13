@@ -114,6 +114,7 @@ $usuario = $usuarioConn->pesquisarUsuario($_SESSION["idusuario"]);
                     </div>
                     <div class="form-check mb-3">
                         <input type="checkbox" class="form-check-input" required>
+                        <input type="hidden" value="<?= $usuario["foto"] ?>" id="fotoantiga" name="fotoantiga" required>
                         <label class="form-check-label">Ao clicar em "Salvar" você está ciente de que os seus dados serão <b>alterados</b> do sistema.</label>
                     </div>
                     <input type="submit" name="upload" value="Salvar" class="btn btn-danger">
