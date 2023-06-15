@@ -97,7 +97,7 @@ class comunidadeDAO
             $sql = "SELECT comunidade.*, usuario.nome AS nome_usuario
             FROM comunidade
             JOIN usuario ON comunidade.idcriador = usuario.id_usuario
-            WHERE idcomunidade = ?";
+            WHERE idcomunidade = ? AND situacao=1";
             $stmt = $conn->prepare($sql);
             $stmt->bindValue(1,$id);
             $stmt->execute();

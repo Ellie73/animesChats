@@ -233,6 +233,11 @@ ol {
 	}
 }
 
+#mensagens {
+	height: 85%;
+	overflow-y: scroll;
+}
+
 .spacial-controls {
 	position: fixed;
 	width: 111px;

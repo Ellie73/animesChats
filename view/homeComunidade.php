@@ -1,6 +1,6 @@
 <?php
 session_start();
-if ($_GET['page']==null || $_GET['page']==0){
+if ($_GET['page'] == null || $_GET['page'] == 0) {
     header("Location:./home.php?msg=Página indefinida!");
 }
 ?>
@@ -37,7 +37,7 @@ if ($_GET['page']==null || $_GET['page']==0){
     </div>
 
     <!-- Header Section Begin -->
-    <?php require_once './menu.php'?>
+    <?php require_once './menu.php' ?>
     <!-- Header End -->
 
 
@@ -47,7 +47,7 @@ if ($_GET['page']==null || $_GET['page']==0){
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
-                        <a href="../home.php"><i class="fa fa-home"></i> Home</a>
+                        <a href="./home.php"><i class="fa fa-home"></i> Home</a>
                         <span>Comunidades</span>
                     </div>
                 </div>
@@ -81,26 +81,26 @@ if ($_GET['page']==null || $_GET['page']==0){
                         </div>
                         <div class="row">
                             <?php
-                        //comunidades
-                        require_once "../model/DAO/comunidadeDAO.php";
-                        $comunidadeConn = new comunidadeDAO();
-                        $retorno = $comunidadeConn->pesquisarComunidade($_GET["page"]);
-                        foreach ($retorno as $comunidade) {
+                            //comunidades
+                            require_once "../model/DAO/comunidadeDAO.php";
+                            $comunidadeConn = new comunidadeDAO();
+                            $retorno = $comunidadeConn->pesquisarComunidade($_GET["page"]);
+                            foreach ($retorno as $comunidade) {
                             ?>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="product__item">
-                                    <a href="./comunidade.php?id=<?=$comunidade["idcomunidade"]?>">
-                                    <div class="product__item__pic set-bg" data-setbg="<?=$comunidade["foto"]?>">
-                                    </div>
-                                </a>
-                                    <div class="product__item__text">
-                                        <h5><a href="./comunidade.php?id=<?=$comunidade["idcomunidade"]?>"><?=$comunidade["nome"]?></a></h5>
+                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                    <div class="product__item">
+                                        <a href="./comunidade.php?id=<?= $comunidade["idcomunidade"] ?>">
+                                            <div class="product__item__pic set-bg" data-setbg="<?= $comunidade["foto"] ?>">
+                                            </div>
+                                        </a>
+                                        <div class="product__item__text">
+                                            <h5><a href="./comunidade.php?id=<?= $comunidade["idcomunidade"] ?>"><?= $comunidade["nome"] ?></a></h5>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        <?php
-                        }
-                        ?>
+                            <?php
+                            }
+                            ?>
                         </div>
                     </div>
                     <div class="product__pagination">
@@ -114,14 +114,14 @@ if ($_GET['page']==null || $_GET['page']==0){
                         for ($i = 1; $i <= $retorno["total"]; $i++) {
                             // Verificar se é um múltiplo de 6 para gerar o link
                             if ($i % 6 == 0) {
-                                echo '<a href="./homeComunidade.php?page='.$linkCount.'">' . $linkCount . '</a> ';
+                                echo '<a href="./homeComunidade.php?page=' . $linkCount . '">' . $linkCount . '</a> ';
                                 $linkCount++;
                             }
                         }
 
                         // Se o total de animes não for múltiplo de 6, exibir o último link
                         if ($retorno["total"] % 6 != 0) {
-                            echo '<a href="./homeComunidade.php?page='.$linkCount.'">' . $linkCount . '</a>';
+                            echo '<a href="./homeComunidade.php?page=' . $linkCount . '">' . $linkCount . '</a>';
                         }
                         ?>
                         <a href="#"><i class="fa fa-angle-double-right"></i></a>
@@ -133,7 +133,7 @@ if ($_GET['page']==null || $_GET['page']==0){
     </section>
     <!-- Product Section End -->
 
-    <?php require_once './footer.php'?>
+    <?php require_once './footer.php' ?>
 
 </body>
 

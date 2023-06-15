@@ -57,7 +57,7 @@ session_start();
                                 <span class="icon_profile"></span>
                             </div>
                             <div class="input__item">
-                                <input type="tel" name="telefone" id="telefone" class="inputUser" placeholder="Telefone" maxlength="17" required>
+                                <input type="tel" name="telefone" id="telefone" class="inputUser"  pattern="\[0-9]{2}\[0-9]{4,5}[0-9]{4}" placeholder="Telefone" maxlength="17" minlength="8" required>
                                 <span class="icon_phone"></span>
                             </div>
                             <div class="input__item">
@@ -82,7 +82,7 @@ session_start();
                                 <br><br>
                             </div>
                             <div class="input__item">
-                                <input type="date" name="nascimento" id="nascimento" placeholder="Data de nascimento" required>
+                                <input type="date" name="nascimento" id="nascimento" placeholder="Data de nascimento" required min="1900-01-01" max="2010-01-01">
                                 <span class="icon_calendar"></span>
                             </div>
                             <div class="input__item">
@@ -106,7 +106,6 @@ session_start();
         </div>
     </section>
     <!-- Login Section End -->
-
     <?php require_once './footer.php' ?>
 
 </body>

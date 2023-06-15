@@ -27,7 +27,7 @@ class mensagemDAO
         try {
             $conn = new PDO('mysql:host=localhost;dbname=anime-chats;charset=utf8', "root", "");
 
-            $sql = "SELECT mensagem.*, usuario.nome, usuario.foto FROM mensagem JOIN usuario ON mensagem.remetente = usuario.id_usuario WHERE chat = ?";
+            $sql = "SELECT mensagem.*, usuario.nome, usuario.foto FROM mensagem JOIN usuario ON mensagem.remetente = usuario.id_usuario WHERE chat = ? ORDER BY idmensagem DESC";
 
             $stmt = $conn->prepare($sql);
             $stmt->bindValue(1, $chat);

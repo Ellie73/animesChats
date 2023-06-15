@@ -71,7 +71,7 @@ $usuario = $usuarioConn->pesquisarUsuario($_SESSION["idusuario"]);
                         </div>
                         <div class="col">
                             <label for="telefone" class="form-label">Telefone/Celular:</label>
-                            <input type="tel" id="telefone" name="telefone" value="<?= $usuario["telefone"] ?>" class="form-control">
+                            <input type="tel" id="telefone" name="telefone" value="<?= $usuario["telefone"] ?>" pattern="\[0-9]{2}\[0-9]{4,5}[0-9]{4}" maxlength="17" minlength="8" class="form-control">
                         </div>
                     </div>
 
@@ -109,7 +109,7 @@ $usuario = $usuarioConn->pesquisarUsuario($_SESSION["idusuario"]);
                         </div>
                         <div class="col">
                             <label for="nascimento" class="form-label">Data de nascimento:</label>
-                            <input type="date" id="nascimento" name="nascimento" value="<?= $usuario["nascimento"] ?>" class="form-control">
+                            <input type="date" id="nascimento" name="nascimento" value="<?= $usuario["nascimento"] ?>" class="form-control" min="1900-01-01" max="2010-01-01">
                         </div>
                     </div>
                     <div class="form-check mb-3">

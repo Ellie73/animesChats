@@ -51,7 +51,7 @@ require_once "../model/DAO/comunidadeDAO.php";
 $comunidadeConn = new comunidadeDAO();
 $comunidade = $comunidadeConn->comunidade($idcomunidade);
 if ($comunidade == null || empty($comunidade)) {
-  header("location:../view/home.php?msg=Error!");
+  header("location:../view/home.php?msg=Comunidade bloqueada ou não existe!");
 }
 ?>
 
